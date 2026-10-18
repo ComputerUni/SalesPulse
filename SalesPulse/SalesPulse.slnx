@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="SalesPulse.Business/SalesPulse.Business.csproj" />
+  <Project Path="SalesPulse.Core/SalesPulse.Core.csproj" />
+  <Project Path="SalesPulse.DataAccess/SalesPulse.DataAccess.csproj" />
+  <Project Path="SalesPulse.WebUI/SalesPulse.WebUI.csproj" />
+</Solution>
