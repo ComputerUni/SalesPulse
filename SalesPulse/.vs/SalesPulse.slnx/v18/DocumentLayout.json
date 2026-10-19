@@ -3,36 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{254E26E7-B875-352A-4CFB-8407A4CAE3B0}|SalesPulse.Business\\SalesPulse.Business.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.business\\services\\products\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{254E26E7-B875-352A-4CFB-8407A4CAE3B0}|SalesPulse.Business\\SalesPulse.Business.csproj|solutionrelative:salespulse.business\\services\\products\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.core\\dtos\\orderdetaildtos\\resultorderdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|solutionrelative:salespulse.core\\dtos\\orderdetaildtos\\resultorderdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{254E26E7-B875-352A-4CFB-8407A4CAE3B0}|SalesPulse.Business\\SalesPulse.Business.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.business\\services\\cities\\cityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{254E26E7-B875-352A-4CFB-8407A4CAE3B0}|SalesPulse.Business\\SalesPulse.Business.csproj|solutionrelative:salespulse.business\\services\\cities\\cityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.core\\dtos\\orderdetaildtos\\updateorderdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|solutionrelative:salespulse.core\\dtos\\orderdetaildtos\\updateorderdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{254E26E7-B875-352A-4CFB-8407A4CAE3B0}|SalesPulse.Business\\SalesPulse.Business.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.business\\services\\products\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{254E26E7-B875-352A-4CFB-8407A4CAE3B0}|SalesPulse.Business\\SalesPulse.Business.csproj|solutionrelative:salespulse.business\\services\\products\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B34E8185-F078-AB31-B538-D7A35A32D718}|SalesPulse.DataAccess\\SalesPulse.DataAccess.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.dataaccess\\repositories\\products\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B34E8185-F078-AB31-B538-D7A35A32D718}|SalesPulse.DataAccess\\SalesPulse.DataAccess.csproj|solutionrelative:salespulse.dataaccess\\repositories\\products\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B34E8185-F078-AB31-B538-D7A35A32D718}|SalesPulse.DataAccess\\SalesPulse.DataAccess.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.dataaccess\\repositories\\products\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B34E8185-F078-AB31-B538-D7A35A32D718}|SalesPulse.DataAccess\\SalesPulse.DataAccess.csproj|solutionrelative:salespulse.dataaccess\\repositories\\products\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.core\\dtos\\productdtos\\createproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|solutionrelative:salespulse.core\\dtos\\productdtos\\createproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.core\\dtos\\productdtos\\updateproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|solutionrelative:salespulse.core\\dtos\\productdtos\\updateproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.core\\dtos\\productdtos\\resultproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|solutionrelative:salespulse.core\\dtos\\productdtos\\resultproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.core\\dtos\\orderdetaildtos\\createorderdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|solutionrelative:salespulse.core\\dtos\\orderdetaildtos\\createorderdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 592,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,112 +42,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Business\\Services\\Products\\ProductService.cs",
-              "RelativeDocumentMoniker": "SalesPulse.Business\\Services\\Products\\ProductService.cs",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Business\\Services\\Products\\ProductService.cs",
-              "RelativeToolTip": "SalesPulse.Business\\Services\\Products\\ProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T10:43:50.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Business\\Services\\Products\\IProductService.cs",
-              "RelativeDocumentMoniker": "SalesPulse.Business\\Services\\Products\\IProductService.cs",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Business\\Services\\Products\\IProductService.cs",
-              "RelativeToolTip": "SalesPulse.Business\\Services\\Products\\IProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Title": "CreateOrderDetailDto.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\OrderDetailDtos\\CreateOrderDetailDto.cs",
+              "RelativeDocumentMoniker": "SalesPulse.Core\\DTOs\\OrderDetailDtos\\CreateOrderDetailDto.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\OrderDetailDtos\\CreateOrderDetailDto.cs",
+              "RelativeToolTip": "SalesPulse.Core\\DTOs\\OrderDetailDtos\\CreateOrderDetailDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T10:42:27.472Z",
+              "WhenOpened": "2026-10-19T16:46:02.187Z",
               "EditorCaption": ""
             },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataAccess\\Repositories\\Products\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "SalesPulse.DataAccess\\Repositories\\Products\\ProductRepository.cs",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataAccess\\Repositories\\Products\\ProductRepository.cs",
-              "RelativeToolTip": "SalesPulse.DataAccess\\Repositories\\Products\\ProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAB2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T10:08:47.816Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IProductRepository.cs",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataAccess\\Repositories\\Products\\IProductRepository.cs",
-              "RelativeDocumentMoniker": "SalesPulse.DataAccess\\Repositories\\Products\\IProductRepository.cs",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataAccess\\Repositories\\Products\\IProductRepository.cs",
-              "RelativeToolTip": "SalesPulse.DataAccess\\Repositories\\Products\\IProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T10:08:30.101Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UpdateProductDto.cs",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\ProductDtos\\UpdateProductDto.cs",
-              "RelativeDocumentMoniker": "SalesPulse.Core\\DTOs\\ProductDtos\\UpdateProductDto.cs",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\ProductDtos\\UpdateProductDto.cs",
-              "RelativeToolTip": "SalesPulse.Core\\DTOs\\ProductDtos\\UpdateProductDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T10:05:57.555Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CreateProductDto.cs",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\ProductDtos\\CreateProductDto.cs",
-              "RelativeDocumentMoniker": "SalesPulse.Core\\DTOs\\ProductDtos\\CreateProductDto.cs",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\ProductDtos\\CreateProductDto.cs",
-              "RelativeToolTip": "SalesPulse.Core\\DTOs\\ProductDtos\\CreateProductDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T10:05:37.656Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ResultProductDto.cs",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\ProductDtos\\ResultProductDto.cs",
-              "RelativeDocumentMoniker": "SalesPulse.Core\\DTOs\\ProductDtos\\ResultProductDto.cs",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\ProductDtos\\ResultProductDto.cs",
-              "RelativeToolTip": "SalesPulse.Core\\DTOs\\ProductDtos\\ResultProductDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T10:05:13Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 592,
-          "SelectedChildIndex": 0,
-          "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CityService.cs",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Business\\Services\\Cities\\CityService.cs",
-              "RelativeDocumentMoniker": "SalesPulse.Business\\Services\\Cities\\CityService.cs",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Business\\Services\\Cities\\CityService.cs",
-              "RelativeToolTip": "SalesPulse.Business\\Services\\Cities\\CityService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Title": "UpdateOrderDetailDto.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\OrderDetailDtos\\UpdateOrderDetailDto.cs",
+              "RelativeDocumentMoniker": "SalesPulse.Core\\DTOs\\OrderDetailDtos\\UpdateOrderDetailDto.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\OrderDetailDtos\\UpdateOrderDetailDto.cs",
+              "RelativeToolTip": "SalesPulse.Core\\DTOs\\OrderDetailDtos\\UpdateOrderDetailDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T10:45:59.599Z",
+              "WhenOpened": "2026-10-19T16:45:21.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ResultOrderDetailDto.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\OrderDetailDtos\\ResultOrderDetailDto.cs",
+              "RelativeDocumentMoniker": "SalesPulse.Core\\DTOs\\OrderDetailDtos\\ResultOrderDetailDto.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\OrderDetailDtos\\ResultOrderDetailDto.cs",
+              "RelativeToolTip": "SalesPulse.Core\\DTOs\\OrderDetailDtos\\ResultOrderDetailDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-19T16:45:06.483Z",
               "EditorCaption": ""
             }
           ]

@@ -1,28 +1,23 @@
 ﻿using SalesPulse.Core.DTOs.ProductDtos;
 using SalesPulse.DataAccess.Repositories.Products;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SalesPulse.Business.Services.Products
 {
     public class ProductService(IProductRepository _productRepository) : IProductService
     {
-        public Task ChangeStatusAsync(int id)
+        public async Task ChangeStatusAsync(int id)
         {
-            throw new NotImplementedException();
+            await _productRepository.ChangeStatusAsync(id);
         }
 
-        public Task CreateAsync(CreateProductDto createProductDto)
+        public async Task CreateAsync(CreateProductDto createProductDto)
         {
-            throw new NotImplementedException();
+            await _productRepository.CreateAsync(createProductDto);
         }
 
-        public Task DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            await _productRepository.DeleteAsync(id);
         }
 
         public async Task<IEnumerable<ResultProductDto>> GetAllAsync()
@@ -30,14 +25,14 @@ namespace SalesPulse.Business.Services.Products
             return await _productRepository.GetAllAsync();
         }
 
-        public Task<UpdateProductDto> GetByIdAsync(int id)
+        public async Task<UpdateProductDto> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _productRepository.GetByIdAsync(id);
         }
 
-        public Task UpdateAsync(UpdateProductDto updateProductDto)
+        public async Task UpdateAsync(UpdateProductDto updateProductDto)
         {
-            throw new NotImplementedException();
+            await _productRepository.UpdateAsync(updateProductDto);
         }
     }
 }
