@@ -2,5 +2,6 @@
   <Project Path="SalesPulse.Business/SalesPulse.Business.csproj" />
   <Project Path="SalesPulse.Core/SalesPulse.Core.csproj" />
   <Project Path="SalesPulse.DataAccess/SalesPulse.DataAccess.csproj" />
+  <Project Path="SalesPulse.DataSeeder/SalesPulse.DataSeeder.csproj" Id="51d0d71c-d6f5-444e-912e-53777f19fb8e" />
   <Project Path="SalesPulse.WebUI/SalesPulse.WebUI.csproj" />
 </Solution>

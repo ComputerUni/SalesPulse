@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.core\\dtos\\orderdetaildtos\\resultorderdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|solutionrelative:salespulse.core\\dtos\\orderdetaildtos\\resultorderdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51D0D71C-D6F5-444E-912E-53777F19FB8E}|SalesPulse.DataSeeder\\SalesPulse.DataSeeder.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.dataseeder\\orderseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D0D71C-D6F5-444E-912E-53777F19FB8E}|SalesPulse.DataSeeder\\SalesPulse.DataSeeder.csproj|solutionrelative:salespulse.dataseeder\\orderseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.core\\dtos\\orderdetaildtos\\updateorderdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|solutionrelative:salespulse.core\\dtos\\orderdetaildtos\\updateorderdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51D0D71C-D6F5-444E-912E-53777F19FB8E}|SalesPulse.DataSeeder\\SalesPulse.DataSeeder.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.dataseeder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D0D71C-D6F5-444E-912E-53777F19FB8E}|SalesPulse.DataSeeder\\SalesPulse.DataSeeder.csproj|solutionrelative:salespulse.dataseeder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.core\\dtos\\orderdetaildtos\\createorderdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|solutionrelative:salespulse.core\\dtos\\orderdetaildtos\\createorderdetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51D0D71C-D6F5-444E-912E-53777F19FB8E}|SalesPulse.DataSeeder\\SalesPulse.DataSeeder.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.dataseeder\\customerseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D0D71C-D6F5-444E-912E-53777F19FB8E}|SalesPulse.DataSeeder\\SalesPulse.DataSeeder.csproj|solutionrelative:salespulse.dataseeder\\customerseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51D0D71C-D6F5-444E-912E-53777F19FB8E}|SalesPulse.DataSeeder\\SalesPulse.DataSeeder.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.dataseeder\\productseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51D0D71C-D6F5-444E-912E-53777F19FB8E}|SalesPulse.DataSeeder\\SalesPulse.DataSeeder.csproj|solutionrelative:salespulse.dataseeder\\productseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 592,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,41 +46,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CreateOrderDetailDto.cs",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\OrderDetailDtos\\CreateOrderDetailDto.cs",
-              "RelativeDocumentMoniker": "SalesPulse.Core\\DTOs\\OrderDetailDtos\\CreateOrderDetailDto.cs",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\OrderDetailDtos\\CreateOrderDetailDto.cs",
-              "RelativeToolTip": "SalesPulse.Core\\DTOs\\OrderDetailDtos\\CreateOrderDetailDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "OrderSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataSeeder\\OrderSeeder.cs",
+              "RelativeDocumentMoniker": "SalesPulse.DataSeeder\\OrderSeeder.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataSeeder\\OrderSeeder.cs",
+              "RelativeToolTip": "SalesPulse.DataSeeder\\OrderSeeder.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAcwCcAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T16:46:02.187Z",
+              "WhenOpened": "2026-10-20T11:04:10.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CustomerSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataSeeder\\CustomerSeeder.cs",
+              "RelativeDocumentMoniker": "SalesPulse.DataSeeder\\CustomerSeeder.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataSeeder\\CustomerSeeder.cs",
+              "RelativeToolTip": "SalesPulse.DataSeeder\\CustomerSeeder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T10:55:35.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataSeeder\\ProductSeeder.cs",
+              "RelativeDocumentMoniker": "SalesPulse.DataSeeder\\ProductSeeder.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataSeeder\\ProductSeeder.cs",
+              "RelativeToolTip": "SalesPulse.DataSeeder\\ProductSeeder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-20T10:53:01.09Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UpdateOrderDetailDto.cs",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\OrderDetailDtos\\UpdateOrderDetailDto.cs",
-              "RelativeDocumentMoniker": "SalesPulse.Core\\DTOs\\OrderDetailDtos\\UpdateOrderDetailDto.cs",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\OrderDetailDtos\\UpdateOrderDetailDto.cs",
-              "RelativeToolTip": "SalesPulse.Core\\DTOs\\OrderDetailDtos\\UpdateOrderDetailDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataSeeder\\Program.cs",
+              "RelativeDocumentMoniker": "SalesPulse.DataSeeder\\Program.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataSeeder\\Program.cs",
+              "RelativeToolTip": "SalesPulse.DataSeeder\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T16:45:21.661Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ResultOrderDetailDto.cs",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\OrderDetailDtos\\ResultOrderDetailDto.cs",
-              "RelativeDocumentMoniker": "SalesPulse.Core\\DTOs\\OrderDetailDtos\\ResultOrderDetailDto.cs",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\OrderDetailDtos\\ResultOrderDetailDto.cs",
-              "RelativeToolTip": "SalesPulse.Core\\DTOs\\OrderDetailDtos\\ResultOrderDetailDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-19T16:45:06.483Z",
+              "WhenOpened": "2026-10-20T10:52:38.261Z",
               "EditorCaption": ""
             }
           ]
