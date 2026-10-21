@@ -1,0 +1,47 @@
+﻿@using SalesPulse.Core.DTOs.DashboardDtos
+@model List<DashboardRegionalDistributionDto>
+
+@{
+    var total = Model.Sum(x => x.TotalRevenue);
+    var totalB = (total / 1_000_000_000m).ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
+}
+
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+    <div class="flex items-center justify-between pb-space-md">
+        <div>
+            <span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Coğrafi Hacim</span>
+            <h2 class="font-title-sm text-title-sm text-on-surface">Bölgesel Dağılım (İlk 10 İl)</h2>
+        </div>
+        <div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-[16px] text-primary">pin_drop</span>
+            <span>₺@totalB Milyar Toplam</span>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+        @foreach (var (item, index) in Model.Select((x, i) => (x, i + 1)))
+        {
+            var revenueB = (item.TotalRevenue / 1_000_000_000m).ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
+            var percentage = item.Percentage.ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
+            var barWidth = item.Percentage.ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
+            var orderK = (item.TotalOrder / 1000).ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
+
+            <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1.5">
+                        <span class="w-5 h-5 rounded flex items-center justify-center bg-primary text-on-primary font-data-table text-[11px] font-bold">@index</span>
+                        <span class="font-body-md text-body-md font-semibold text-on-surface">@item.CityName</span>
+                    </div>
+                    <span class="font-data-table text-body-sm font-bold text-primary">₺@revenueB Milyar</span>
+                </div>
+                <div class="flex items-center justify-between text-body-sm text-on-surface-variant font-label-caps">
+                    <span>Pay: %@percentage</span>
+                    <span>@orderK K Sipariş</span>
+                </div>
+                <div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
+                    <div class="h-full bg-primary rounded-full" style="width: @barWidth%;"></div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

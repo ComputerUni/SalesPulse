@@ -1,0 +1,39 @@
+﻿@using SalesPulse.Core.DTOs.DashboardDtos
+@model List<DashboardCategoryPerformanceDto>
+
+@{
+    var total = Model.Sum(x => x.TotalRevenue);
+    var totalB = total / 1_000_000_000m;
+    var totalFormatted = totalB.ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
+}
+
+
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+    <div class="flex items-center justify-between pb-space-md">
+        <div>
+            <span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Portföy Analizi</span>
+            <h2 class="font-title-sm text-title-sm text-on-surface">Kategori Performansı (Ciroya Göre İlk 10)</h2>
+        </div>
+        <span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">Toplam ₺@totalFormatted Milyar</span>
+    </div>
+    <!-- Sleek Horizontal Progress Rows -->
+    <div class="flex flex-col gap-space-sm">
+        @foreach (var item in Model)
+        {
+            <div class="flex flex-col gap-1">
+                <div class="flex items-center justify-between font-body-sm text-body-sm">
+                    <span class="font-medium text-on-surface">@item.CategoryName</span>
+                    <span class="font-data-table font-semibold text-on-surface">
+                        ₺@item.TotalRevenue.ToString("N0", new System.Globalization.CultureInfo("tr-TR"))
+                        <span class="text-on-surface-variant font-normal">(%@item.Percentage.ToString("F1", System.Globalization.CultureInfo.InvariantCulture))</span>
+                    </span>
+                </div>
+                <div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+                    <div class="h-full rounded-full bg-primary-container"
+                         style="width: @item.Percentage.ToString("F1", System.Globalization.CultureInfo.InvariantCulture)%;">
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

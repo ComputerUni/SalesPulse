@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html lang="tr">
+
+@await Component.InvokeAsync("_PanelLayoutHead")
+
+<body class="min-h-screen bg-gradient-to-br from-[#FFF9F6] via-[#F8FAFC] to-[#F0F5FF] font-body-md text-body-md text-on-surface antialiased">
+
+    @await Component.InvokeAsync("_PanelLayoutSidebar")
+
+    <div class="pl-[260px]">
+
+        @await Component.InvokeAsync("_PanelLayoutTopbar")
+
+        <main class="w-full pt-16 px-margin">
+
+            @RenderBody()
+
+        </main>
+    </div>
+</body>
+</html>

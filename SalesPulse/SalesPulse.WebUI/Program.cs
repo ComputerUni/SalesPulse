@@ -1,6 +1,7 @@
 using SalesPulse.Business.Services.Categories;
 using SalesPulse.Business.Services.Cities;
 using SalesPulse.Business.Services.Customers;
+using SalesPulse.Business.Services.Dashboards;
 using SalesPulse.Business.Services.OrderDetails;
 using SalesPulse.Business.Services.Orders;
 using SalesPulse.Business.Services.Payments;
@@ -9,6 +10,7 @@ using SalesPulse.DataAccess.Context;
 using SalesPulse.DataAccess.Repositories.Categories;
 using SalesPulse.DataAccess.Repositories.Cities;
 using SalesPulse.DataAccess.Repositories.Customers;
+using SalesPulse.DataAccess.Repositories.Dashboards;
 using SalesPulse.DataAccess.Repositories.OrderDetails;
 using SalesPulse.DataAccess.Repositories.Orders;
 using SalesPulse.DataAccess.Repositories.Payments;
@@ -41,7 +43,10 @@ builder.Services.AddScoped<IPaymentService, PaymentService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 
-    
+builder.Services.AddScoped<IDashboardRepository, DashboardRepository>();
+builder.Services.AddScoped<IDashboardService, DashboardService>();
+
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Outfit:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"#a73a05","on-primary-container":"#672000","surface-container-lowest":"#ffffff","inverse-primary":"#ffb59a","on-secondary-container":"#002e5d","background":"#f9f9ff","on-secondary-fixed-variant":"#004788","secondary-fixed-dim":"#a7c8ff","on-secondary-fixed":"#001b3b","secondary":"#005eb2","inverse-surface":"#263143","surface-dim":"#cfdaf2","surface-container-highest":"#d8e3fb","on-surface":"#111c2d","outline-variant":"#dfc0b5","on-tertiary":"#ffffff","surface-variant":"#d8e3fb","tertiary-fixed":"#eedbff","primary-container":"#ff7a45","tertiary":"#7a3ac5","on-tertiary-fixed":"#2a0054","on-primary-fixed-variant":"#802900","surface-container":"#e7eeff","surface-container-low":"#f0f3ff","primary-fixed":"#ffdbcf","on-tertiary-container":"#500096","on-primary":"#ffffff","on-primary-fixed":"#380d00","inverse-on-surface":"#ecf1ff","surface-bright":"#f9f9ff","tertiary-fixed-dim":"#d9b9ff","surface-tint":"#a73a05","error-container":"#ffdad6","primary-fixed-dim":"#ffb59a","on-tertiary-fixed-variant":"#611aac","outline":"#8b7168","secondary-container":"#4297ff","on-surface-variant":"#58423a","on-error":"#ffffff","surface-container-high":"#dee8ff","on-secondary":"#ffffff","error":"#ba1a1a","surface":"#f9f9ff","secondary-fixed":"#d5e3ff","tertiary-container":"#bd88ff","on-background":"#111c2d","on-error-container":"#93000a"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xl":"2rem","space-lg":"1.25rem","space-sm":"0.5rem","margin-mobile":"1rem","space-md":"0.875rem","gutter-mobile":"1rem","margin":"2rem","space-xs":"0.25rem","gutter":"1.5rem"},fontFamily:{"headline-lg":["Outfit"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Outfit"],"data-metric":["JetBrains Mono"],"display-lg":["Outfit"],"label-caps":["Plus Jakarta Sans"],"data-table":["JetBrains Mono"],"body-sm":["Plus Jakarta Sans"],"title-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"display-lg-mobile":["Outfit"],"headline-lg-mobile":["Outfit"]},fontSize:{"headline-lg":["2rem",{"lineHeight":"1.25","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["1rem",{"lineHeight":"1.5","fontWeight":"400"}],"headline-md":["1.375rem",{"lineHeight":"1.35","letterSpacing":"-0.01em","fontWeight":"600"}],"data-metric":["1.75rem",{"lineHeight":"1.2","letterSpacing":"-0.02em","fontWeight":"600"}],"display-lg":["3rem",{"lineHeight":"1.15","letterSpacing":"-0.03em","fontWeight":"700"}],"label-caps":["0.6875rem",{"lineHeight":"1.2","letterSpacing":"0.06em","fontWeight":"700"}],"data-table":["0.8125rem",{"lineHeight":"1.4","fontWeight":"500"}],"body-sm":["0.75rem",{"lineHeight":"1.45","fontWeight":"500"}],"title-sm":["1.125rem",{"lineHeight":"1.4","fontWeight":"600"}],"body-md":["0.875rem",{"lineHeight":"1.5","fontWeight":"400"}],"display-lg-mobile":["2rem",{"lineHeight":"1.2","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["1.5rem",{"lineHeight":"1.3","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="min-h-screen bg-gradient-to-br from-[#FFF9F6] via-[#F8FAFC] to-[#F0F5FF] font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_12px_rgba(15,23,42,0.03)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm border-b border-surface-container-low"><img alt="Vanguard Admin Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XFYp5p8Ij13c_L3TVGSTtIpB8E08xdXURyLtcX-xQ1fqh_rOf_nKLVmhn0xO0uqvv3LyDSyVRVO213Yv2Q9wbQFR0jpWhywrOFjFZ-V_89Vevws79G_cQXE6w9ddy3dBI4OZ91b1PQszLZDT1y34epaXPCyTG7Pu0mYazkq5pCfGw-XQmGsn4yC5tKOfCb2CM0l0TY-ahu8zpd2Jmeq4Yc3kIJzVavHC4csOxoRgGjXQ9Z0o2bj7kLPVG6"/><div class="flex flex-col"><span class="font-headline-md text-body-md text-on-surface leading-tight">Vanguard</span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Analytics Platform</span></div></div><div class="px-space-md pt-space-md"><span class="px-space-sm font-label-caps text-label-caps uppercase text-outline">Operasyonel Menü</span></div><nav class="mt-space-xs px-space-sm flex flex-col gap-1" data-active-classes="bg-primary-fixed text-on-primary-fixed-variant font-semibold rounded-lg"><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="genel-bakis" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md">Genel Bakış</span></div><span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant">CANLI</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="siparis-yonetimi" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span class="font-body-md text-body-md">Sipariş Yönetimi</span></div><span class="font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">28</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="satis-analizi" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-body-md text-body-md">Satış Analizi</span></div><span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed">+%14</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="musteriler-segmentler" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-body-md text-body-md">Müşteriler &amp; Segmentler</span></div></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="raporlar-disa-aktarma" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">description</span><span class="font-body-md text-body-md">Raporlar &amp; Dışa Aktarma</span></div><span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">PDF</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="ayarlar" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-md text-body-md">Ayarlar</span></div></a></nav></div><div class="p-space-md m-space-sm rounded-xl bg-surface-container-low"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps uppercase text-outline">Sistem Durumu</span><span class="h-2 w-2 rounded-full bg-secondary"></span></div><div class="mt-space-xs flex items-baseline justify-between"><span class="font-body-sm text-body-sm text-on-surface-variant">Senkronizasyon</span><span class="font-data-table text-data-table text-on-surface">100% Aktif</span></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface-container-lowest/85 backdrop-blur-md z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-space-lg"><div class="relative flex items-center w-80"><span class="material-symbols-outlined absolute left-3 text-outline text-[20px]">search</span><input class="w-full pl-10 pr-14 py-1.5 bg-surface-container-low text-on-surface placeholder:text-outline rounded-lg text-body-sm font-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary" placeholder="Metrik, sipariş veya müşteri ara..." type="text"/><kbd class="absolute right-2.5 px-1.5 py-0.5 text-[10px] font-data-table font-semibold text-outline bg-surface-container-lowest rounded border border-surface-container-highest">Ctrl + K</kbd></div><div class="hidden xl:flex items-center bg-surface-container-low p-1 rounded-lg"><button class="px-space-md py-1 rounded font-body-sm text-body-sm font-medium bg-surface-container-lowest text-on-surface shadow-xs">Son 30 Gün</button><button class="px-space-md py-1 rounded font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface">Son 12 Ay</button><button class="px-space-md py-1 rounded font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span>Özel Tarih</button></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-all font-body-sm text-body-sm"><span class="material-symbols-outlined text-[18px]">file_download</span><span class="hidden md:inline font-medium">Dışa Aktar</span></button><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary-container text-on-primary font-data-table text-[10px] font-semibold">4</span></button><div class="h-6 w-[1px] bg-surface-container-high"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden sm:block"><p class="font-title-sm text-body-sm text-on-surface leading-tight">Selin Kaya</p><span class="font-label-caps text-label-caps text-primary uppercase">Kıdemli Gelir Yöneticisi</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 px-margin"><div class="flex flex-col w-full pb-16">
+<!-- Top Navigation & Action Header -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg mb-space-lg">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-outline mb-1">
+<span class="font-label-caps text-label-caps tracking-wider uppercase text-on-surface-variant">Operasyonel Analitik</span>
+<span class="text-xs">•</span>
+<span class="font-label-caps text-label-caps tracking-wider uppercase text-primary">Sipariş Kayıtları</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight flex items-center gap-3">
+        Sipariş Yönetimi (Order Explorer)
+        <span class="font-data-table text-body-sm font-semibold px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant border-0">v2.4 Canlı Depo</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-3xl">
+        Veritabanındaki 3.420.000+ kayıt arasında gerçek zamanlı arama, dinamik filtreleme ve anlık operasyonel detay analizi.
+      </p>
+</div>
+<!-- Global CTA Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm self-start xl:self-auto">
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-title-sm text-body-sm shadow-sm transition-all duration-200" onclick="triggerNotification('CSV aktarımı başlatıldı (10.000 satır sınırlandırıldı)')">
+<span class="material-symbols-outlined text-[19px] text-primary">cloud_download</span>
+<span>CSV İndir <span class="font-data-table text-outline text-[11px] font-normal">(10k)</span></span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-lg py-2.5 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-title-sm text-body-sm shadow-md hover:shadow-lg hover:shadow-primary-container/30 transition-all duration-200" onclick="openDrawer('#ORD-2024-98412')">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Yeni Sipariş Girişi</span>
+</button>
+</div>
+</div>
+<!-- Comprehensive Filter Ribbon (Level 1 Surface) -->
+<section class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-lg mb-space-lg relative overflow-hidden">
+<!-- Soft Decorative Glow -->
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/3 -bottom-12 w-48 h-48 bg-secondary-fixed/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-md">
+<!-- Search & Primary Dropdowns Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-md">
+<!-- Live Search Field -->
+<div class="lg:col-span-4 relative">
+<label class="block font-label-caps text-label-caps uppercase text-outline mb-1.5">Sipariş No / Müşteri / E-Posta</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">manage_search</span>
+<input class="w-full pl-10 pr-10 py-2 bg-surface-container-low text-on-surface placeholder:text-outline/70 rounded-xl text-body-md font-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" id="searchInput" placeholder="Örn: #ORD-2024 veya 'Selin Yılmaz'..." type="text" value="#ORD-2024"/>
+<button class="absolute right-3 text-outline hover:text-on-surface" onclick="document.getElementById('searchInput').value=''">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Date Range Filter -->
+<div class="lg:col-span-3">
+<label class="block font-label-caps text-label-caps uppercase text-outline mb-1.5">Tarih Aralığı</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[18px]">calendar_month</span>
+<select class="w-full pl-10 pr-8 py-2 bg-surface-container-low text-on-surface rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary-container appearance-none cursor-pointer">
+<option>Son 7 Gün (18 - 25 Eki)</option>
+<option selected="">Bu Ay (Ekim 2024)</option>
+<option>Son 90 Günlük Çeyrek</option>
+<option>Özel Aralık (01.01.2024 - 31.12.2024)</option>
+<option>Tüm Zamanlar</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- City Dropdown -->
+<div class="lg:col-span-2">
+<label class="block font-label-caps text-label-caps uppercase text-outline mb-1.5">Şehir Filtresi</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">location_on</span>
+<select class="w-full pl-9 pr-7 py-2 bg-surface-container-low text-on-surface rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary-container appearance-none cursor-pointer">
+<option selected="">Tüm Şehirler</option>
+<option>İstanbul (1.420.300)</option>
+<option>Ankara (682.110)</option>
+<option>İzmir (492.050)</option>
+<option>Bursa (240.180)</option>
+<option>Antalya (182.900)</option>
+<option>Gaziantep (98.420)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Status Filter Dropdown -->
+<div class="lg:col-span-3">
+<label class="block font-label-caps text-label-caps uppercase text-outline mb-1.5">Operasyon Durumu</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">filter_list</span>
+<select class="w-full pl-9 pr-7 py-2 bg-surface-container-low text-on-surface rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary-container appearance-none cursor-pointer">
+<option selected="">Tüm Durumlar (Canlı)</option>
+<option>Tamamlandı (Mint)</option>
+<option>Kargoda (Pastel Mavi)</option>
+<option>Beklemede (Yumuşak Turuncu)</option>
+<option>İptal / İade Edildi (Lavanta)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 text-outline text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Second Row: Amount Range & Payment Method & Quick Badges -->
+<div class="pt-space-xs flex flex-col xl:flex-row xl:items-center justify-between gap-space-md border-t border-surface-container-low">
+<!-- Payment Mode Radio-style Pill Toggles -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-caps text-label-caps uppercase text-outline mr-2">Ödeme Türü:</span>
+<button class="px-3 py-1.5 rounded-lg text-body-sm font-semibold bg-primary-fixed text-on-primary-fixed-variant shadow-xs">Tümü</button>
+<button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">Kredi Kartı</button>
+<button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">Havale / EFT</button>
+<button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">Kapıda Ödeme</button>
+<button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">B2B Cari</button>
+</div>
+<!-- Amount Range Indicator -->
+<div class="flex items-center gap-space-md self-start xl:self-auto">
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-xl">
+<span class="font-label-caps text-label-caps uppercase text-outline">Tutar Aralığı:</span>
+<span class="font-data-table text-body-sm font-semibold text-on-surface">₺0 - ₺50.000+</span>
+<input class="w-24 accent-primary cursor-pointer h-1.5 bg-surface-container-highest rounded-lg" max="50000" min="0" type="range" value="42000"/>
+</div>
+</div>
+</div>
+<!-- Active Filter Tags Bar -->
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="font-label-caps text-label-caps text-outline uppercase mr-1">Aktif Filtreler (3):</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-caps text-label-caps">
+          Arama: "#ORD-2024"
+          <button class="hover:text-primary"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps">
+          Tarih: "Ekim 2024"
+          <button class="hover:text-secondary"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">
+          Tutar: "₺0 - ₺50.000"
+          <button class="hover:text-on-surface"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<button class="text-primary hover:underline font-title-sm text-body-sm ml-2">Tüm Filtreleri Temizle</button>
+</div>
+</div>
+</section>
+<!-- Metric Strip Highlight (Micro Contextual Ribbon) -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md mb-space-lg">
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline">Filtrelenen Sipariş</span>
+<div class="font-data-metric text-headline-md font-bold text-on-surface mt-0.5">3.421.800</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline">Toplam Net Hacim</span>
+<div class="font-data-metric text-headline-md font-bold text-on-surface mt-0.5">₺184.250.400</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline">Ort. Sepet Tutarı</span>
+<div class="font-data-metric text-headline-md font-bold text-on-surface mt-0.5">₺2.485,60</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[20px]">shopping_cart_checkout</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-outline">Teslimat Başarısı</span>
+<div class="font-data-metric text-headline-md font-bold text-[#1e6f43] mt-0.5">%98.4</div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-[#E6F9F0] flex items-center justify-center text-[#1e6f43]">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+</div>
+</div>
+<!-- Main Split Canvas: Orders Table + Preview Drawer/Panel -->
+<div class="grid grid-cols-12 gap-space-lg items-start">
+<!-- Table Column (Expanded or Fluid) -->
+<div class="col-span-12 xl:col-span-8 2xl:col-span-8 flex flex-col">
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Control Toolbar -->
+<div class="px-space-lg py-space-md bg-surface-container-low/50 flex flex-wrap items-center justify-between gap-space-sm border-b border-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<span class="font-title-sm text-body-md text-on-surface font-semibold">Tüm Sonuçlar</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-data-table text-body-sm">25 / 3.421.800</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<button class="p-1.5 rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors" title="Toplu İşlem: Fatura Yazdır">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors" title="Toplu İşlem: Kargoya Ata">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container hover:text-on-surface transition-colors" title="Sütunları Düzenle">
+<span class="material-symbols-outlined text-[18px]">view_column</span>
+</button>
+</div>
+</div>
+<!-- High-Density Responsive Table View -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/70 text-outline border-b border-surface-container-high select-none">
+<th class="py-3 px-3 w-10 text-center">
+<input class="rounded accent-primary cursor-pointer w-4 h-4" type="checkbox"/>
+</th>
+<th class="py-3 px-3 font-label-caps text-label-caps uppercase tracking-wider cursor-pointer hover:text-primary">
+<div class="flex items-center gap-1">
+<span>Sipariş No</span>
+<span class="material-symbols-outlined text-[14px]">swap_vert</span>
+</div>
+</th>
+<th class="py-3 px-3 font-label-caps text-label-caps uppercase tracking-wider cursor-pointer hover:text-primary">
+<div class="flex items-center gap-1">
+<span>Müşteri</span>
+<span class="material-symbols-outlined text-[14px]">swap_vert</span>
+</div>
+</th>
+<th class="py-3 px-3 font-label-caps text-label-caps uppercase tracking-wider">Şehir</th>
+<th class="py-3 px-3 font-label-caps text-label-caps uppercase tracking-wider cursor-pointer hover:text-primary">
+<div class="flex items-center gap-1">
+<span>Tarih &amp; Saat</span>
+<span class="material-symbols-outlined text-[14px] text-primary">arrow_downward</span>
+</div>
+</th>
+<th class="py-3 px-3 font-label-caps text-label-caps uppercase tracking-wider text-right cursor-pointer hover:text-primary">
+<div class="flex items-center justify-end gap-1">
+<span>Tutar</span>
+<span class="material-symbols-outlined text-[14px]">swap_vert</span>
+</div>
+</th>
+<th class="py-3 px-3 font-label-caps text-label-caps uppercase tracking-wider text-center">Ödeme</th>
+<th class="py-3 px-3 font-label-caps text-label-caps uppercase tracking-wider text-center">Durum</th>
+<th class="py-3 px-4 font-label-caps text-label-caps uppercase tracking-wider text-right">İşlemler</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low text-on-surface">
+<!-- Row 1: Selected / Highlighted active item matching the drawer -->
+<tr class="bg-primary-fixed/20 hover:bg-primary-fixed/30 transition-colors group cursor-pointer" onclick="openDrawer('#ORD-2024-98412')">
+<td class="py-3.5 px-3 text-center" onclick="event.stopPropagation()">
+<input checked="" class="rounded accent-primary cursor-pointer w-4 h-4" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 font-data-table text-data-table font-semibold text-primary">
+<div class="flex items-center gap-1.5">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-1.5 py-0.5 rounded text-[11px]">#ORD-2024-98412</span>
+<button class="opacity-0 group-hover:opacity-100 text-outline hover:text-primary" onclick="copyToClipboard('#ORD-2024-98412', event)" title="Kopyala">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-[#FFD8BF] text-[#802900] font-title-sm text-body-sm font-semibold flex items-center justify-center shrink-0">
+                      SY
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Selin Yılmaz</span>
+<span class="font-body-sm text-body-sm text-outline truncate">selin.yilmaz@enterprise.com</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-outline">pin_drop</span>
+                    Kadıköy, İstanbul
+                  </span>
+</td>
+<td class="py-3.5 px-3 font-data-table text-body-sm text-on-surface-variant whitespace-nowrap">
+                  24 Eki 2024, 14:32
+                </td>
+<td class="py-3.5 px-3 font-data-table text-body-sm font-bold text-on-surface text-right whitespace-nowrap">
+                  ₺4.850,00
+                </td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-semibold">
+                    Kredi Kartı
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-[#D5F5E3] text-[#145A32] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#27AE60]"></span>
+                    Tamamlandı
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-primary hover:bg-surface-container" onclick="openDrawer('#ORD-2024-98412')" title="Detayı İncele">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container" title="Yazdır">
+<span class="material-symbols-outlined text-[18px]">receipt</span>
+</button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container" title="Daha Fazla">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Kargoda (Pastel Mavi) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group cursor-pointer" onclick="openDrawer('#ORD-2024-98411')">
+<td class="py-3.5 px-3 text-center" onclick="event.stopPropagation()">
+<input class="rounded accent-primary cursor-pointer w-4 h-4" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 font-data-table text-data-table font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>#ORD-2024-98411</span>
+<button class="opacity-0 group-hover:opacity-100 text-outline hover:text-primary" onclick="copyToClipboard('#ORD-2024-98411', event)">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-[#E0E7FF] text-[#3730A3] font-title-sm text-body-sm font-semibold flex items-center justify-center shrink-0">
+                      MK
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Murat Keskin</span>
+<span class="font-body-sm text-body-sm text-outline truncate">murat.keskin@teknogrup.net</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-outline">pin_drop</span>
+                    Çankaya, Ankara
+                  </span>
+</td>
+<td class="py-3.5 px-3 font-data-table text-body-sm text-on-surface-variant whitespace-nowrap">
+                  24 Eki 2024, 14:18
+                </td>
+<td class="py-3.5 px-3 font-data-table text-body-sm font-bold text-on-surface text-right whitespace-nowrap">
+                  ₺12.450,00
+                </td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-semibold">
+                    Kredi Kartı
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-[#E1F0FF] text-[#0A58CA] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#0D6EFD]"></span>
+                    Kargoda
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-primary hover:bg-surface-container" onclick="openDrawer('#ORD-2024-98411')"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Beklemede (Yumuşak Turuncu) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group cursor-pointer" onclick="openDrawer('#ORD-2024-98410')">
+<td class="py-3.5 px-3 text-center" onclick="event.stopPropagation()">
+<input class="rounded accent-primary cursor-pointer w-4 h-4" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 font-data-table text-data-table font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>#ORD-2024-98410</span>
+<button class="opacity-0 group-hover:opacity-100 text-outline hover:text-primary" onclick="copyToClipboard('#ORD-2024-98410', event)">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-[#FEF3C7] text-[#92400E] font-title-sm text-body-sm font-semibold flex items-center justify-center shrink-0">
+                      EC
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Ece Çelebi</span>
+<span class="font-body-sm text-body-sm text-outline truncate">ece.celebi@gmail.com</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-outline">pin_drop</span>
+                    Bornova, İzmir
+                  </span>
+</td>
+<td class="py-3.5 px-3 font-data-table text-body-sm text-on-surface-variant whitespace-nowrap">
+                  24 Eki 2024, 13:50
+                </td>
+<td class="py-3.5 px-3 font-data-table text-body-sm font-bold text-on-surface text-right whitespace-nowrap">
+                  ₺1.890,50
+                </td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-semibold">
+                    Havale / EFT
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-[#FFF0E6] text-[#C05621] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#DD6B20]"></span>
+                    Beklemede
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-primary hover:bg-surface-container" onclick="openDrawer('#ORD-2024-98410')"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4: İptal Edildi (Lavanta) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group cursor-pointer" onclick="openDrawer('#ORD-2024-98409')">
+<td class="py-3.5 px-3 text-center" onclick="event.stopPropagation()">
+<input class="rounded accent-primary cursor-pointer w-4 h-4" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 font-data-table text-data-table font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>#ORD-2024-98409</span>
+<button class="opacity-0 group-hover:opacity-100 text-outline hover:text-primary" onclick="copyToClipboard('#ORD-2024-98409', event)">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-[#F3E8FF] text-[#6B21A8] font-title-sm text-body-sm font-semibold flex items-center justify-center shrink-0">
+                      BA
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Burak Altınok</span>
+<span class="font-body-sm text-body-sm text-outline truncate">burak.altinok@fintech.co</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-outline">pin_drop</span>
+                    Nilüfer, Bursa
+                  </span>
+</td>
+<td class="py-3.5 px-3 font-data-table text-body-sm text-on-surface-variant whitespace-nowrap">
+                  24 Eki 2024, 12:44
+                </td>
+<td class="py-3.5 px-3 font-data-table text-body-sm font-bold text-outline text-right line-through whitespace-nowrap">
+                  ₺3.200,00
+                </td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-semibold">
+                    Kredi Kartı
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-[#F3E8FF] text-[#6B21A8] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#9333EA]"></span>
+                    İptal Edildi
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-primary hover:bg-surface-container" onclick="openDrawer('#ORD-2024-98409')"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Tamamlandı (Mint) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group cursor-pointer" onclick="openDrawer('#ORD-2024-98408')">
+<td class="py-3.5 px-3 text-center" onclick="event.stopPropagation()">
+<input class="rounded accent-primary cursor-pointer w-4 h-4" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 font-data-table text-data-table font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>#ORD-2024-98408</span>
+<button class="opacity-0 group-hover:opacity-100 text-outline hover:text-primary" onclick="copyToClipboard('#ORD-2024-98408', event)">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-[#D1FAE5] text-[#065F46] font-title-sm text-body-sm font-semibold flex items-center justify-center shrink-0">
+                      DA
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Deniz Aksoy</span>
+<span class="font-body-sm text-body-sm text-outline truncate">deniz.aksoy@studio.io</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-outline">pin_drop</span>
+                    Muratpaşa, Antalya
+                  </span>
+</td>
+<td class="py-3.5 px-3 font-data-table text-body-sm text-on-surface-variant whitespace-nowrap">
+                  24 Eki 2024, 11:15
+                </td>
+<td class="py-3.5 px-3 font-data-table text-body-sm font-bold text-on-surface text-right whitespace-nowrap">
+                  ₺8.720,00
+                </td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-semibold">
+                    Kredi Kartı
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-[#D5F5E3] text-[#145A32] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#27AE60]"></span>
+                    Tamamlandı
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-primary hover:bg-surface-container" onclick="openDrawer('#ORD-2024-98408')"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Kargoda (Mavi) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group cursor-pointer" onclick="openDrawer('#ORD-2024-98407')">
+<td class="py-3.5 px-3 text-center" onclick="event.stopPropagation()">
+<input class="rounded accent-primary cursor-pointer w-4 h-4" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 font-data-table text-data-table font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>#ORD-2024-98407</span>
+<button class="opacity-0 group-hover:opacity-100 text-outline hover:text-primary" onclick="copyToClipboard('#ORD-2024-98407', event)">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-[#FCE7F3] text-[#9D174D] font-title-sm text-body-sm font-semibold flex items-center justify-center shrink-0">
+                      HG
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Hakan Güneş</span>
+<span class="font-body-sm text-body-sm text-outline truncate">hakan.gunes@gunestekstil.com</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-outline">pin_drop</span>
+                    Şehitkamil, Gaziantep
+                  </span>
+</td>
+<td class="py-3.5 px-3 font-data-table text-body-sm text-on-surface-variant whitespace-nowrap">
+                  24 Eki 2024, 10:40
+                </td>
+<td class="py-3.5 px-3 font-data-table text-body-sm font-bold text-on-surface text-right whitespace-nowrap">
+                  ₺23.640,00
+                </td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-semibold">
+                    Cari Hesap
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-[#E1F0FF] text-[#0A58CA] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#0D6EFD]"></span>
+                    Kargoda
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-primary hover:bg-surface-container" onclick="openDrawer('#ORD-2024-98407')"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 7: Beklemede (Kapıda Ödeme) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group cursor-pointer" onclick="openDrawer('#ORD-2024-98406')">
+<td class="py-3.5 px-3 text-center" onclick="event.stopPropagation()">
+<input class="rounded accent-primary cursor-pointer w-4 h-4" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 font-data-table text-data-table font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>#ORD-2024-98406</span>
+<button class="opacity-0 group-hover:opacity-100 text-outline hover:text-primary" onclick="copyToClipboard('#ORD-2024-98406', event)">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-[#E0F2FE] text-[#0369A1] font-title-sm text-body-sm font-semibold flex items-center justify-center shrink-0">
+                      ZO
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Zeynep Öztürk</span>
+<span class="font-body-sm text-body-sm text-outline truncate">zeynep.ozturk@mail.com</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-outline">pin_drop</span>
+                    Beşiktaş, İstanbul
+                  </span>
+</td>
+<td class="py-3.5 px-3 font-data-table text-body-sm text-on-surface-variant whitespace-nowrap">
+                  24 Eki 2024, 09:55
+                </td>
+<td class="py-3.5 px-3 font-data-table text-body-sm font-bold text-on-surface text-right whitespace-nowrap">
+                  ₺950,00
+                </td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-semibold">
+                    Kapıda Ödeme
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-[#FFF0E6] text-[#C05621] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#DD6B20]"></span>
+                    Beklemede
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-primary hover:bg-surface-container" onclick="openDrawer('#ORD-2024-98406')"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 8: Tamamlandı (Mint) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group cursor-pointer" onclick="openDrawer('#ORD-2024-98405')">
+<td class="py-3.5 px-3 text-center" onclick="event.stopPropagation()">
+<input class="rounded accent-primary cursor-pointer w-4 h-4" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 font-data-table text-data-table font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>#ORD-2024-98405</span>
+<button class="opacity-0 group-hover:opacity-100 text-outline hover:text-primary" onclick="copyToClipboard('#ORD-2024-98405', event)">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-[#FFEDD5] text-[#9A3412] font-title-sm text-body-sm font-semibold flex items-center justify-center shrink-0">
+                      AS
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Ahmet Samet Soylu</span>
+<span class="font-body-sm text-body-sm text-outline truncate">ahmet@soyluholding.com</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-outline">pin_drop</span>
+                    Karşıyaka, İzmir
+                  </span>
+</td>
+<td class="py-3.5 px-3 font-data-table text-body-sm text-on-surface-variant whitespace-nowrap">
+                  24 Eki 2024, 08:30
+                </td>
+<td class="py-3.5 px-3 font-data-table text-body-sm font-bold text-on-surface text-right whitespace-nowrap">
+                  ₺31.900,00
+                </td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-semibold">
+                    Kredi Kartı
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-[#D5F5E3] text-[#145A32] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#27AE60]"></span>
+                    Tamamlandı
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-primary hover:bg-surface-container" onclick="openDrawer('#ORD-2024-98405')"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 9: Tamamlandı (Mint) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group cursor-pointer" onclick="openDrawer('#ORD-2024-98404')">
+<td class="py-3.5 px-3 text-center" onclick="event.stopPropagation()">
+<input class="rounded accent-primary cursor-pointer w-4 h-4" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 font-data-table text-data-table font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>#ORD-2024-98404</span>
+<button class="opacity-0 group-hover:opacity-100 text-outline hover:text-primary" onclick="copyToClipboard('#ORD-2024-98404', event)">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-[#EDE9FE] text-[#5B21B6] font-title-sm text-body-sm font-semibold flex items-center justify-center shrink-0">
+                      İD
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">İpek Demir</span>
+<span class="font-body-sm text-body-sm text-outline truncate">ipek.demir@mimarlik.com.tr</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-outline">pin_drop</span>
+                    Yenimahalle, Ankara
+                  </span>
+</td>
+<td class="py-3.5 px-3 font-data-table text-body-sm text-on-surface-variant whitespace-nowrap">
+                  23 Eki 2024, 21:05
+                </td>
+<td class="py-3.5 px-3 font-data-table text-body-sm font-bold text-on-surface text-right whitespace-nowrap">
+                  ₺5.420,00
+                </td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed font-semibold">
+                    Kredi Kartı
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-[#D5F5E3] text-[#145A32] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#27AE60]"></span>
+                    Tamamlandı
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-primary hover:bg-surface-container" onclick="openDrawer('#ORD-2024-98404')"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 10: Kargoda (Mavi) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors group cursor-pointer" onclick="openDrawer('#ORD-2024-98403')">
+<td class="py-3.5 px-3 text-center" onclick="event.stopPropagation()">
+<input class="rounded accent-primary cursor-pointer w-4 h-4" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3 font-data-table text-data-table font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>#ORD-2024-98403</span>
+<button class="opacity-0 group-hover:opacity-100 text-outline hover:text-primary" onclick="copyToClipboard('#ORD-2024-98403', event)">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-[#FEE2E2] text-[#991B1B] font-title-sm text-body-sm font-semibold flex items-center justify-center shrink-0">
+                      TU
+                    </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Tolga Uçar</span>
+<span class="font-body-sm text-body-sm text-outline truncate">tolga.ucar@ucarmuhendislik.com</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-outline">pin_drop</span>
+                    Osmangazi, Bursa
+                  </span>
+</td>
+<td class="py-3.5 px-3 font-data-table text-body-sm text-on-surface-variant whitespace-nowrap">
+                  23 Eki 2024, 18:22
+                </td>
+<td class="py-3.5 px-3 font-data-table text-body-sm font-bold text-on-surface text-right whitespace-nowrap">
+                  ₺6.150,00
+                </td>
+<td class="py-3.5 px-3 text-center">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-semibold">
+                    Havale / EFT
+                  </span>
+</td>
+<td class="py-3.5 px-3 text-center">
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-[#E1F0FF] text-[#0A58CA] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#0D6EFD]"></span>
+                    Kargoda
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right" onclick="event.stopPropagation()">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded text-primary hover:bg-surface-container" onclick="openDrawer('#ORD-2024-98403')"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">receipt</span></button>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Enterprise Server-Side Pagination Bar -->
+<div class="px-space-lg py-space-md bg-surface-container-low/40 flex flex-col sm:flex-row items-center justify-between gap-space-md border-t border-surface-container-low">
+<!-- Left Info & Page Size -->
+<div class="flex items-center gap-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+              Toplam <span class="font-data-table font-semibold text-on-surface">3.421.800</span> sonuçtan <span class="font-data-table font-semibold text-on-surface">1 - 25</span> arası listeleniyor
+            </span>
+<div class="flex items-center gap-1.5">
+<span class="font-label-caps text-label-caps uppercase text-outline">Sayfa Başı:</span>
+<select class="py-1 px-2 rounded-lg bg-surface-container-lowest text-on-surface text-body-sm font-data-table border-0 shadow-xs focus:ring-1 focus:ring-primary">
+<option selected="">25</option>
+<option>50</option>
+<option>100</option>
+</select>
+</div>
+</div>
+<!-- Numeric Pagination Buttons -->
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-outline hover:text-on-surface hover:bg-surface-container transition-colors shadow-xs disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded-lg font-data-table text-body-sm font-semibold bg-primary-container text-on-primary shadow-xs">1</button>
+<button class="w-8 h-8 rounded-lg font-data-table text-body-sm text-on-surface-variant hover:bg-surface-container transition-colors">2</button>
+<button class="w-8 h-8 rounded-lg font-data-table text-body-sm text-on-surface-variant hover:bg-surface-container transition-colors">3</button>
+<span class="px-1 text-outline font-data-table">...</span>
+<button class="px-2 h-8 rounded-lg font-data-table text-body-sm text-on-surface-variant hover:bg-surface-container transition-colors">136.872</button>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors shadow-xs">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Interactive Order Detail Panel (Pre-selected #ORD-2024-98412) -->
+<div class="col-span-12 xl:col-span-4 2xl:col-span-4 flex flex-col transition-all duration-300" id="orderDrawer">
+<div class="bg-surface-container-lowest rounded-2xl shadow-md p-space-lg flex flex-col gap-space-lg sticky top-20">
+<!-- Panel Header -->
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-container-low">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-data-table text-data-metric font-bold text-on-surface tracking-tight" id="drawerOrderId">#ORD-2024-98412</span>
+<span class="inline-flex items-center gap-1 font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-[#D5F5E3] text-[#145A32] font-semibold">
+                Tamamlandı
+              </span>
+</div>
+<span class="font-body-sm text-body-sm text-outline mt-0.5">Sipariş Oluşturulma: 24 Eki 2024, 14:32</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Fatura İndir">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+<button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-low transition-colors" onclick="closeDrawer()" title="Pencereyi Kapat">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Customer Snapshot & Shipping Tag -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps uppercase text-outline">Müşteri &amp; Kargo Künyesi</span>
+<span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">B2C Bireysel</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#FFD8BF] text-[#802900] font-headline-md text-headline-md flex items-center justify-center font-bold">
+              SY
+            </div>
+<div class="flex flex-col">
+<span class="font-title-sm text-body-md font-bold text-on-surface">Selin Yılmaz</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">selin.yilmaz@enterprise.com • +90 (532) 412 88 19</span>
+</div>
+</div>
+<!-- Shipping Route Details -->
+<div class="mt-1 pt-2 border-t border-surface-container-high/60 flex flex-col gap-1 text-body-sm">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">location_on</span>
+<span class="text-on-surface-variant font-body-sm">
+                Caferağa Mah. Moda Cad. No: 42 D: 8, Kadıköy / İstanbul
+              </span>
+</div>
+<div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-lowest px-2.5 py-1.5 rounded-lg">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">local_shipping</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Yurtiçi Kargo:</span>
+<span class="font-data-table text-body-sm text-secondary font-semibold">#948192831</span>
+</div>
+<button class="text-secondary font-title-sm text-body-sm hover:underline" onclick="triggerNotification('Kargo takip sayfasına yönlendiriliyorsunuz')">Sorgula</button>
+</div>
+</div>
+</div>
+<!-- Ordered Products List -->
+<div class="flex flex-col">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-caps text-label-caps uppercase text-outline">Sepet İçeriği (3 Kalem)</span>
+<span class="font-body-sm text-body-sm text-outline">Depo: Tuzla-A2</span>
+</div>
+<div class="divide-y divide-surface-container-low max-h-56 overflow-y-auto pr-1">
+<!-- Product Item 1 -->
+<div class="py-2.5 flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean top-down product photography of sleek wireless ergonomic noise cancelling headphones resting on a warm wooden studio surface with subtle warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-fZtStQo-gtU96CQwD0-mxKUSK5-Jz3UiXURKFn0F2ahDtctZNG5jmGpiZsWvQif7xAwCEUG783ucqo9hXuyplEZCV9hI3h3D8639JwBRdiYaZI9Q94hNYHiGvtqMAmMucXReUUg0ZTsHG1UmFb9KAEyzL9kr8E3hNQERqzij3cXpWJBowh0K_Z7W4y5474WmQGTTRbHNNFMAQduw0aK2STjWqAqYDs7yj06yFkbVgPoRRRx3NYgNPQ"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Vanguard Wireless Headset Pro</span>
+<span class="font-data-table text-outline text-[11px]">SKU: VAN-8491-BLK • 1 Adet</span>
+</div>
+</div>
+<span class="font-data-table text-body-sm font-semibold text-on-surface shrink-0">₺2.450,00</span>
+</div>
+<!-- Product Item 2 -->
+<div class="py-2.5 flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Studio shot of a minimalist matte anodized aluminum laptop cooling stand with warm accent edge reflections on a soft grey gradient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP99bO14-KhJZiR3_AcRPKHLlw_dijbhdO_dUlk53cHMXrppQCjL7Gsy-WruDoyN45qJ-88fhpvlrQnlpts6yZvauAMU6X-5MhVjfaV3KVY2_PLW2vWWE1bdBBOElHQdEpPVi8zaNsUy3L_91_BBXL3-ia8Wirxmj-OI5Hpv7dli8YDjCOy8FBsp-Wunn-yzXRAob6XIYJJgxkhhHne7Yq462NPQkXCnIOUTVyIQgMwFtZG8oyTmnZIg"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Ergonomik Laptop Standı (Alüminyum)</span>
+<span class="font-data-table text-outline text-[11px]">SKU: ACC-3312-SLV • 1 Adet</span>
+</div>
+</div>
+<span class="font-data-table text-body-sm font-semibold text-on-surface shrink-0">₺1.850,00</span>
+</div>
+<!-- Product Item 3 -->
+<div class="py-2.5 flex items-center justify-between gap-2">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up product view of a premium braided orange fast charging USB-C cable neatly coiled with brushed metallic connectors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQEKBnblH-FiDTEinjzAbciXa-yLkUvg_c1C9qEA6YHy6dcnme8A20mggq0y1KHVff66oB3nxm4yh1Wvd0y1PQ82Txo_st-1Zstd0AK4nfh1uGBZ6R-e0TUB1ZTEa1Dv5u29aaCRF4cLUhsDmso7UeyO1zDsm8YhIic5EoLqfY9FcKAcF5tvQJvnDJz3IkxNiiDUVGZiDUDfEwBEzfAavvgMdgQJyFrdadCPE3enRYoOvU6ee3zvBhaQ"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Ultra-Hızlı Örgü Type-C Kablo 2m</span>
+<span class="font-data-table text-outline text-[11px]">SKU: CAB-0091-ORG • 1 Adet</span>
+</div>
+</div>
+<span class="font-data-table text-body-sm font-semibold text-on-surface shrink-0">₺550,00</span>
+</div>
+</div>
+</div>
+<!-- Invoice Breakdown Card -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest border-0 shadow-inner bg-surface-container-low/30 flex flex-col gap-1.5 font-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Ara Toplam</span>
+<span class="font-data-table font-semibold">₺4.850,00</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>KDV (%20 Dahil)</span>
+<span class="font-data-table">₺808,33</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Kargo &amp; Lojistik</span>
+<span class="font-data-table text-[#145A32] font-semibold">ÜCRETSİZ</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Kupon İndirimi (GÜZ20)</span>
+<span class="font-data-table text-primary">-₺0,00</span>
+</div>
+<div class="pt-2 mt-1 border-t border-surface-container-high flex justify-between items-baseline">
+<span class="font-title-sm text-body-md font-bold text-on-surface">Genel Toplam:</span>
+<span class="font-data-metric text-headline-md font-bold text-primary">₺4.850,00</span>
+</div>
+</div>
+<!-- Order Operational Timeline -->
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-outline mb-space-sm">Operasyon Akış Çizelgesi</span>
+<div class="relative pl-6 flex flex-col gap-4 before:content-[''] before:absolute before:left-2 before:top-1.5 before:bottom-2 before:w-0.5 before:bg-surface-container-highest">
+<!-- Step 1 (Completed) -->
+<div class="relative flex flex-col">
+<span class="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-[#27AE60] flex items-center justify-center text-white ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</span>
+<span class="font-title-sm text-body-sm font-bold text-on-surface">Sipariş Başarıyla Alındı</span>
+<span class="font-data-table text-[11px] text-outline">24 Eki 2024 • 14:32:10 (IP: 176.240.xx.xx)</span>
+</div>
+<!-- Step 2 (Completed) -->
+<div class="relative flex flex-col">
+<span class="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-[#27AE60] flex items-center justify-center text-white ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</span>
+<span class="font-title-sm text-body-sm font-bold text-on-surface">Ödeme Onaylandı (3D Secure)</span>
+<span class="font-data-table text-[11px] text-outline">24 Eki 2024 • 14:32:45 (Banka Ref: #TX-9021)</span>
+</div>
+<!-- Step 3 (Completed) -->
+<div class="relative flex flex-col">
+<span class="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-[#27AE60] flex items-center justify-center text-white ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</span>
+<span class="font-title-sm text-body-sm font-bold text-on-surface">Paketlendi &amp; Fatura Kesildi</span>
+<span class="font-data-table text-[11px] text-outline">24 Eki 2024 • 16:10:00 (Depo Sorumlusu: Kemal T.)</span>
+</div>
+<!-- Step 4 (Current Completed / Delivered) -->
+<div class="relative flex flex-col">
+<span class="absolute -left-6 top-0.5 w-4 h-4 rounded-full bg-secondary flex items-center justify-center text-white ring-4 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-[10px]">local_shipping</span>
+</span>
+<span class="font-title-sm text-body-sm font-bold text-secondary">Kurye Teslim Etti</span>
+<span class="font-data-table text-[11px] text-outline">25 Eki 2024 • 11:45:00 (İmza Karşılığı)</span>
+</div>
+</div>
+</div>
+<!-- Action Drawer Buttons -->
+<div class="flex items-center gap-space-sm pt-space-xs border-t border-surface-container-low">
+<button class="flex-1 py-2 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-title-sm text-body-sm text-center transition-colors" onclick="triggerNotification('Sipariş faturası e-posta ile gönderildi')">
+            Fatura Gönder
+          </button>
+<button class="py-2 px-3 rounded-xl bg-[#FEE2E2] hover:bg-[#FCD34D]/20 text-[#991B1B] font-title-sm text-body-sm transition-colors" onclick="triggerNotification('İade süreci penceresi açılıyor...')">
+            İptal / İade Başlat
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Dynamic Notification Toast Container (Script Supported) -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-inverse-surface text-inverse-on-surface px-space-lg py-3 rounded-xl shadow-xl flex items-center gap-3" id="toastNotification">
+<span class="material-symbols-outlined text-primary-container text-[20px]">check_circle</span>
+<span class="font-body-md text-body-sm font-medium" id="toastMessage">İşlem başarıyla kaydedildi.</span>
+</div>
+</div>
+<script>
+  function openDrawer(orderId) {
+    const drawer = document.getElementById('orderDrawer');
+    const drawerOrderId = document.getElementById('drawerOrderId');
+    if (drawer && drawerOrderId) {
+      drawerOrderId.innerText = orderId;
+      drawer.classList.remove('hidden');
+      triggerNotification(orderId + " sipariş detayı görüntülendi.");
+    }
+  }
+
+  function closeDrawer() {
+    const drawer = document.getElementById('orderDrawer');
+    if (drawer) {
+      drawer.classList.add('hidden');
+    }
+  }
+
+  function copyToClipboard(text, event) {
+    if (event) event.stopPropagation();
+    navigator.clipboard.writeText(text).then(() => {
+      triggerNotification("Kopyalandı: " + text);
+    }).catch(() => {
+      triggerNotification("Panoya kopyalama hazır: " + text);
+    });
+  }
+
+  function triggerNotification(msg) {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    if (toast && toastMsg) {
+      toastMsg.innerText = msg;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3000);
+    }
+  }
+</script></main></div></body></html>

@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Outfit:wght@500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"primary":"#a73a05","on-primary-container":"#672000","surface-container-lowest":"#ffffff","inverse-primary":"#ffb59a","on-secondary-container":"#002e5d","background":"#f9f9ff","on-secondary-fixed-variant":"#004788","secondary-fixed-dim":"#a7c8ff","on-secondary-fixed":"#001b3b","secondary":"#005eb2","inverse-surface":"#263143","surface-dim":"#cfdaf2","surface-container-highest":"#d8e3fb","on-surface":"#111c2d","outline-variant":"#dfc0b5","on-tertiary":"#ffffff","surface-variant":"#d8e3fb","tertiary-fixed":"#eedbff","primary-container":"#ff7a45","tertiary":"#7a3ac5","on-tertiary-fixed":"#2a0054","on-primary-fixed-variant":"#802900","surface-container":"#e7eeff","surface-container-low":"#f0f3ff","primary-fixed":"#ffdbcf","on-tertiary-container":"#500096","on-primary":"#ffffff","on-primary-fixed":"#380d00","inverse-on-surface":"#ecf1ff","surface-bright":"#f9f9ff","tertiary-fixed-dim":"#d9b9ff","surface-tint":"#a73a05","error-container":"#ffdad6","primary-fixed-dim":"#ffb59a","on-tertiary-fixed-variant":"#611aac","outline":"#8b7168","secondary-container":"#4297ff","on-surface-variant":"#58423a","on-error":"#ffffff","surface-container-high":"#dee8ff","on-secondary":"#ffffff","error":"#ba1a1a","surface":"#f9f9ff","secondary-fixed":"#d5e3ff","tertiary-container":"#bd88ff","on-background":"#111c2d","on-error-container":"#93000a"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xl":"2rem","space-lg":"1.25rem","space-sm":"0.5rem","margin-mobile":"1rem","space-md":"0.875rem","gutter-mobile":"1rem","margin":"2rem","space-xs":"0.25rem","gutter":"1.5rem"},fontFamily:{"headline-lg":["Outfit"],"body-lg":["Plus Jakarta Sans"],"headline-md":["Outfit"],"data-metric":["JetBrains Mono"],"display-lg":["Outfit"],"label-caps":["Plus Jakarta Sans"],"data-table":["JetBrains Mono"],"body-sm":["Plus Jakarta Sans"],"title-sm":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"display-lg-mobile":["Outfit"],"headline-lg-mobile":["Outfit"]},fontSize:{"headline-lg":["2rem",{"lineHeight":"1.25","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["1rem",{"lineHeight":"1.5","fontWeight":"400"}],"headline-md":["1.375rem",{"lineHeight":"1.35","letterSpacing":"-0.01em","fontWeight":"600"}],"data-metric":["1.75rem",{"lineHeight":"1.2","letterSpacing":"-0.02em","fontWeight":"600"}],"display-lg":["3rem",{"lineHeight":"1.15","letterSpacing":"-0.03em","fontWeight":"700"}],"label-caps":["0.6875rem",{"lineHeight":"1.2","letterSpacing":"0.06em","fontWeight":"700"}],"data-table":["0.8125rem",{"lineHeight":"1.4","fontWeight":"500"}],"body-sm":["0.75rem",{"lineHeight":"1.45","fontWeight":"500"}],"title-sm":["1.125rem",{"lineHeight":"1.4","fontWeight":"600"}],"body-md":["0.875rem",{"lineHeight":"1.5","fontWeight":"400"}],"display-lg-mobile":["2rem",{"lineHeight":"1.2","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["1.5rem",{"lineHeight":"1.3","letterSpacing":"-0.01em","fontWeight":"600"}]}}}};</script></head><body class="min-h-screen bg-gradient-to-br from-[#FFF9F6] via-[#F8FAFC] to-[#F0F5FF] font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[260px] bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_12px_rgba(15,23,42,0.03)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm border-b border-surface-container-low"><img alt="Vanguard Admin Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1XFYp5p8Ij13c_L3TVGSTtIpB8E08xdXURyLtcX-xQ1fqh_rOf_nKLVmhn0xO0uqvv3LyDSyVRVO213Yv2Q9wbQFR0jpWhywrOFjFZ-V_89Vevws79G_cQXE6w9ddy3dBI4OZ91b1PQszLZDT1y34epaXPCyTG7Pu0mYazkq5pCfGw-XQmGsn4yC5tKOfCb2CM0l0TY-ahu8zpd2Jmeq4Yc3kIJzVavHC4csOxoRgGjXQ9Z0o2bj7kLPVG6"/><div class="flex flex-col"><span class="font-headline-md text-body-md text-on-surface leading-tight">Vanguard</span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Analytics Platform</span></div></div><div class="px-space-md pt-space-md"><span class="px-space-sm font-label-caps text-label-caps uppercase text-outline">Operasyonel Menü</span></div><nav class="mt-space-xs px-space-sm flex flex-col gap-1" data-active-classes="bg-primary-fixed text-on-primary-fixed-variant font-semibold rounded-lg"><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="genel-bakis" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-md text-body-md">Genel Bakış</span></div><span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant">CANLI</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="siparis-yonetimi" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span class="font-body-md text-body-md">Sipariş Yönetimi</span></div><span class="font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">28</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="satis-analizi" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">monitoring</span><span class="font-body-md text-body-md">Satış Analizi</span></div><span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed">+%14</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="musteriler-segmentler" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-body-md text-body-md">Müşteriler &amp; Segmentler</span></div></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="raporlar-disa-aktarma" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">description</span><span class="font-body-md text-body-md">Raporlar &amp; Dışa Aktarma</span></div><span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant">PDF</span></a><a class="group flex items-center justify-between px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="ayarlar" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-md text-body-md">Ayarlar</span></div></a></nav></div><div class="p-space-md m-space-sm rounded-xl bg-surface-container-low"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps uppercase text-outline">Sistem Durumu</span><span class="h-2 w-2 rounded-full bg-secondary"></span></div><div class="mt-space-xs flex items-baseline justify-between"><span class="font-body-sm text-body-sm text-on-surface-variant">Senkronizasyon</span><span class="font-data-table text-data-table text-on-surface">100% Aktif</span></div></div></aside><div class="pl-[260px]"><header class="fixed top-0 left-[260px] right-0 h-16 bg-surface-container-lowest/85 backdrop-blur-md z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-space-lg"><div class="relative flex items-center w-80"><span class="material-symbols-outlined absolute left-3 text-outline text-[20px]">search</span><input class="w-full pl-10 pr-14 py-1.5 bg-surface-container-low text-on-surface placeholder:text-outline rounded-lg text-body-sm font-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary" placeholder="Metrik, sipariş veya müşteri ara..." type="text"/><kbd class="absolute right-2.5 px-1.5 py-0.5 text-[10px] font-data-table font-semibold text-outline bg-surface-container-lowest rounded border border-surface-container-highest">Ctrl + K</kbd></div><div class="hidden xl:flex items-center bg-surface-container-low p-1 rounded-lg"><button class="px-space-md py-1 rounded font-body-sm text-body-sm font-medium bg-surface-container-lowest text-on-surface shadow-xs">Son 30 Gün</button><button class="px-space-md py-1 rounded font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface">Son 12 Ay</button><button class="px-space-md py-1 rounded font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">calendar_today</span>Özel Tarih</button></div></div><div class="flex items-center gap-space-md"><button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-all font-body-sm text-body-sm"><span class="material-symbols-outlined text-[18px]">file_download</span><span class="hidden md:inline font-medium">Dışa Aktar</span></button><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary-container text-on-primary font-data-table text-[10px] font-semibold">4</span></button><div class="h-6 w-[1px] bg-surface-container-high"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden sm:block"><p class="font-title-sm text-body-sm text-on-surface leading-tight">Selin Kaya</p><span class="font-label-caps text-label-caps text-primary uppercase">Kıdemli Gelir Yöneticisi</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 px-margin"><div class="flex flex-col w-full pb-16">
+<!-- Analytics Control Toolbar -->
+<section class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg mb-8">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-caps text-label-caps uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          Canlı Veri Ambarı
+        </span>
+<span class="font-data-table text-body-sm text-outline">v4.8.2-prod • PostgreSQL 16.2 OLAP</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">Gelişmiş Satış Analizi &amp; SQL Intelligence</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+        Veri ambarı üzerinden karmaşık analitik sorgular, kohort analizi ve müşteri ciro dağılımı. Tüm metrikler 15 dakikalık artımlı ETL döngüleriyle doğrulanmaktadır.
+      </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Year Comparison Switcher -->
+<div class="flex items-center bg-surface-container-low p-1 rounded-xl shadow-xs">
+<button class="px-space-md py-1.5 rounded-lg font-body-sm text-body-sm font-semibold bg-surface-container-lowest text-primary shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">swap_horiz</span>
+          2024 vs 2023
+        </button>
+<button class="px-space-md py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
+          Son 4 Çeyrek (QoQ)
+        </button>
+</div>
+<!-- SQL Inspector Trigger -->
+<button class="inline-flex items-center gap-2 px-space-md py-2 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low text-on-surface transition-all shadow-sm" onclick="document.getElementById('sql-drawer-backdrop').classList.remove('hidden'); document.getElementById('sql-drawer').classList.remove('translate-x-full');">
+<span class="material-symbols-outlined text-[18px] text-tertiary">terminal</span>
+<span class="font-body-sm text-body-sm font-semibold">Sorguyu Görüntüle</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-data-table text-[11px]">SQL</span>
+</button>
+<!-- Export Dropdown -->
+<div class="relative group">
+<button class="inline-flex items-center gap-2 px-space-md py-2 rounded-xl bg-primary text-on-primary hover:bg-[#8e3104] transition-all shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="font-body-sm text-body-sm font-semibold">Dışa Aktar</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+<div class="absolute right-0 mt-2 w-48 bg-surface-container-lowest rounded-xl shadow-xl p-1.5 hidden group-hover:block z-30">
+<button class="w-full text-left px-3 py-2 rounded-lg text-body-sm font-body-sm hover:bg-surface-container-low flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-secondary">table_view</span> Excel (.xlsx) Raporu
+          </button>
+<button class="w-full text-left px-3 py-2 rounded-lg text-body-sm font-body-sm hover:bg-surface-container-low flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">picture_as_pdf</span> Yönetici Özeti (.PDF)
+          </button>
+<button class="w-full text-left px-3 py-2 rounded-lg text-body-sm font-body-sm hover:bg-surface-container-low flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-tertiary">data_array</span> Ham Veri (.CSV)
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Key Intelligence Metrics (4 KPI Cards) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg mb-10">
+<!-- Metric 1: Repeat Purchase Rate -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Tekrar Alışveriş Oranı</span>
+<div class="w-9 h-9 rounded-xl bg-[#E6FFFB] flex items-center justify-center text-[#08979C]">
+<span class="material-symbols-outlined text-[20px]">repeat</span>
+</div>
+</div>
+<div class="my-3">
+<div class="font-data-metric text-data-metric text-on-surface tracking-tight font-semibold">%38.4</div>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-[#E6FFFB] text-[#08979C] font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[14px]">arrow_drop_up</span> +%4.2
+          </span>
+<span class="font-body-sm text-body-sm text-outline">2023 bazına kıyasla</span>
+</div>
+</div>
+<div class="pt-2">
+<div class="h-1.5 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-[#13C2C2] rounded-full" style="width: 38.4%"></div>
+</div>
+</div>
+</div>
+<!-- Metric 2: LTV / CLV -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Müşteri Yaşam Boyu Değeri (LTV)</span>
+<div class="w-9 h-9 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+</div>
+<div class="my-3">
+<div class="font-data-metric text-data-metric text-on-surface tracking-tight font-semibold">₺3.480<span class="text-body-md text-outline font-normal">,00</span></div>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[14px]">arrow_drop_up</span> +%14.6
+          </span>
+<span class="font-body-sm text-body-sm text-outline">ortalama 18 ay kohort</span>
+</div>
+</div>
+<div class="pt-2">
+<div class="h-1.5 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 68%"></div>
+</div>
+</div>
+</div>
+<!-- Metric 3: NPS -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Net Tavsiye Skoru (NPS)</span>
+<div class="w-9 h-9 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">thumb_up</span>
+</div>
+</div>
+<div class="my-3">
+<div class="font-data-metric text-data-metric text-on-surface tracking-tight font-semibold">72<span class="text-body-md text-outline font-normal">/100</span></div>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-secondary-fixed text-secondary font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> Mükemmel Seviye
+          </span>
+<span class="font-body-sm text-body-sm text-outline">12.420 anket</span>
+</div>
+</div>
+<div class="pt-2">
+<div class="h-1.5 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 72%"></div>
+</div>
+</div>
+</div>
+<!-- Metric 4: Average Order Cycle -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-outline uppercase tracking-wider">Ortalama Sipariş Döngüsü</span>
+<div class="w-9 h-9 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">timelapse</span>
+</div>
+</div>
+<div class="my-3">
+<div class="font-data-metric text-data-metric text-on-surface tracking-tight font-semibold">24 <span class="text-body-md text-outline font-normal">Gün</span></div>
+<div class="flex items-center gap-2 mt-1">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-tertiary-fixed text-tertiary font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[14px]">speed</span> -3.1 Gün Hızlanma
+          </span>
+<span class="font-body-sm text-body-sm text-outline">sıklık artışı</span>
+</div>
+</div>
+<div class="pt-2">
+<div class="h-1.5 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 82%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Deep-Dive Section 1: En Yüksek Ciro Sağlayan İlk 20 Müşteri -->
+<section class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-lg mb-10">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<h2 class="font-title-sm text-title-sm text-on-surface">En Yüksek Ciro Sağlayan İlk Müşteriler (VIP Kurumsal &amp; B2B/B2C Portföyü)</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Toplam cironun %41.2'sini temsil eden ana gelir üreten hesapların detaylı RFM segmentasyon dökümü.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1.5 bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="font-body-sm text-body-sm text-outline">Görünüm:</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">İlk 20 Hesap</span>
+</div>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors">
+          Segmenti Filtrele
+        </button>
+</div>
+</div>
+<!-- VIP Accounts Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant">
+<th class="py-3 px-4 font-label-caps text-label-caps uppercase rounded-l-lg">Sıra</th>
+<th class="py-3 px-4 font-label-caps text-label-caps uppercase">Müşteri / Kurum Adı</th>
+<th class="py-3 px-4 font-label-caps text-label-caps uppercase">Bölge &amp; Şehir</th>
+<th class="py-3 px-4 font-label-caps text-label-caps uppercase text-center">Sipariş Adedi</th>
+<th class="py-3 px-4 font-label-caps text-label-caps uppercase text-right">Ort. Sepet (AOV)</th>
+<th class="py-3 px-4 font-label-caps text-label-caps uppercase text-right">Toplam Katkı (Ciro)</th>
+<th class="py-3 px-4 font-label-caps text-label-caps uppercase">Ciro Payı Oranı</th>
+<th class="py-3 px-4 font-label-caps text-label-caps uppercase">Son Satın Alma</th>
+<th class="py-3 px-4 font-label-caps text-label-caps uppercase text-right rounded-r-lg">Segment Seviyesi</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface">
+<!-- Row 1 (Rank 1 - Medallion) -->
+<tr class="hover:bg-primary-fixed/20 transition-colors">
+<td class="py-3.5 px-4 font-data-table text-data-table">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#FFE58F] text-[#874D00] font-bold text-xs shadow-xs">1</span>
+</td>
+<td class="py-3.5 px-4 font-body-sm text-body-sm font-semibold text-on-surface">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary font-bold text-xs">AV</div>
+<div>
+<div>Avrasya Lojistik ve Ticaret A.Ş.</div>
+<span class="font-data-table text-[11px] text-outline">B2B • Vergi No: 0948271104</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-body-sm text-body-sm text-on-surface-variant">İstanbul (Avrupa)</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-center font-semibold">142</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-right font-medium">₺6.901,40</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-right font-bold text-primary">₺980.000,00</td>
+<td class="py-3.5 px-4">
+<div class="w-32">
+<div class="flex justify-between font-data-table text-[10px] text-outline mb-1">
+<span>%5.8</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-on-surface-variant text-xs">Dün, 16:40</td>
+<td class="py-3.5 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#F9F0FF] text-[#531DAB] font-label-caps text-label-caps uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">diamond</span> Platinum VIP
+              </span>
+</td>
+</tr>
+<!-- Row 2 (Rank 2) -->
+<tr class="hover:bg-primary-fixed/20 transition-colors">
+<td class="py-3.5 px-4 font-data-table text-data-table">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#E6E8EA] text-[#475569] font-bold text-xs shadow-xs">2</span>
+</td>
+<td class="py-3.5 px-4 font-body-sm text-body-sm font-semibold text-on-surface">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed flex items-center justify-center text-primary font-bold text-xs">KG</div>
+<div>
+<div>Kuzey Grup Perakende Dağıtım</div>
+<span class="font-data-table text-[11px] text-outline">B2B • Vergi No: 8810293844</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-body-sm text-body-sm text-on-surface-variant">Ankara (Ostim)</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-center font-semibold">118</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-right font-medium">₺7.161,00</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-right font-bold text-primary">₺845.000,00</td>
+<td class="py-3.5 px-4">
+<div class="w-32">
+<div class="flex justify-between font-data-table text-[10px] text-outline mb-1">
+<span>%5.0</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 72%"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-on-surface-variant text-xs">3 gün önce</td>
+<td class="py-3.5 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#F9F0FF] text-[#531DAB] font-label-caps text-label-caps uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">diamond</span> Platinum VIP
+              </span>
+</td>
+</tr>
+<!-- Row 3 (Rank 3) -->
+<tr class="hover:bg-primary-fixed/20 transition-colors">
+<td class="py-3.5 px-4 font-data-table text-data-table">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#FFD591] text-[#873800] font-bold text-xs shadow-xs">3</span>
+</td>
+<td class="py-3.5 px-4 font-body-sm text-body-sm font-semibold text-on-surface">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary font-bold text-xs">ET</div>
+<div>
+<div>Ege Teknoloji Çözümleri San.</div>
+<span class="font-data-table text-[11px] text-outline">B2B • Vergi No: 5410982341</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-body-sm text-body-sm text-on-surface-variant">İzmir (Bornova)</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-center font-semibold">94</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-right font-medium">₺7.659,50</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-right font-bold text-primary">₺720.000,00</td>
+<td class="py-3.5 px-4">
+<div class="w-32">
+<div class="flex justify-between font-data-table text-[10px] text-outline mb-1">
+<span>%4.3</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 61%"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-on-surface-variant text-xs">28 Mayıs 2024</td>
+<td class="py-3.5 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#FFF2E8] text-[#D4380D] font-label-caps text-label-caps uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">military_tech</span> Gold Üye
+              </span>
+</td>
+</tr>
+<!-- Row 4 (Rank 4) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-data-table text-data-table text-outline font-semibold">4</td>
+<td class="py-3.5 px-4 font-body-sm text-body-sm font-semibold text-on-surface">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant font-bold text-xs">MA</div>
+<div>
+<div>Marmara Alışveriş Merkezleri A.Ş.</div>
+<span class="font-data-table text-[11px] text-outline">B2B • Sözleşmeli Kurumsal</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-body-sm text-body-sm text-on-surface-variant">Bursa (Nilüfer)</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-center font-semibold">82</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-right font-medium">₺7.439,00</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-right font-bold text-on-surface">₺610.000,00</td>
+<td class="py-3.5 px-4">
+<div class="w-32">
+<div class="flex justify-between font-data-table text-[10px] text-outline mb-1">
+<span>%3.6</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-[#13C2C2] rounded-full" style="width: 52%"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-on-surface-variant text-xs">24 Mayıs 2024</td>
+<td class="py-3.5 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#FFF2E8] text-[#D4380D] font-label-caps text-label-caps uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">military_tech</span> Gold Üye
+              </span>
+</td>
+</tr>
+<!-- Row 5 (Rank 5) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-data-table text-data-table text-outline font-semibold">5</td>
+<td class="py-3.5 px-4 font-body-sm text-body-sm font-semibold text-on-surface">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant font-bold text-xs">OD</div>
+<div>
+<div>Dr. Osman Deniz (Klinik Zinciri)</div>
+<span class="font-data-table text-[11px] text-outline">VIP Özel Portföy • B2C</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-body-sm text-body-sm text-on-surface-variant">Antalya (Muratpaşa)</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-center font-semibold">61</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-right font-medium">₺7.868,85</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-right font-bold text-on-surface">₺480.000,00</td>
+<td class="py-3.5 px-4">
+<div class="w-32">
+<div class="flex justify-between font-data-table text-[10px] text-outline mb-1">
+<span>%2.9</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 41%"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-on-surface-variant text-xs">19 Mayıs 2024</td>
+<td class="py-3.5 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#E6F4FF] text-[#0958D9] font-label-caps text-label-caps uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">workspace_premium</span> Silver Üye
+              </span>
+</td>
+</tr>
+<!-- Row 6 (Rank 6) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-4 font-data-table text-data-table text-outline font-semibold">6</td>
+<td class="py-3.5 px-4 font-body-sm text-body-sm font-semibold text-on-surface">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant font-bold text-xs">AE</div>
+<div>
+<div>Anadolu Endüstriyel Donanım Ltd.</div>
+<span class="font-data-table text-[11px] text-outline">B2B • İhale Alımı</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-body-sm text-body-sm text-on-surface-variant">Eskişehir (Odunpazarı)</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-center font-semibold">45</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-right font-medium">₺7.888,88</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-right font-bold text-on-surface">₺355.000,00</td>
+<td class="py-3.5 px-4">
+<div class="w-32">
+<div class="flex justify-between font-data-table text-[10px] text-outline mb-1">
+<span>%2.1</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 32%"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4 font-data-table text-data-table text-on-surface-variant text-xs">14 Mayıs 2024</td>
+<td class="py-3.5 px-4 text-right">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#E6F4FF] text-[#0958D9] font-label-caps text-label-caps uppercase font-bold">
+<span class="material-symbols-outlined text-[13px]">workspace_premium</span> Silver Üye
+              </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination / Footer info -->
+<div class="flex items-center justify-between pt-4 mt-2">
+<span class="font-body-sm text-body-sm text-outline">Toplam 20 VIP hesaptan ilk 6 tanesi listeleniyor (Kalan 14 müşteri arka planda önbelleğe alındı)</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-outline hover:text-on-surface font-body-sm text-body-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span> Önceki
+        </button>
+<span class="font-data-table text-data-table text-on-surface font-semibold px-2">1 / 4</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-body-sm text-body-sm flex items-center gap-1">
+          Sonraki <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Deep-Dive Section 2: Kategori Isı Haritası & En Yüksek Gelir Sağlayan Ürünler -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-10">
+<!-- Category Performance Heatmap (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<h2 class="font-title-sm text-title-sm text-on-surface">Kategorilerin Aylık Performansı (Son 6 Ay Isı Haritası)</h2>
+</div>
+<span class="font-label-caps text-label-caps uppercase px-2 py-0.5 rounded bg-surface-container-low text-outline">Ciro Yoğunluğu (₺ Bin)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
+          Ana ürün departmanlarının Ocak - Haziran 2024 dönemindeki ciro dalgalanmaları ve mevsimsel zirveleri.
+        </p>
+<!-- Heatmap Grid -->
+<div class="overflow-x-auto">
+<table class="w-full text-center border-separate border-spacing-1.5">
+<thead>
+<tr class="font-label-caps text-label-caps text-outline">
+<th class="text-left font-normal pb-2 px-2">Kategori</th>
+<th class="pb-2">Oca</th>
+<th class="pb-2">Şub</th>
+<th class="pb-2">Mar</th>
+<th class="pb-2">Nis</th>
+<th class="pb-2">May</th>
+<th class="pb-2">Haz (Prj)</th>
+</tr>
+</thead>
+<tbody class="font-data-table text-body-sm">
+<!-- Category 1 -->
+<tr>
+<td class="text-left font-body-sm text-body-sm font-semibold text-on-surface px-2 py-2">Akıllı Ev &amp; IoT</td>
+<td class="p-2.5 rounded-lg bg-primary-fixed/40 text-on-surface font-medium">₺420k</td>
+<td class="p-2.5 rounded-lg bg-primary-fixed/60 text-on-surface font-medium">₺580k</td>
+<td class="p-2.5 rounded-lg bg-primary-fixed text-primary font-bold">₺840k</td>
+<td class="p-2.5 rounded-lg bg-primary-container text-on-primary font-bold shadow-xs">₺1.120k</td>
+<td class="p-2.5 rounded-lg bg-primary text-on-primary font-bold shadow-sm">₺1.450k</td>
+<td class="p-2.5 rounded-lg bg-primary-container text-on-primary font-bold">₺1.280k</td>
+</tr>
+<!-- Category 2 -->
+<tr>
+<td class="text-left font-body-sm text-body-sm font-semibold text-on-surface px-2 py-2">Kurumsal Donanım</td>
+<td class="p-2.5 rounded-lg bg-secondary-fixed/50 text-on-surface font-medium">₺680k</td>
+<td class="p-2.5 rounded-lg bg-secondary-fixed text-secondary font-bold">₺910k</td>
+<td class="p-2.5 rounded-lg bg-secondary-container text-on-primary font-bold shadow-xs">₺1.050k</td>
+<td class="p-2.5 rounded-lg bg-secondary text-on-secondary font-bold shadow-sm">₺1.320k</td>
+<td class="p-2.5 rounded-lg bg-secondary-container text-on-primary font-bold">₺1.150k</td>
+<td class="p-2.5 rounded-lg bg-secondary-fixed text-secondary font-bold">₺990k</td>
+</tr>
+<!-- Category 3 -->
+<tr>
+<td class="text-left font-body-sm text-body-sm font-semibold text-on-surface px-2 py-2">Giyilebilir Sağlık</td>
+<td class="p-2.5 rounded-lg bg-tertiary-fixed/30 text-on-surface font-medium">₺210k</td>
+<td class="p-2.5 rounded-lg bg-tertiary-fixed/50 text-on-surface font-medium">₺340k</td>
+<td class="p-2.5 rounded-lg bg-tertiary-fixed text-tertiary font-bold">₺480k</td>
+<td class="p-2.5 rounded-lg bg-tertiary-container text-on-primary font-bold">₺620k</td>
+<td class="p-2.5 rounded-lg bg-tertiary text-on-tertiary font-bold shadow-sm">₺890k</td>
+<td class="p-2.5 rounded-lg bg-tertiary-container text-on-primary font-bold">₺740k</td>
+</tr>
+<!-- Category 4 -->
+<tr>
+<td class="text-left font-body-sm text-body-sm font-semibold text-on-surface px-2 py-2">Ses Sistemleri &amp; Hi-Fi</td>
+<td class="p-2.5 rounded-lg bg-[#E6FFFB] text-[#08979C] font-medium">₺310k</td>
+<td class="p-2.5 rounded-lg bg-[#E6FFFB] text-[#08979C] font-medium">₺350k</td>
+<td class="p-2.5 rounded-lg bg-[#87E8DE] text-on-surface font-bold">₺520k</td>
+<td class="p-2.5 rounded-lg bg-[#36CFC9] text-on-surface font-bold">₺590k</td>
+<td class="p-2.5 rounded-lg bg-[#13C2C2] text-on-primary font-bold shadow-sm">₺720k</td>
+<td class="p-2.5 rounded-lg bg-[#36CFC9] text-on-surface font-bold">₺610k</td>
+</tr>
+<!-- Category 5 -->
+<tr>
+<td class="text-left font-body-sm text-body-sm font-semibold text-on-surface px-2 py-2">Aksesuar &amp; Sarf</td>
+<td class="p-2.5 rounded-lg bg-surface-container-low text-on-surface-variant">₺120k</td>
+<td class="p-2.5 rounded-lg bg-surface-container-low text-on-surface-variant">₺140k</td>
+<td class="p-2.5 rounded-lg bg-primary-fixed/30 text-on-surface font-medium">₺190k</td>
+<td class="p-2.5 rounded-lg bg-primary-fixed/50 text-on-surface font-medium">₺240k</td>
+<td class="p-2.5 rounded-lg bg-primary-fixed text-primary font-bold">₺310k</td>
+<td class="p-2.5 rounded-lg bg-primary-fixed/60 text-on-surface font-medium">₺280k</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Heatmap Legend -->
+<div class="flex items-center justify-between pt-4 mt-4">
+<span class="font-body-sm text-body-sm text-outline">En yüksek ivme: <strong>Mayıs (+%24)</strong></span>
+<div class="flex items-center gap-1.5 font-label-caps text-label-caps text-outline">
+<span>Düşük</span>
+<span class="w-3.5 h-3.5 rounded bg-primary-fixed/40"></span>
+<span class="w-3.5 h-3.5 rounded bg-primary-fixed"></span>
+<span class="w-3.5 h-3.5 rounded bg-primary-container"></span>
+<span class="w-3.5 h-3.5 rounded bg-primary"></span>
+<span>Yüksek Hacim</span>
+</div>
+</div>
+</div>
+<!-- Top 5 Revenue-Driving Star Products (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<h2 class="font-title-sm text-title-sm text-on-surface">5 Yıldız Ürün Portföyü</h2>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-tertiary-fixed text-tertiary uppercase">En Çok Ciro</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+          Ciro hacmi ve kârlılık marjı en yüksek optimize SKU kataloğu.
+        </p>
+<!-- Product List -->
+<div class="flex flex-col gap-3">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low/60 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="High-end sleek minimalist enterprise smart server hub on a matte surface with soft ambient orange and lavender backlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALROROMuVAQTfq6Ci0R17P8AyB2Buh_NVbATjA1JxKp2gksqhmGIWGOmmF7Uwfi_Tm8hMpiHnXYyEwX_KcfCK6TyouVOHLyfZXu6yqIzIP6BZ4H5NsYVVjKHiyP7kWvsLsmPm-SxwAedsI0ZvqC6wJnzD9Y5zL2pJx5Yak5s2RH3ft2Gg8iAHe7Gskfiys3BGNvwylFYfj4TLXj_JAyoqYDCJuRfjpib4sB-igLtqut5jWERia2rvGCQ"/>
+<div>
+<h3 class="font-body-sm text-body-sm font-bold text-on-surface">NexusPro Enterprise Server V3</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-data-table text-[11px] text-outline">SKU-89210</span>
+<span class="font-label-caps text-[10px] text-primary bg-primary-fixed px-1.5 py-0.2 rounded font-semibold">%48.2 Marj</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-data-table text-body-sm font-bold text-on-surface">₺1.840.000</div>
+<span class="font-label-caps text-[11px] text-[#237804] font-semibold flex items-center justify-end">
+<span class="material-symbols-outlined text-[13px]">trending_up</span> +%21.4
+              </span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low/60 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="Modern ultra-thin titanium smartwatch with sleek obsidian wristband displayed on light pedestal in studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu3Yg0EpksNVwntvY_bg99mKQs_sJHHlaQhpqd-PvCcB2Z7R6UA-huUT3SlkzPWjLXl--venKIUTzbOMjh8u7ksIDA5aPleKNjT8BVV7KKkVA9Kdky7iBpBGirmm57Igd7R8AftwdeIffUp-bmq7TouR9UKM87wwSBKJMzbKE0XzL2o--KLWesZalKISzcqO3W3eagdjqajuCPaXw7cHMVCc3sDuZ8rzpg7siAmK5BDBtF4IcBm6YqIA"/>
+<div>
+<h3 class="font-body-sm text-body-sm font-bold text-on-surface">AuraSense Health Band Elite</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-data-table text-[11px] text-outline">SKU-44109</span>
+<span class="font-label-caps text-[10px] text-secondary bg-secondary-fixed px-1.5 py-0.2 rounded font-semibold">%54.0 Marj</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-data-table text-body-sm font-bold text-on-surface">₺1.210.000</div>
+<span class="font-label-caps text-[11px] text-[#237804] font-semibold flex items-center justify-end">
+<span class="material-symbols-outlined text-[13px]">trending_up</span> +%18.2
+              </span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low/60 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="Minimalist modern smart home hub thermostat device with glowing circular glass interface and warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb5nIHThk9YMO_6XlDBMUXVQtetjvjMIUKE0MnGR6CeG6vwhrL_JYbKVUfRBk44X8L3ekxfnBhaUmMPh70bYaFmXG5e7OoFRVCoGciVZYToulyPbNDJJd3A9u478fa0O0W-Hkwt3W7B3mQHvLgebktQHhzSn4WP8kvH5cfGTjfuD1JzewSFNk_fvIg0XYXqcKFpHoU-97M-utfN9PeW_cOZoQU682BBf4Np1jbUp4lxwGdapzqpVRkkw"/>
+<div>
+<h3 class="font-body-sm text-body-sm font-bold text-on-surface">Lumix Gateway Pro Hub</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-data-table text-[11px] text-outline">SKU-10923</span>
+<span class="font-label-caps text-[10px] text-tertiary bg-tertiary-fixed px-1.5 py-0.2 rounded font-semibold">%39.5 Marj</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-data-table text-body-sm font-bold text-on-surface">₺940.500</div>
+<span class="font-label-caps text-[11px] text-[#237804] font-semibold flex items-center justify-end">
+<span class="material-symbols-outlined text-[13px]">trending_up</span> +%12.8
+              </span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low/60 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-lg object-cover" data-alt="High fidelity studio wireless headphones with brushed metallic finish on a pure soft white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI5Pi6whIQhZQcqeLKj7yOHZpBJto4D_x9aH_H3eDGfXMkO4Ilph2PjOqQsnl7A7jLq2yAGH2Eq0eSLGHRRQziRbLzgDREvffmCVn2JzFAZw1z5O1Jg0vXRplvq_wj3YWNh3zySIiUEty3a6RtnCat1WV7tEygbXMxwQagXp5HyNHRh8Nc7WErs3sKPHV2jdMOO0dRgonCDCXUBI_KrUaWfU91OvMogjIOxelbU-9zkV5v0fhdI3rWpw"/>
+<div>
+<h3 class="font-body-sm text-body-sm font-bold text-on-surface">SonicWave Studio ANC Kulaklık</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-data-table text-[11px] text-outline">SKU-77291</span>
+<span class="font-label-caps text-[10px] text-[#08979C] bg-[#E6FFFB] px-1.5 py-0.2 rounded font-semibold">%61.2 Marj</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-data-table text-body-sm font-bold text-on-surface">₺765.000</div>
+<span class="font-label-caps text-[11px] text-[#237804] font-semibold flex items-center justify-end">
+<span class="material-symbols-outlined text-[13px]">trending_up</span> +%9.4
+              </span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-3">
+<a class="w-full py-2 rounded-xl bg-surface-container text-on-surface font-body-sm text-body-sm font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors" href="#">
+<span>Tüm Ürün SKU Raporuna Git</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Deep-Dive Section 3: Kohort Analizi & Şehirlerin Büyüme Hızı -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Cohort Retention Matrix (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#13C2C2]"></span>
+<h2 class="font-title-sm text-title-sm text-on-surface">Tekrar Eden Alışveriş: Kohort Tutundurma (Retention)</h2>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-[#E6FFFB] text-[#08979C] uppercase font-bold">SQL Window Kohortu</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
+        Kayıt/İlk alışveriş ayına göre kullanıcı gruplarının sonraki 6 aydaki aktif sipariş verme sadakat oranları.
+      </p>
+<!-- Cohort Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-center border-separate border-spacing-1 font-data-table text-body-sm">
+<thead>
+<tr class="font-label-caps text-label-caps text-outline">
+<th class="text-left font-normal pb-2 px-2">Kohort</th>
+<th class="pb-2">Kullanıcı</th>
+<th class="pb-2">Ay 0</th>
+<th class="pb-2">Ay 1</th>
+<th class="pb-2">Ay 2</th>
+<th class="pb-2">Ay 3</th>
+<th class="pb-2">Ay 4</th>
+<th class="pb-2">Ay 5</th>
+</tr>
+</thead>
+<tbody>
+<!-- Cohort Jan -->
+<tr>
+<td class="text-left font-semibold text-on-surface px-2 py-1.5 font-body-sm">Ocak 2024</td>
+<td class="text-on-surface-variant text-xs">4.280</td>
+<td class="p-2 rounded bg-primary text-on-primary font-bold">100%</td>
+<td class="p-2 rounded bg-primary-fixed text-primary font-bold">42.8%</td>
+<td class="p-2 rounded bg-primary-fixed/80 text-on-surface font-semibold">36.1%</td>
+<td class="p-2 rounded bg-secondary-fixed text-secondary font-semibold">31.4%</td>
+<td class="p-2 rounded bg-secondary-fixed/70 text-on-surface">28.9%</td>
+<td class="p-2 rounded bg-tertiary-fixed text-tertiary font-semibold">27.2%</td>
+</tr>
+<!-- Cohort Feb -->
+<tr>
+<td class="text-left font-semibold text-on-surface px-2 py-1.5 font-body-sm">Şubat 2024</td>
+<td class="text-on-surface-variant text-xs">5.120</td>
+<td class="p-2 rounded bg-primary text-on-primary font-bold">100%</td>
+<td class="p-2 rounded bg-primary-fixed text-primary font-bold">44.6%</td>
+<td class="p-2 rounded bg-primary-fixed/80 text-on-surface font-semibold">38.2%</td>
+<td class="p-2 rounded bg-secondary-fixed text-secondary font-semibold">33.5%</td>
+<td class="p-2 rounded bg-secondary-fixed/70 text-on-surface">30.1%</td>
+<td class="p-2 rounded bg-surface-container-low text-outline">-</td>
+</tr>
+<!-- Cohort Mar -->
+<tr>
+<td class="text-left font-semibold text-on-surface px-2 py-1.5 font-body-sm">Mart 2024</td>
+<td class="text-on-surface-variant text-xs">6.340</td>
+<td class="p-2 rounded bg-primary text-on-primary font-bold">100%</td>
+<td class="p-2 rounded bg-primary-container text-on-primary font-bold">47.1%</td>
+<td class="p-2 rounded bg-primary-fixed text-primary font-semibold">39.8%</td>
+<td class="p-2 rounded bg-secondary-fixed text-secondary font-semibold">35.0%</td>
+<td class="p-2 rounded bg-surface-container-low text-outline">-</td>
+<td class="p-2 rounded bg-surface-container-low text-outline">-</td>
+</tr>
+<!-- Cohort Apr -->
+<tr>
+<td class="text-left font-semibold text-on-surface px-2 py-1.5 font-body-sm">Nisan 2024</td>
+<td class="text-on-surface-variant text-xs">7.890</td>
+<td class="p-2 rounded bg-primary text-on-primary font-bold">100%</td>
+<td class="p-2 rounded bg-primary-container text-on-primary font-bold">49.4%</td>
+<td class="p-2 rounded bg-primary-fixed text-primary font-semibold">41.2%</td>
+<td class="p-2 rounded bg-surface-container-low text-outline">-</td>
+<td class="p-2 rounded bg-surface-container-low text-outline">-</td>
+<td class="p-2 rounded bg-surface-container-low text-outline">-</td>
+</tr>
+<!-- Cohort May -->
+<tr>
+<td class="text-left font-semibold text-on-surface px-2 py-1.5 font-body-sm">Mayıs 2024</td>
+<td class="text-on-surface-variant text-xs">9.140</td>
+<td class="p-2 rounded bg-primary text-on-primary font-bold">100%</td>
+<td class="p-2 rounded bg-primary-container text-on-primary font-bold">51.8%</td>
+<td class="p-2 rounded bg-surface-container-low text-outline">-</td>
+<td class="p-2 rounded bg-surface-container-low text-outline">-</td>
+<td class="p-2 rounded bg-surface-container-low text-outline">-</td>
+<td class="p-2 rounded bg-surface-container-low text-outline">-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-4 p-3 rounded-xl bg-surface-container-low/70 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">insights</span>
+<span class="font-body-sm text-body-sm text-on-surface"><strong>Kohort Analiz Notu:</strong> Mayıs kohortu ilk ay dönüşümünde (%51.8) son 12 ayın en yüksek tutunmasını kaydetti.</span>
+</div>
+</div>
+</div>
+<!-- En Çok Satış Yapılan Şehirler ve Büyüme Hızı (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<h2 class="font-title-sm text-title-sm text-on-surface">Şehirlerin Büyüme Hızı (YoY)</h2>
+</div>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container text-on-surface-variant uppercase">Bölgesel Ciro</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-5">
+          Türkiye genelinde en yüksek hacme sahip 7 metropolün yıllık büyüme oranları.
+        </p>
+<!-- Vertical Bar Metric List -->
+<div class="flex flex-col gap-3">
+<!-- Istanbul -->
+<div>
+<div class="flex items-center justify-between font-body-sm text-body-sm mb-1">
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface">İstanbul</span>
+<span class="text-xs text-outline font-data-table">₺4.82M</span>
+</div>
+<span class="font-data-table text-data-table text-primary font-bold">+%34.2</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<!-- Ankara -->
+<div>
+<div class="flex items-center justify-between font-body-sm text-body-sm mb-1">
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface">Ankara</span>
+<span class="text-xs text-outline font-data-table">₺2.41M</span>
+</div>
+<span class="font-data-table text-data-table text-primary-container font-bold">+%28.6</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 74%"></div>
+</div>
+</div>
+<!-- Izmir -->
+<div>
+<div class="flex items-center justify-between font-body-sm text-body-sm mb-1">
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface">İzmir</span>
+<span class="text-xs text-outline font-data-table">₺1.98M</span>
+</div>
+<span class="font-data-table text-data-table text-secondary font-bold">+%22.1</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 62%"></div>
+</div>
+</div>
+<!-- Bursa -->
+<div>
+<div class="flex items-center justify-between font-body-sm text-body-sm mb-1">
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface">Bursa</span>
+<span class="text-xs text-outline font-data-table">₺1.15M</span>
+</div>
+<span class="font-data-table text-data-table text-tertiary font-bold">+%31.8</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 68%"></div>
+</div>
+</div>
+<!-- Antalya -->
+<div>
+<div class="flex items-center justify-between font-body-sm text-body-sm mb-1">
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface">Antalya</span>
+<span class="text-xs text-outline font-data-table">₺980k</span>
+</div>
+<span class="font-data-table text-data-table text-[#08979C] font-bold">+%41.5</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-[#13C2C2] rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<!-- Trabzon & Eskisehir (Compact summary) -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="p-2 rounded-lg bg-surface-container-low/70">
+<div class="font-body-sm text-[12px] text-outline">Eskişehir</div>
+<div class="font-data-table text-body-sm font-bold text-on-surface">+%19.4 <span class="text-xs font-normal text-outline">(₺620k)</span></div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low/70">
+<div class="font-body-sm text-[12px] text-outline">Trabzon</div>
+<div class="font-data-table text-body-sm font-bold text-on-surface">+%26.0 <span class="text-xs font-normal text-outline">(₺490k)</span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4">
+<div class="text-xs font-data-table text-outline flex items-center justify-between">
+<span>* Coğrafi dağılım IP ve fatura adresi doğrulamalıdır.</span>
+<span class="text-primary font-semibold cursor-pointer hover:underline">İl Bazında Harita →</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive SQL Intelligence Drawer Modal (Off-canvas) -->
+<div class="fixed inset-0 bg-[#0F172A]/40 backdrop-blur-sm z-50 hidden transition-opacity" id="sql-drawer-backdrop" onclick="this.classList.add('hidden'); document.getElementById('sql-drawer').classList.add('translate-x-full');"></div>
+<aside class="fixed top-0 right-0 h-full w-full max-w-2xl bg-surface-container-lowest shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between" id="sql-drawer">
+<div class="flex flex-col h-full overflow-y-auto p-space-xl">
+<!-- Drawer Header -->
+<div class="flex items-center justify-between pb-4">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">terminal</span>
+</div>
+<div>
+<h2 class="font-title-sm text-title-sm text-on-surface">SQL Intelligence Sorgu İnceleyici</h2>
+<p class="font-body-sm text-body-sm text-outline">Gelişmiş analitik görünümü oluşturan optimize SQL betiği</p>
+</div>
+</div>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" onclick="document.getElementById('sql-drawer-backdrop').classList.add('hidden'); document.getElementById('sql-drawer').classList.add('translate-x-full');">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<!-- SQL Engine Metadata Badges -->
+<div class="flex flex-wrap items-center gap-2 my-4">
+<span class="px-2.5 py-1 rounded bg-[#E6F4FF] text-[#0958D9] font-data-table text-xs font-semibold">PostgreSQL 16.2</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-data-table text-xs">Yürütme: 142ms</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-data-table text-xs">Taranan Satır: 2.418.902</span>
+<span class="px-2.5 py-1 rounded bg-[#F6FFED] text-[#237804] font-data-table text-xs font-semibold">İndeks: btree_orders_cust</span>
+</div>
+<!-- Formatted SQL Editor Box -->
+<div class="rounded-xl bg-[#0B132B] p-4 text-[#E2E8F0] font-data-table text-xs overflow-x-auto shadow-inner leading-relaxed">
+<div class="flex justify-between items-center text-outline-variant pb-2 mb-2 font-mono text-[11px]">
+<span>-- sales_cohort_and_vip_aggregation.sql</span>
+<button class="hover:text-primary-fixed flex items-center gap-1" onclick="navigator.clipboard.writeText(document.getElementById('sql-code-block').innerText); alert('SQL sorgusu panoya kopyalandı.');">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> Kopyala
+          </button>
+</div>
+<pre class="font-mono text-[#D8E3FB]" id="sql-code-block"><code><span class="text-[#FF7A45]">WITH</span> CustomerFirstOrder <span class="text-[#FF7A45]">AS</span> (
+    <span class="text-[#FF7A45]">SELECT</span> 
+        customer_id,
+        DATE_TRUNC(<span class="text-[#4096FF]">'month'</span>, MIN(order_date)) <span class="text-[#FF7A45]">AS</span> cohort_month
+    <span class="text-[#FF7A45]">FROM</span> core_warehouse.fact_sales
+    <span class="text-[#FF7A45]">WHERE</span> order_status = <span class="text-[#4096FF]'COMPLETED'&lt;/span&gt; &lt;span class=" text-[#ff7a45]"="">GROUP BY</span> 1
+),
+CustomerActivity <span class="text-[#FF7A45]">AS</span> (
+    <span class="text-[#FF7A45]">SELECT</span> 
+        f.customer_id,
+        c.cohort_month,
+        DATE_TRUNC(<span class="text-[#4096FF]">'month'</span>, f.order_date) <span class="text-[#FF7A45]">AS</span> activity_month,
+        SUM(f.total_net_amount) <span class="text-[#FF7A45]">AS</span> revenue_contribution,
+        COUNT(DISTINCT f.order_id) <span class="text-[#FF7A45]">AS</span> lifetime_orders
+    <span class="text-[#FF7A45]">FROM</span> core_warehouse.fact_sales f
+    <span class="text-[#FF7A45]">JOIN</span> CustomerFirstOrder c <span class="text-[#FF7A45]">ON</span> f.customer_id = c.customer_id
+    <span class="text-[#FF7A45]">WHERE</span> f.order_date &gt;= <span class="text-[#4096FF]">'2024-01-01'</span>
+    <span class="text-[#FF7A45]">GROUP BY</span> 1, 2, 3
+)
+<span class="text-[#FF7A45]">SELECT</span> 
+    ca.customer_id,
+    dim.company_name,
+    dim.city,
+    SUM(ca.revenue_contribution) <span class="text-[#FF7A45]">AS</span> total_revenue,
+    SUM(ca.lifetime_orders) <span class="text-[#FF7A45]">AS</span> total_orders,
+    ROUND(SUM(ca.revenue_contribution) / NULLIF(SUM(ca.lifetime_orders), 0), 2) <span class="text-[#FF7A45]">AS</span> aov,
+    DENSE_RANK() <span class="text-[#FF7A45]">OVER</span> (<span class="text-[#FF7A45]">ORDER BY</span> SUM(ca.revenue_contribution) <span class="text-[#FF7A45]">DESC</span>) <span class="text-[#FF7A45]">AS</span> revenue_rank
+<span class="text-[#FF7A45]">FROM</span> CustomerActivity ca
+<span class="text-[#FF7A45]">LEFT JOIN</span> core_warehouse.dim_customers dim <span class="text-[#FF7A45]">ON</span> ca.customer_id = dim.customer_id
+<span class="text-[#FF7A45]">GROUP BY</span> 1, 2, 3
+<span class="text-[#FF7A45]">ORDER BY</span> total_revenue <span class="text-[#FF7A45]">DESC</span>
+<span class="text-[#FF7A45]">LIMIT</span> 20;</code></pre>
+</div>
+<!-- Execution Plan Notes -->
+<div class="mt-4 p-4 rounded-xl bg-surface-container-low">
+<h4 class="font-body-sm text-body-sm font-bold text-on-surface mb-1">Optimizasyon &amp; İndeks Açıklaması</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Bu sorgu, <code>core_warehouse.fact_sales</code> üzerindeki <code>(order_date, order_status, customer_id)</code> bileşik BRIN indeksini kullanır. Partition pruning sayesinde yalnızca 2024 blokları taranmakta olup bellek tüketimi 18MB ile sınırlandırılmıştır.
+        </p>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="p-space-lg bg-surface-container-lowest flex items-center justify-between">
+<button class="px-4 py-2 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">schema</span>
+        Veri Şemasını Aç
+      </button>
+<button class="px-5 py-2 rounded-xl bg-primary text-on-primary hover:bg-[#8e3104] transition-all font-body-sm text-body-sm font-semibold shadow-sm" onclick="document.getElementById('sql-drawer-backdrop').classList.add('hidden'); document.getElementById('sql-drawer').classList.add('translate-x-full');">
+        Anladım, Kapat
+      </button>
+</div>
+</aside>
+</div></main></div></body></html>
