@@ -58,6 +58,5 @@ wwwroot\lib\jquery\LICENSE.txt
 wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
-wwwroot\sales_ui\dashboard.html
 wwwroot\sales_ui\order_analyze.html
 wwwroot\sales_ui\order_manage.html

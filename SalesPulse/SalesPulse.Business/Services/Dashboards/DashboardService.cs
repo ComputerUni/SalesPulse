@@ -1,4 +1,5 @@
-﻿using SalesPulse.Core.DTOs.DashboardDtos;
+﻿using SalesPulse.Core.DTOs.Common;
+using SalesPulse.Core.DTOs.DashboardDtos;
 using SalesPulse.DataAccess.Repositories.Dashboards;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,11 @@ namespace SalesPulse.Business.Services.Dashboards
         public async Task<IEnumerable<DashboardRegionalDistributionDto>> RegionalDistributionAsync()
         {
             return await _dashboardRepository.RegionalDistributionAsync();
+        }
+
+        public async Task<PagedResult<DashboardTopSellingProductsDto>> TopSellingProductsAsync(int page, int pageSize)
+        {
+            return await _dashboardRepository.TopSellingProductsAsync(page, pageSize);
         }
     }
 }

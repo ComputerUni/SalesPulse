@@ -1,0 +1,167 @@
+﻿@using SalesPulse.Core.DTOs.Common
+@using SalesPulse.Core.DTOs.DashboardDtos
+@model PagedResult<DashboardTopSellingProductsDto>
+
+
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+    <!-- Table Header Controls -->
+    <div class="p-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-md border-b border-surface-container-low">
+        <div>
+            <span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Katalog Liderleri</span>
+            <h2 class="font-title-sm text-title-sm text-on-surface">En Çok Satan 10 Ürün &amp; Karlılık Sıralaması</h2>
+        </div>
+        <div class="flex items-center gap-space-sm">
+            <!-- Quick Interval Tabs -->
+            <div class="flex items-center bg-surface-container-low p-1 rounded-lg">
+                <button class="px-space-md py-1 rounded font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all">Haftalık</button>
+                <button class="px-space-md py-1 rounded font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-all">Aylık</button>
+                <button class="px-space-md py-1 rounded font-body-sm text-body-sm font-semibold bg-surface-container-lowest text-on-surface shadow-xs transition-all">Yıllık</button>
+            </div>
+            <button class="flex items-center gap-1 px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-all">
+                <span class="material-symbols-outlined text-[18px]">download</span>
+                Excel
+            </button>
+        </div>
+    </div>
+    <!-- Responsive Table -->
+    <div class="w-full overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+            <thead>
+                <tr class="bg-surface-container-low/60 font-label-caps text-label-caps uppercase text-on-surface-variant">
+                    <th class="py-space-md px-space-lg w-16 text-center">Sıra</th>
+                    <th class="py-space-md px-space-md min-w-[280px]">Ürün Adı &amp; Model</th>
+                    <th class="py-space-md px-space-md">Kategori</th>
+                    <th class="py-space-md px-space-md text-right">Satış Adedi</th>
+                    <th class="py-space-md px-space-md text-right">Birim Fiyat</th>
+                    <th class="py-space-md px-space-md text-right">Toplam Ciro</th>
+                    <th class="py-space-md px-space-md text-center">Stok Durumu</th>
+                    <th class="py-space-md px-space-lg text-right">İşlem</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-surface-container-low font-body-sm text-body-sm">
+                @foreach (var (item, index) in Model.Items.Select((x, i) => (x, i + 1)))
+                {
+                    var categoryIcon = item.CategoryName switch
+                    {
+                        "Elektronik" => "devices",
+                        "Bilgisayar & Tablet" => "laptop",
+                        "Telefon & Aksesuar" => "smartphone",
+                        "TV & Görüntü" => "tv",
+                        "Beyaz Eşya" => "kitchen",
+                        "Küçük Ev Aletleri" => "blender",
+                        "Mobilya" => "chair",
+                        "Ev Tekstili" => "bed",
+                        "Mutfak" => "cooking",
+                        "Bahçe & Yapı Market" => "yard",
+                        "Spor & Outdoor" => "sports_soccer",
+                        "Kitap" => "menu_book",
+                        "Oyuncak" => "toys",
+                        "Giyim" => "checkroom",
+                        "Ayakkabı & Çanta" => "shopping_bag",
+                        "Kozmetik & Kişisel Bakım" => "spa",
+                        "Anne & Bebek" => "baby_changing_station",
+                        "Oto & Motosiklet" => "directions_car",
+                        "Ofis & Kırtasiye" => "work",
+                        "Gıda & İçecek" => "restaurant",
+                        "Pet Shop" => "pets",
+                        "Saat & Mücevher" => "watch",
+                        "Müzik & Hobi" => "music_note",
+                        "Oyun & Konsol" => "sports_esports",
+                        "Film & Müzik" => "movie",
+                        "Yazılım" => "code",
+                        "Fotoğraf & Kamera" => "camera_alt",
+                        "Sağlık & Wellness" => "favorite",
+                        "Aydınlatma" => "light_mode",
+                        "Yapı Malzemeleri" => "construction",
+                        _ => "inventory_2"
+                    };
+
+                    var revenue = (item.TotalRevenue / 1_000_000).ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
+
+                    <tr class="hover:bg-surface-container-low/40 transition-colors">
+                        <td class="py-space-md px-space-lg text-center font-data-table font-bold text-primary">@index</td>
+                        <td class="py-space-md px-space-md">
+                            <div class="flex items-center gap-space-sm">
+                                <div class="w-10 h-10 rounded-lg bg-surface-container-low shrink-0 flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-on-surface-variant text-[22px]">@categoryIcon</span>
+                                </div>
+                                <div class="flex flex-col min-w-0">
+                                    <span class="font-medium text-on-surface truncate">@item.ProductName</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="py-space-md px-space-md">
+                            <span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-caps text-label-caps">@item.CategoryName</span>
+                        </td>
+                        <td class="py-space-md px-space-md text-right font-data-table font-semibold text-on-surface">@item.SalesVolume</td>
+                        <td class="py-space-md px-space-md text-right font-data-table text-on-surface-variant">₺@item.Price</td>
+                        <td class="py-space-md px-space-md text-right font-data-table font-bold text-on-surface">₺@revenue</td>
+                        <td class="py-space-md px-space-md text-center">
+                            @if (item.Stock > 50)
+                            {
+                                <span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps">Stokta (@item.Stock)</span>
+                            }
+                            else
+                            {
+                                <span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-caps text-label-caps">Kritik (@item.Stock)</span>
+                            }
+
+                        </td>
+                        <td class="py-space-md px-space-lg text-right">
+                            <button class="p-1 rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface">
+                                <span class="material-symbols-outlined text-[18px]">more_vert</span>
+                            </button>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+    <div class="p-space-md bg-surface-container-lowest border-t border-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+        <div class="font-body-sm text-body-sm text-on-surface-variant">
+            Sayfa @Model.Page / @Model.TotalPages
+            (Toplam <span class="font-semibold text-on-surface">@Model.TotalCount aktif ürün</span> listelenmektedir)
+        </div>
+        <div class="flex items-center gap-1">
+            @if (Model.Page > 1)
+            {
+                <button onclick="loadPage(@(Model.Page - 1))" class="px-2.5 py-1 rounded-lg border border-surface-container-high bg-surface-container-low text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-all flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">chevron_left</span>
+                    Önceki
+                </button>
+            }
+
+            @{
+                var startPage = Math.Max(1, Model.Page - 1);
+                var endPage = Math.Min(Model.TotalPages, startPage + 2);
+            }
+
+            @for (int i = startPage; i <= endPage; i++)
+            {
+                if (i == Model.Page)
+                {
+                    <button class="px-3 py-1 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold">@i</button>
+                }
+                else
+                {
+                    <button onclick="loadPage(@i)" class="px-3 py-1 rounded-lg hover:bg-surface-container-low text-on-surface font-body-sm text-body-sm">@i</button>
+                }
+            }
+
+            @if (endPage < Model.TotalPages)
+            {
+                <span class="px-1 text-outline">...</span>
+                <button onclick="loadPage(@Model.TotalPages)" class="px-3 py-1 rounded-lg hover:bg-surface-container-low text-on-surface font-body-sm text-body-sm">@Model.TotalPages</button>
+            }
+
+            @if (Model.Page < Model.TotalPages)
+            {
+                <button onclick="loadPage(@(Model.Page + 1))" class="px-2.5 py-1 rounded-lg border border-surface-container-high bg-surface-container-low text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm transition-all flex items-center gap-1">
+                    Sonraki
+                    <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+                </button>
+            }
+        </div>
+    </div>
+</div>

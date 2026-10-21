@@ -1,9 +1,5 @@
-﻿using SalesPulse.Core.DTOs.DashboardDtos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SalesPulse.Core.DTOs.Common;
+using SalesPulse.Core.DTOs.DashboardDtos;
 
 namespace SalesPulse.DataAccess.Repositories.Dashboards
 {
@@ -12,5 +8,6 @@ namespace SalesPulse.DataAccess.Repositories.Dashboards
         Task<DashboardKpiCardDto> KpiCardsAsync();
         Task<IEnumerable<DashboardCategoryPerformanceDto>> CategoryPerformanceAsync();
         Task<IEnumerable<DashboardRegionalDistributionDto>> RegionalDistributionAsync();
+        Task<PagedResult<DashboardTopSellingProductsDto>> TopSellingProductsAsync(int page, int pageSize);
     }
 }

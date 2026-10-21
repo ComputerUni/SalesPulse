@@ -82,3 +82,4 @@ C:\Users\BURHAN\Desktop\Dapper-SalesPulse\SalesPulse\SalesPulse.WebUI\obj\Debug\
 C:\Users\BURHAN\Desktop\Dapper-SalesPulse\SalesPulse\SalesPulse.WebUI\obj\Debug\net8.0\SalesPulse.WebUI.pdb
 C:\Users\BURHAN\Desktop\Dapper-SalesPulse\SalesPulse\SalesPulse.WebUI\obj\Debug\net8.0\SalesPulse.WebUI.genruntimeconfig.cache
 C:\Users\BURHAN\Desktop\Dapper-SalesPulse\SalesPulse\SalesPulse.WebUI\obj\Debug\net8.0\ref\SalesPulse.WebUI.dll
+C:\Users\BURHAN\Desktop\Dapper-SalesPulse\SalesPulse\SalesPulse.WebUI\bin\Debug\net8.0\System.Linq.Dynamic.Core.dll
