@@ -26,10 +26,26 @@
             var barWidth = item.Percentage.ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
             var orderK = (item.TotalOrder / 1000).ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
 
+            var rankBg = index switch
+            {
+                1 => "bg-[#F4976C] text-white",           
+                2 => "bg-[#9B8EC4] text-white",         
+                3 => "bg-[#52C4A0] text-white",           
+                _ => "bg-primary text-on-primary"
+            };
+
+            var barColor = index switch
+            {
+                1 => "bg-[#F4976C]",
+                2 => "bg-[#9B8EC4]",
+                3 => "bg-[#52C4A0]",
+                _ => "bg-primary"
+            };
+
             <div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-1">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-1.5">
-                        <span class="w-5 h-5 rounded flex items-center justify-center bg-primary text-on-primary font-data-table text-[11px] font-bold">@index</span>
+                        <span class="w-5 h-5 rounded flex items-center justify-center @rankBg text-on-primary font-data-table text-[11px] font-bold">@index</span>
                         <span class="font-body-md text-body-md font-semibold text-on-surface">@item.CityName</span>
                     </div>
                     <span class="font-data-table text-body-sm font-bold text-primary">₺@revenueB Milyar</span>
@@ -39,7 +55,7 @@
                     <span>@orderK K Sipariş</span>
                 </div>
                 <div class="w-full h-1.5 rounded-full bg-surface-container-highest overflow-hidden">
-                    <div class="h-full bg-primary rounded-full" style="width: @barWidth%;"></div>
+                    <div class="h-full @barColor rounded-full" style="width: @barWidth%;"></div>
                 </div>
             </div>
         }

@@ -231,7 +231,9 @@
 
     </div>
 
-    @await Component.InvokeAsync("_PanelDashboardTopSellingProducts")
+    <div id="top-selling-container">
+        @await Component.InvokeAsync("_PanelDashboardTopSellingProducts")
+    </div>
 
 </div>
 

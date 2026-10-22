@@ -8,5 +8,10 @@ namespace SalesPulse.WebUI.Controllers
         {
             return View();
         }
+
+        public async Task<IActionResult> TopSellingProductsPartial(int page = 1)
+        {
+            return ViewComponent("_PanelDashboardTopSellingProducts", new { page });
+        }
     }
 }

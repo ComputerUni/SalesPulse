@@ -2,6 +2,7 @@
 using SalesPulse.Core.DTOs.Common;
 using SalesPulse.Core.DTOs.DashboardDtos;
 using SalesPulse.DataAccess.Context;
+using System.Data;
 
 
 namespace SalesPulse.DataAccess.Repositories.Dashboards
@@ -53,16 +54,15 @@ namespace SalesPulse.DataAccess.Repositories.Dashboards
 
         public async Task<PagedResult<DashboardTopSellingProductsDto>> TopSellingProductsAsync(int page, int pageSize)
         {
-            string countQuery = " SELECT COUNT(1) FROM Products p WHERE EXISTS (SELECT 1 FROM OrderDetails od WHERE od.ProductId = p.Id)";
-            string query = "SELECT p.Name AS ProductName, c.Name AS CategoryName, p.Price AS Price, p.Stock AS Stock, SUM(od.Quantity) AS SalesVolume, SUM(od.Quantity * od.UnitPrice) AS TotalRevenue FROM Products p INNER JOIN Categories c ON p.CategoryId = c.Id INNER JOIN OrderDetails od ON od.ProductId = p.Id GROUP BY p.Id, p.Name, c.Name, p.Price, p.Stock ORDER BY TotalRevenue DESC OFFSET @Offset ROWS FETCH NEXT @PageSize ROWS ONLY";
+            string countQuery = "SELECT COUNT(DISTINCT ProductId) FROM OrderDetails";
             using var connection = _context.CreateConnection();
 
             int totalCount = await connection.ExecuteScalarAsync<int>(countQuery);
-            var items = await connection.QueryAsync<DashboardTopSellingProductsDto>(query, new
-            {
-                Offset = (page - 1) * pageSize,
-                PageSize = pageSize
-            });
+            var items = await connection.QueryAsync<DashboardTopSellingProductsDto>(
+                "GetTopSellingProducts",
+                new { Offset = (page - 1) * pageSize, PageSize = pageSize },
+                commandType: CommandType.StoredProcedure
+            );
 
             return new PagedResult<DashboardTopSellingProductsDto>
             {
@@ -74,3 +74,4 @@ namespace SalesPulse.DataAccess.Repositories.Dashboards
         }
     }
 }
+

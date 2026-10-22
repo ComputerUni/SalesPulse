@@ -41,42 +41,42 @@
             <tbody class="divide-y divide-surface-container-low font-body-sm text-body-sm">
                 @foreach (var (item, index) in Model.Items.Select((x, i) => (x, i + 1)))
                 {
-                    var categoryIcon = item.CategoryName switch
+                    var (categoryIcon, categoryColor) = item.CategoryName switch
                     {
-                        "Elektronik" => "devices",
-                        "Bilgisayar & Tablet" => "laptop",
-                        "Telefon & Aksesuar" => "smartphone",
-                        "TV & Görüntü" => "tv",
-                        "Beyaz Eşya" => "kitchen",
-                        "Küçük Ev Aletleri" => "blender",
-                        "Mobilya" => "chair",
-                        "Ev Tekstili" => "bed",
-                        "Mutfak" => "cooking",
-                        "Bahçe & Yapı Market" => "yard",
-                        "Spor & Outdoor" => "sports_soccer",
-                        "Kitap" => "menu_book",
-                        "Oyuncak" => "toys",
-                        "Giyim" => "checkroom",
-                        "Ayakkabı & Çanta" => "shopping_bag",
-                        "Kozmetik & Kişisel Bakım" => "spa",
-                        "Anne & Bebek" => "baby_changing_station",
-                        "Oto & Motosiklet" => "directions_car",
-                        "Ofis & Kırtasiye" => "work",
-                        "Gıda & İçecek" => "restaurant",
-                        "Pet Shop" => "pets",
-                        "Saat & Mücevher" => "watch",
-                        "Müzik & Hobi" => "music_note",
-                        "Oyun & Konsol" => "sports_esports",
-                        "Film & Müzik" => "movie",
-                        "Yazılım" => "code",
-                        "Fotoğraf & Kamera" => "camera_alt",
-                        "Sağlık & Wellness" => "favorite",
-                        "Aydınlatma" => "light_mode",
-                        "Yapı Malzemeleri" => "construction",
-                        _ => "inventory_2"
+                        "Elektronik" => ("devices", "bg-blue-100 text-blue-700"),
+                        "Bilgisayar & Tablet" => ("laptop", "bg-indigo-100 text-indigo-700"),
+                        "Telefon & Aksesuar" => ("smartphone", "bg-violet-100 text-violet-700"),
+                        "TV & Görüntü" => ("tv", "bg-purple-100 text-purple-700"),
+                        "Beyaz Eşya" => ("kitchen", "bg-sky-100 text-sky-700"),
+                        "Küçük Ev Aletleri" => ("blender", "bg-cyan-100 text-cyan-700"),
+                        "Mobilya" => ("chair", "bg-amber-100 text-amber-700"),
+                        "Ev Tekstili" => ("bed", "bg-yellow-100 text-yellow-700"),
+                        "Mutfak" => ("cooking", "bg-orange-100 text-orange-700"),
+                        "Bahçe & Yapı Market" => ("yard", "bg-lime-100 text-lime-700"),
+                        "Spor & Outdoor" => ("sports_soccer", "bg-green-100 text-green-700"),
+                        "Kitap" => ("menu_book", "bg-teal-100 text-teal-700"),
+                        "Oyuncak" => ("toys", "bg-pink-100 text-pink-700"),
+                        "Giyim" => ("checkroom", "bg-rose-100 text-rose-700"),
+                        "Ayakkabı & Çanta" => ("shopping_bag", "bg-fuchsia-100 text-fuchsia-700"),
+                        "Kozmetik & Kişisel Bakım" => ("spa", "bg-red-100 text-red-700"),
+                        "Anne & Bebek" => ("baby_changing_station", "bg-pink-100 text-pink-600"),
+                        "Oto & Motosiklet" => ("directions_car", "bg-zinc-100 text-zinc-700"),
+                        "Ofis & Kırtasiye" => ("work", "bg-slate-100 text-slate-700"),
+                        "Gıda & İçecek" => ("restaurant", "bg-emerald-100 text-emerald-700"),
+                        "Pet Shop" => ("pets", "bg-amber-100 text-amber-600"),
+                        "Saat & Mücevher" => ("watch", "bg-yellow-100 text-yellow-600"),
+                        "Müzik & Hobi" => ("music_note", "bg-violet-100 text-violet-600"),
+                        "Oyun & Konsol" => ("sports_esports", "bg-indigo-100 text-indigo-600"),
+                        "Film & Müzik" => ("movie", "bg-purple-100 text-purple-600"),
+                        "Yazılım" => ("code", "bg-blue-100 text-blue-600"),
+                        "Fotoğraf & Kamera" => ("camera_alt", "bg-sky-100 text-sky-600"),
+                        "Sağlık & Wellness" => ("favorite", "bg-rose-100 text-rose-600"),
+                        "Aydınlatma" => ("light_mode", "bg-yellow-100 text-yellow-500"),
+                        "Yapı Malzemeleri" => ("construction", "bg-stone-100 text-stone-700"),
+                        _ => ("inventory_2", "bg-surface-container text-on-surface-variant")
                     };
 
-                    var revenue = (item.TotalRevenue / 1_000_000).ToString("F1", System.Globalization.CultureInfo.InvariantCulture);
+                    var revenue = (item.TotalRevenue).ToString("N2", new System.Globalization.CultureInfo("tr-TR"));
 
                     <tr class="hover:bg-surface-container-low/40 transition-colors">
                         <td class="py-space-md px-space-lg text-center font-data-table font-bold text-primary">@index</td>
@@ -91,10 +91,12 @@
                             </div>
                         </td>
                         <td class="py-space-md px-space-md">
-                            <span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-caps text-label-caps">@item.CategoryName</span>
+                            <span class="px-2 py-0.5 rounded-full @categoryColor font-label-caps text-label-caps">
+                                @item.CategoryName
+                            </span>
                         </td>
                         <td class="py-space-md px-space-md text-right font-data-table font-semibold text-on-surface">@item.SalesVolume</td>
-                        <td class="py-space-md px-space-md text-right font-data-table text-on-surface-variant">₺@item.Price</td>
+                        <td class="py-space-md px-space-md text-right font-data-table text-on-surface-variant">₺@item.Price.ToString("N2", new System.Globalization.CultureInfo("tr-TR"))</td>
                         <td class="py-space-md px-space-md text-right font-data-table font-bold text-on-surface">₺@revenue</td>
                         <td class="py-space-md px-space-md text-center">
                             @if (item.Stock > 50)
@@ -165,3 +167,13 @@
         </div>
     </div>
 </div>
+
+<script>
+    function loadPage(page) {
+        fetch(`/Dashboard/TopSellingProductsPartial?page=${page}`)
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById('top-selling-container').innerHTML = html;
+            });
+    }
+</script>

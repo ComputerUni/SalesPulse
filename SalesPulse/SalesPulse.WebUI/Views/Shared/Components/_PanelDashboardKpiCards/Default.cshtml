@@ -2,18 +2,16 @@
 @model DashboardKpiCardDto
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl">
-    <!-- KPI 1: Toplam Ciro (Terracotta / Warm Apricot) -->
     <div class="group relative bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
         <div class="flex items-start justify-between mb-space-md">
             <div class="flex flex-col">
                 <span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Konsolide Net Ciro</span>
-                <span class="font-display-lg text-data-metric text-on-surface tracking-tight mt-1">₺@Model.TotalRevenue</span>
+                <span class="font-display-lg text-data-metric text-on-surface tracking-tight mt-1">₺@Model.TotalRevenue.ToString("N0", new System.Globalization.CultureInfo("tr-TR"))</span>
             </div>
             <div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed-variant shadow-xs">
                 <span class="material-symbols-outlined text-[22px]">payments</span>
             </div>
         </div>
-        <!-- Sparkline & Bottom Delta -->
         <div class="flex items-end justify-between pt-space-xs">
             <div class="flex items-center gap-1.5">
                 <span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-caps text-label-caps">
@@ -22,19 +20,17 @@
                 </span>
                 <span class="font-body-sm text-body-sm text-on-surface-variant">geçen yıla göre</span>
             </div>
-            <!-- Micro Sparkline SVG -->
             <svg class="w-20 h-7 text-primary" fill="none" viewbox="0 0 80 28">
                 <path d="M0 24 L10 20 L22 22 L34 14 L46 16 L58 8 L70 10 L80 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
                 <path d="M0 24 L10 20 L22 22 L34 14 L46 16 L58 8 L70 10 L80 2 V28 H0 Z" fill="currentColor" fill-opacity="0.12"></path>
             </svg>
         </div>
     </div>
-    <!-- KPI 2: Toplam Sipariş (Pastel Blue) -->
     <div class="group relative bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
         <div class="flex items-start justify-between mb-space-md">
             <div class="flex flex-col">
                 <span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">İşlenen Siparişler</span>
-                <span class="font-display-lg text-data-metric text-on-surface tracking-tight mt-1">@Model.TotalOrder <span class="text-body-sm font-normal text-on-surface-variant">adet</span></span>
+                <span class="font-display-lg text-data-metric text-on-surface tracking-tight mt-1">@Model.TotalOrder.ToString("N0", new System.Globalization.CultureInfo("tr-TR")) <span class="text-body-sm font-normal text-on-surface-variant">adet</span></span>
             </div>
             <div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shadow-xs">
                 <span class="material-symbols-outlined text-[22px]">local_shipping</span>
@@ -54,12 +50,11 @@
             </svg>
         </div>
     </div>
-    <!-- KPI 3: Toplam Müşteri (Soft Lavender) -->
     <div class="group relative bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
         <div class="flex items-start justify-between mb-space-md">
             <div class="flex flex-col">
                 <span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Aktif Tekil Müşteri</span>
-                <span class="font-display-lg text-data-metric text-on-surface tracking-tight mt-1">@Model.TotalCustomer</span>
+                <span class="font-display-lg text-data-metric text-on-surface tracking-tight mt-1">@Model.TotalCustomer.ToString("N0", new System.Globalization.CultureInfo("tr-TR"))</span>
             </div>
             <div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shadow-xs">
                 <span class="material-symbols-outlined text-[22px]">badge</span>
@@ -79,7 +74,6 @@
             </svg>
         </div>
     </div>
-    <!-- KPI 4: Ortalama Sepet (AOV) (Fresh Mint) -->
     <div class="group relative bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between">
         <div class="flex items-start justify-between mb-space-md">
             <div class="flex flex-col">
