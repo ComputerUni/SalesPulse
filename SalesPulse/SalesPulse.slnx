@@ -1,4 +1,9 @@
 <Solution>
+  <Folder Name="/SQL/">
+    <File Path="../../../Documents/script.sql" />
+    <File Path="Indexes.sql" />
+    <File Path="StoredProcedures.sql" />
+  </Folder>
   <Project Path="SalesPulse.Business/SalesPulse.Business.csproj" />
   <Project Path="SalesPulse.Core/SalesPulse.Core.csproj" />
   <Project Path="SalesPulse.DataAccess/SalesPulse.DataAccess.csproj" />
