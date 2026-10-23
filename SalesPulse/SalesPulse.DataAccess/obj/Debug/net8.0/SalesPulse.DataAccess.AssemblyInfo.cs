@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SalesPulse.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee6f108819d74711a717d9842bf1e2c6ecdf6e35")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83a26c5269ecf4fd4d3fdd96b84ddb911ad149ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("SalesPulse.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SalesPulse.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

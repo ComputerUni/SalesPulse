@@ -1,0 +1,132 @@
+﻿@model SalesPulse.Core.DTOs.DashboardDtos.DashboardOrderStatusDistributionDto
+
+@{
+    var colors = new[] { "#005eb2", "#ff7a45", "#4297ff", "#7a3ac5", "#10b981", "#64748b" };
+}
+
+<div class="xl:col-span-4 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+    <div class="flex items-center justify-between pb-space-sm">
+        <div>
+            <span class="font-label-caps text-label-caps uppercase text-on-surface-variant text-xs font-semibold tracking-wider text-slate-400">Operasyonel Dağılım</span>
+            <h2 class="font-title-sm text-title-sm text-on-surface text-lg font-bold text-slate-800">Sipariş Durumları &amp; Dönüşüm</h2>
+        </div>
+        <span class="material-symbols-outlined text-outline text-[20px] text-slate-400">pie_chart</span>
+    </div>
+
+    <div class="relative flex items-center justify-center py-space-sm min-h-[220px]">
+        <div id="orderStatusDonutChart" class="w-full flex justify-center"></div>
+    </div>
+
+    <div class="flex flex-col gap-2 pt-space-xs">
+        @for (int i = 0; i < Model.Items.Count; i++)
+        {
+            var item = Model.Items[i];
+            var dotColor = colors[i % colors.Length];
+
+            <div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low/70 bg-slate-50/70 border border-slate-100">
+                <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full" style="background-color: @dotColor;"></span>
+                    <span class="font-body-sm text-body-sm text-on-surface font-medium text-slate-700">@item.Status</span>
+                </div>
+                <div class="flex items-center gap-space-sm gap-2">
+                    <span class="font-data-table text-body-sm text-on-surface-variant text-slate-500">
+                        @item.OrderCount.ToString("N0", new System.Globalization.CultureInfo("tr-TR")) adet
+                    </span>
+                    <span class="font-data-table text-body-sm font-semibold" style="color: @dotColor;">
+                        %@item.Percentage.ToString("0.0", new System.Globalization.CultureInfo("tr-TR"))
+                    </span>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const rawStatusData = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Items));
+        const totalOrders = @Model.TotalOrderCount;
+
+        if (!rawStatusData || rawStatusData.length === 0) return;
+
+        const labels = rawStatusData.map(x => x.Status);
+        const series = rawStatusData.map(x => x.OrderCount);
+        const chartColors = ['#005eb2', '#ff7a45', '#4297ff', '#7a3ac5', '#10b981', '#64748b'];
+
+        const donutOptions = {
+            series: series,
+            labels: labels,
+            chart: {
+                type: 'donut',
+                height: 220,
+                fontFamily: 'inherit'
+            },
+            colors: chartColors.slice(0, series.length),
+            stroke: {
+                width: 2,
+                colors: ['#ffffff']
+            },
+            dataLabels: {
+                enabled: false
+            },
+            legend: {
+                show: false 
+            },
+            plotOptions: {
+                pie: {
+                    donut: {
+                        size: '72%',
+                        labels: {
+                            show: true,
+                            name: {
+                                show: true,
+                                fontSize: '11px',
+                                fontFamily: 'inherit',
+                                color: '#94a3b8',
+                                offsetY: 20,
+                                formatter: () => 'TOPLAM İŞLEM'
+                            },
+                            value: {
+                                show: true,
+                                fontSize: '20px',
+                                fontFamily: 'inherit',
+                                fontWeight: 700,
+                                color: '#1e293b',
+                                offsetY: -16,
+                                formatter: function (val) {
+                                    const num = Number(val);
+                                    if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+                                    if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+                                    return num.toLocaleString('tr-TR');
+                                }
+                            },
+                            total: {
+                                show: true,
+                                label: 'TOPLAM İŞLEM',
+                                color: '#94a3b8',
+                                fontSize: '11px',
+                                fontFamily: 'inherit',
+                                formatter: function (w) {
+                                    const sum = w.globals.seriesTotals.reduce((a, b) => a + b, 0);
+                                    if (sum >= 1000000) return (sum / 1000000).toFixed(1) + 'M';
+                                    if (sum >= 1000) return (sum / 1000).toFixed(1) + 'K';
+                                    return sum.toLocaleString('tr-TR');
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            tooltip: {
+                y: {
+                    formatter: function (val) {
+                        const pct = totalOrders > 0 ? ((val / totalOrders) * 100).toFixed(1) : 0;
+                        return `${val.toLocaleString('tr-TR')} adet (%${pct})`;
+                    }
+                }
+            }
+        };
+
+        const statusChart = new ApexCharts(document.querySelector("#orderStatusDonutChart"), donutOptions);
+        statusChart.render();
+    });
+</script>

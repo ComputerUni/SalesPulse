@@ -16,9 +16,19 @@ namespace SalesPulse.Business.Services.Dashboards
             return await _dashboardRepository.CategoryPerformanceAsync();
         }
 
+        public async Task<DashboardMonthlySalesTrendDto> DashboardMonthlySalesTrendAsync(DateTime? startDate, DateTime? endDate)
+        {
+            return await _dashboardRepository.MonthlySalesTrendAsync(startDate, endDate);
+        }
+
         public async Task<DashboardKpiCardDto> KpiCardsAsync()
         {
             return await _dashboardRepository.KpiCardsAsync();
+        }
+
+        public async Task<DashboardOrderStatusDistributionDto> MonthlyOrderStatusDistributionAsync(DateTime? startDate, DateTime? endDate)
+        {
+            return await _dashboardRepository.MonthlyOrderStatusDistributionAsync(startDate, endDate);
         }
 
         public async Task<IEnumerable<DashboardRegionalDistributionDto>> RegionalDistributionAsync()

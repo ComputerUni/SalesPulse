@@ -1,0 +1,147 @@
+﻿@model SalesPulse.Core.DTOs.DashboardDtos.DashboardMonthlySalesTrendDto
+
+<div class="xl:col-span-8 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-space-sm">
+        <div>
+            <span class="font-label-caps text-label-caps uppercase text-on-surface-variant text-xs font-semibold tracking-wider text-slate-400">Performans Eğilimi</span>
+            <h2 class="font-title-sm text-title-sm text-on-surface text-lg font-bold text-slate-800">Aylık Satış Eğilimi &amp; Sipariş Hacmi</h2>
+        </div>
+
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-orange-50 border border-orange-200/60 text-orange-700 text-xs font-medium w-fit">
+            <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+            <span>Zirve: <strong>@Model.PeakMonth (₺@((Model.PeakRevenue / 1_000_000m).ToString("0.00", new System.Globalization.CultureInfo("tr-TR")))M)</strong></span>
+        </div>
+    </div>
+
+    <div class="relative w-full min-h-[300px]">
+        <div id="monthlySalesTrendChart" class="w-full h-full"></div>
+    </div>
+
+    <div class="mt-space-md pt-space-sm bg-surface-container-low rounded-lg p-space-md grid grid-cols-3 gap-2 text-center bg-slate-50/70 border border-slate-100 p-3">
+        <div>
+            <span class="font-label-caps text-label-caps uppercase text-outline text-[11px] text-slate-400 font-semibold block">En Yüksek Ay</span>
+            <p class="font-data-table text-body-sm font-semibold text-slate-800 mt-0.5">
+                @Model.PeakMonth (₺@((Model.PeakRevenue / 1_000_000m).ToString("0.00", new System.Globalization.CultureInfo("tr-TR")))M)
+            </p>
+        </div>
+        <div class="border-x border-slate-200/60">
+            <span class="font-label-caps text-label-caps uppercase text-outline text-[11px] text-slate-400 font-semibold block">Aylık Ort. Ciro</span>
+            <p class="font-data-table text-body-sm font-semibold text-slate-800 mt-0.5">
+                ₺@Model.AverageMonthlyRevenue.ToString("N0", new System.Globalization.CultureInfo("tr-TR"))
+            </p>
+        </div>
+        <div>
+            <span class="font-label-caps text-label-caps uppercase text-outline text-[11px] text-slate-400 font-semibold block">Hedef Tutma Oranı</span>
+            <p class="font-data-table text-body-sm font-semibold @(Model.TargetAchievementRate >= 100 ? "text-emerald-600" : "text-amber-600") mt-0.5">
+                %@Model.TargetAchievementRate.ToString("0.0", new System.Globalization.CultureInfo("tr-TR")) Başarı
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const rawData = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.MonthlyItems));
+
+        if (!rawData || rawData.length === 0) return;
+
+        const categories = rawData.map(x => x.MonthName);
+        const revenues = rawData.map(x => x.TotalRevenue); // DÜZELTİLDİ: Saf sayısal dizi aktarıldı
+        const orders = rawData.map(x => x.TotalOrderCount);
+
+        const options = {
+            series: [
+                {
+                    name: 'Ciro (₺)',
+                    type: 'area',
+                    data: revenues
+                },
+                {
+                    name: 'Sipariş Hacmi',
+                    type: 'line',
+                    data: orders
+                }
+            ],
+            chart: {
+                height: 300,
+                type: 'line',
+                toolbar: { show: false },
+                zoom: { enabled: false },
+                fontFamily: 'inherit'
+            },
+            colors: ['#ff7a45', '#005eb2'],
+            fill: {
+                type: ['gradient', 'solid'],
+                gradient: {
+                    shade: 'light',
+                    type: 'vertical',
+                    shadeIntensity: 0.5,
+                    gradientToColors: ['#ffffff'],
+                    inverseColors: false,
+                    opacityFrom: 0.35,
+                    opacityTo: 0.02,
+                    stops: [0, 90, 100]
+                }
+            },
+            stroke: {
+                curve: 'smooth',
+                width: [3, 2.5],
+                dashArray: [0, 5]
+            },
+            markers: {
+                size: [4, 3],
+                strokeColors: '#ffffff',
+                strokeWidth: 2,
+                hover: { size: 6 }
+            },
+            xaxis: {
+                categories: categories,
+                axisBorder: { show: false },
+                axisTicks: { show: false },
+                labels: {
+                    style: { colors: '#94a3b8', fontSize: '12px' }
+                }
+            },
+            yaxis: [
+                {
+                    labels: {
+                        formatter: val => `₺${Math.round(val / 1000000)}M`,
+                        style: { colors: '#94a3b8', fontSize: '11px' }
+                    }
+                },
+                {
+                    opposite: true,
+                    labels: {
+                        formatter: val => `${Math.round(val / 1000)}K`,
+                        style: { colors: '#94a3b8', fontSize: '11px' }
+                    }
+                }
+            ],
+            grid: {
+                borderColor: '#f1f5f9',
+                strokeDashArray: 4
+            },
+            tooltip: {
+                shared: true,
+                intersect: false,
+                y: {
+                    formatter: function (y, { seriesIndex }) {
+                        if (typeof y !== "undefined") {
+                            return seriesIndex === 0
+                                ? `₺${Math.round(y).toLocaleString('tr-TR')}`
+                                : `${Math.round(y).toLocaleString('tr-TR')} adet`;
+                        }
+                        return y;
+                    }
+                }
+            },
+            legend: {
+                position: 'top',
+                horizontalAlign: 'right'
+            }
+        };
+
+        const chart = new ApexCharts(document.querySelector("#monthlySalesTrendChart"), options);
+        chart.render();
+    });
+</script>

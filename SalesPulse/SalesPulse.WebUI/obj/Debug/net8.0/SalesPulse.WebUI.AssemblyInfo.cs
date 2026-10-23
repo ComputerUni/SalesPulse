@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SalesPulse.WebUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4363fcd400890d4d334585645f70b31b41d07d1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83a26c5269ecf4fd4d3fdd96b84ddb911ad149ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("SalesPulse.WebUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SalesPulse.WebUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

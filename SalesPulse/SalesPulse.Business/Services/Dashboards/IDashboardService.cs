@@ -14,5 +14,7 @@ namespace SalesPulse.Business.Services.Dashboards
         Task<IEnumerable<DashboardCategoryPerformanceDto>> CategoryPerformanceAsync();
         Task<IEnumerable<DashboardRegionalDistributionDto>> RegionalDistributionAsync();
         Task<PagedResult<DashboardTopSellingProductsDto>> TopSellingProductsAsync(int page, int pageSize);
+        Task<DashboardMonthlySalesTrendDto> DashboardMonthlySalesTrendAsync(DateTime? startDate, DateTime? endDate);
+        Task<DashboardOrderStatusDistributionDto> MonthlyOrderStatusDistributionAsync(DateTime? startDate, DateTime? endDate);
     }
 }
