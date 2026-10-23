@@ -9,48 +9,65 @@ namespace SalesPulse.DataAccess.Repositories.Dashboards
 {
     public class DashboardRepository(AppDbContext _context) : IDashboardRepository
     {
-        public async Task<IEnumerable<DashboardCategoryPerformanceDto>> CategoryPerformanceAsync()
+        public async Task<IEnumerable<DashboardCategoryPerformanceDto>> CategoryPerformanceAsync(DateTime? startDate, DateTime? endDate)
         {
-            string query = "SELECT TOP 10 c.Name AS CategoryName, SUM(od.Quantity * od.UnitPrice) AS TotalRevenue FROM OrderDetails od INNER JOIN Products p ON od.ProductId = p.Id INNER JOIN Categories c ON p.CategoryId = c.Id GROUP BY c.Id, c.Name ORDER BY TotalRevenue DESC";
             using var connection = _context.CreateConnection();
-            var result = await connection.QueryAsync<DashboardCategoryPerformanceDto>(query);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@StartDate", startDate, DbType.DateTime);
+            parameters.Add("@EndDate", endDate, DbType.DateTime);
+
+            var result = await connection.QueryAsync<DashboardCategoryPerformanceDto>(
+                "sp_GetTopCategoriesByRevenue",
+                parameters,
+                commandType: CommandType.StoredProcedure,
+                commandTimeout: 120
+            );
+
             var list = result.ToList();
             decimal total = list.Sum(x => x.TotalRevenue);
-            if(total > 0)
+            if (total > 0)
             {
-                foreach(var item in list)
+                foreach (var item in list)
                 {
-                    item.Percentage = Math.Round((double)(item.TotalRevenue / total * 100), 1);
+                    item.Percentage = Math.Round((double)(item.TotalRevenue / total) * 100, 1);
                 }
             }
+
             return list;
 
         }
 
-        public async Task<DashboardKpiCardDto> KpiCardsAsync()
+        public async Task<DashboardKpiCardDto> KpiCardsAsync(DateTime? startDate, DateTime? endDate)
         {
-            string query = "SELECT COUNT(*) AS TotalOrder, SUM(TotalAmount) AS TotalRevenue, (SELECT COUNT(*) FROM Customers) AS TotalCustomer, AVG(TotalAmount) AS AverageBasket FROM Orders";
             using var connection = _context.CreateConnection();
-            return await connection.QueryFirstOrDefaultAsync<DashboardKpiCardDto>(query);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@StartDate", startDate, DbType.DateTime);
+            parameters.Add("@EndDate", endDate, DbType.DateTime);
+
+            return await connection.QueryFirstOrDefaultAsync<DashboardKpiCardDto>(
+                "sp_GetDashboardKpiCards",
+                parameters,
+                commandType: CommandType.StoredProcedure,
+                commandTimeout: 60
+            ) ?? new DashboardKpiCardDto();
         }
 
         public async Task<DashboardOrderStatusDistributionDto> MonthlyOrderStatusDistributionAsync(DateTime? startDate, DateTime? endDate)
         {
             using var connection = _context.CreateConnection();
-            if(!startDate.HasValue || !endDate.HasValue)
-            {
-                var maxDate = await connection.ExecuteScalarAsync<DateTime?>("SELECT TOP 1 CreatedAt FROM Orders ORDER BY CreatedAt DESC") ?? DateTime.Now;
-                endDate ??= maxDate;
-                startDate ??= maxDate.AddMonths(-12);
-            }
 
-            string query = "SELECT Status, COUNT(Id) AS OrderCount FROM Orders WITH (NOLOCK) WHERE CreatedAt >= @StartDate AND CreatedAt <= @EndDate GROUP BY Status ORDER BY OrderCount DESC";
+            var parameters = new DynamicParameters();
+            parameters.Add("@StartDate", startDate, DbType.DateTime);
+            parameters.Add("@EndDate", endDate, DbType.DateTime);
 
-            var items = (await connection.QueryAsync<DashboardOrderStatusItemDto>(query, new
-            {
-                StartDate = startDate,
-                EndDate = endDate
-            })).ToList();
+            var items = (await connection.QueryAsync<DashboardOrderStatusItemDto>(
+                "sp_GetOrderStatusDistribution",
+                parameters,
+                commandType: CommandType.StoredProcedure,
+                commandTimeout: 60
+            )).ToList();
 
             var result = new DashboardOrderStatusDistributionDto
             {
@@ -73,23 +90,19 @@ namespace SalesPulse.DataAccess.Repositories.Dashboards
         {
             using var connection = _context.CreateConnection();
 
-            if (!startDate.HasValue || !endDate.HasValue)
-            {
-                var maxDate = await connection.ExecuteScalarAsync<DateTime?>("SELECT TOP 1 CreatedAt FROM Orders ORDER BY CreatedAt DESC") ?? DateTime.Now;
-                endDate ??= maxDate;
-                startDate ??= maxDate.AddMonths(-12);
-            }
+            var parameters = new DynamicParameters();
+            parameters.Add("@StartDate", startDate, DbType.DateTime);
+            parameters.Add("@EndDate", endDate, DbType.DateTime);
 
-            string query = "SELECT YEAR(CreatedAt) AS Year, MONTH(CreatedAt) AS Month, ISNULL(SUM(TotalAmount), 0) AS TotalRevenue, COUNT(Id) AS TotalOrderCount FROM Orders WHERE CreatedAt >= @StartDate AND CreatedAt <= @EndDate GROUP BY YEAR(CreatedAt), MONTH(CreatedAt) ORDER BY Year ASC, Month ASC";
-
-            var items = (await connection.QueryAsync<DashboardMonthlySalesItemDto>(query, new
-            {
-                StartDate = startDate,
-                EndDate = endDate
-            })).ToList();
+            var items = (await connection.QueryAsync<DashboardMonthlySalesItemDto>(
+                "sp_GetMonthlySalesTrend",
+                parameters,
+                commandType: CommandType.StoredProcedure,
+                commandTimeout: 60
+            )).ToList();
 
             var culture = new System.Globalization.CultureInfo("tr-TR");
-            foreach (var item in items)
+            foreach(var item in items)
             {
                 item.MonthName = new DateTime(item.Year, item.Month, 1).ToString("MMM yy", culture);
             }
@@ -99,18 +112,18 @@ namespace SalesPulse.DataAccess.Repositories.Dashboards
                 MonthlyItems = items
             };
 
-            if (items.Any())
+            if(items.Any())
             {
                 trendDto.AverageMonthlyRevenue = items.Average(x => x.TotalRevenue);
                 var peakItem = items.MaxBy(x => x.TotalRevenue);
-                if (peakItem != null)
+                if(peakItem != null)
                 {
                     trendDto.PeakMonth = peakItem.MonthName;
                     trendDto.PeakRevenue = peakItem.TotalRevenue;
                 }
 
                 var lastMonth = items.Last();
-                if (trendDto.AverageMonthlyRevenue > 0)
+                if(trendDto.AverageMonthlyRevenue > 0)
                 {
                     trendDto.TargetAchievementRate = Math.Round((double)(lastMonth.TotalRevenue / trendDto.AverageMonthlyRevenue) * 100, 1);
                 }
@@ -119,22 +132,33 @@ namespace SalesPulse.DataAccess.Repositories.Dashboards
             return trendDto;
         }
 
-        public async Task<IEnumerable<DashboardRegionalDistributionDto>> RegionalDistributionAsync()
+        public async Task<IEnumerable<DashboardRegionalDistributionDto>> RegionalDistributionAsync(DateTime? startDate, DateTime? endDate)
         {
-            string query = "SELECT TOP 10 c.Name AS CityName, SUM(o.TotalAmount) AS TotalRevenue, COUNT(o.Id) AS TotalOrder FROM Orders o INNER JOIN Cities c ON o.CityId = c.Id GROUP BY c.Id, c.Name ORDER BY TotalRevenue DESC";
             using var connection = _context.CreateConnection();
-            var result = await connection.QueryAsync<DashboardRegionalDistributionDto>(query);
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@StartDate", startDate, DbType.DateTime);
+            parameters.Add("@EndDate", endDate, DbType.DateTime);
+
+            var result = await connection.QueryAsync<DashboardRegionalDistributionDto>(
+                "sp_GetRegionalDistribution",
+                parameters,
+                commandType: CommandType.StoredProcedure,
+                commandTimeout: 60
+            );
+
             var list = result.ToList();
             decimal total = list.Sum(x => x.TotalRevenue);
-            if (total > 0)
+
+            if(total > 0)
             {
-                foreach (var item in list)
+                foreach(var item in list)
                 {
-                    item.Percentage = Math.Round((double)(item.TotalRevenue / total * 100), 1);
+                    item.Percentage = Math.Round((double)(item.TotalRevenue / total) * 100, 1);
                 }
             }
-            return list;
 
+            return list;
         }
 
         public async Task<PagedResult<DashboardTopSellingProductsDto>> TopSellingProductsAsync(int page, int pageSize)

@@ -11,9 +11,9 @@ namespace SalesPulse.Business.Services.Dashboards
 {
     public class DashboardService(IDashboardRepository _dashboardRepository) : IDashboardService
     {
-        public async Task<IEnumerable<DashboardCategoryPerformanceDto>> CategoryPerformanceAsync()
+        public async Task<IEnumerable<DashboardCategoryPerformanceDto>> CategoryPerformanceAsync(DateTime? startDate, DateTime? endDate)
         {
-            return await _dashboardRepository.CategoryPerformanceAsync();
+            return await _dashboardRepository.CategoryPerformanceAsync(startDate, endDate);
         }
 
         public async Task<DashboardMonthlySalesTrendDto> DashboardMonthlySalesTrendAsync(DateTime? startDate, DateTime? endDate)
@@ -21,9 +21,9 @@ namespace SalesPulse.Business.Services.Dashboards
             return await _dashboardRepository.MonthlySalesTrendAsync(startDate, endDate);
         }
 
-        public async Task<DashboardKpiCardDto> KpiCardsAsync()
+        public async Task<DashboardKpiCardDto> KpiCardsAsync(DateTime? startDate, DateTime? endDate)
         {
-            return await _dashboardRepository.KpiCardsAsync();
+            return await _dashboardRepository.KpiCardsAsync(startDate, endDate);
         }
 
         public async Task<DashboardOrderStatusDistributionDto> MonthlyOrderStatusDistributionAsync(DateTime? startDate, DateTime? endDate)
@@ -31,9 +31,9 @@ namespace SalesPulse.Business.Services.Dashboards
             return await _dashboardRepository.MonthlyOrderStatusDistributionAsync(startDate, endDate);
         }
 
-        public async Task<IEnumerable<DashboardRegionalDistributionDto>> RegionalDistributionAsync()
+        public async Task<IEnumerable<DashboardRegionalDistributionDto>> RegionalDistributionAsync(DateTime? startDate, DateTime? endDate)
         {
-            return await _dashboardRepository.RegionalDistributionAsync();
+            return await _dashboardRepository.RegionalDistributionAsync(startDate, endDate);
         }
 
         public async Task<PagedResult<DashboardTopSellingProductsDto>> TopSellingProductsAsync(int page, int pageSize)

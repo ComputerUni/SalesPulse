@@ -5,10 +5,10 @@ namespace SalesPulse.WebUI.ViewComponents._PanelDashboardViewComponents
 {
     public class _PanelDashboardCategoryPerformanceViewComponent(IDashboardService _dashboardService) : ViewComponent
     {
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync(DateTime? startDate, DateTime? endDate)
         {
-            var performance = await _dashboardService.CategoryPerformanceAsync();
+            var performance = await _dashboardService.CategoryPerformanceAsync(startDate, endDate);
             return View(performance);
-        } 
+        }
     }
 }

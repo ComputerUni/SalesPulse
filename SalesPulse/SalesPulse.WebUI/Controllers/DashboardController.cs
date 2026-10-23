@@ -1,12 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SalesPulse.Core.DTOs.DashboardDtos;
 
 namespace SalesPulse.WebUI.Controllers
 {
     public class DashboardController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(DateTime? startDate, DateTime? endDate)
         {
-            return View();
+            var filter = new DashboardFilterDto
+            {
+                StartDate = startDate,
+                EndDate = endDate
+            };
+            return View(filter);
         }
 
         public async Task<IActionResult> TopSellingProductsPartial(int page = 1)
