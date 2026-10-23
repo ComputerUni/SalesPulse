@@ -1,0 +1,105 @@
+﻿<section class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-lg mb-space-lg relative overflow-hidden">
+    <!-- Soft Decorative Glow -->
+    <div class="absolute -right-16 -top-16 w-64 h-64 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute left-1/3 -bottom-12 w-48 h-48 bg-secondary-fixed/20 rounded-full blur-2xl pointer-events-none"></div>
+    <div class="relative z-10 flex flex-col gap-space-md">
+        <!-- Search & Primary Dropdowns Row -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-md">
+            <!-- Live Search Field -->
+            <div class="lg:col-span-4 relative">
+                <label class="block font-label-caps text-label-caps uppercase text-outline mb-1.5">Sipariş No / Müşteri / E-Posta</label>
+                <div class="relative flex items-center">
+                    <span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">manage_search</span>
+                    <input class="w-full pl-10 pr-10 py-2 bg-surface-container-low text-on-surface placeholder:text-outline/70 rounded-xl text-body-md font-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" id="searchInput" placeholder="Örn: #ORD-2024 veya 'Selin Yılmaz'..." type="text" value="#ORD-2024" />
+                    <button class="absolute right-3 text-outline hover:text-on-surface" onclick="document.getElementById('searchInput').value=''">
+                        <span class="material-symbols-outlined text-[16px]">close</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Date Range Filter -->
+            <div class="lg:col-span-3">
+                <label class="block font-label-caps text-label-caps uppercase text-outline mb-1.5">Tarih Aralığı</label>
+                <div class="relative flex items-center">
+                    <span class="material-symbols-outlined absolute left-3.5 text-outline text-[18px]">calendar_month</span>
+                    <select class="w-full pl-10 pr-8 py-2 bg-surface-container-low text-on-surface rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary-container appearance-none cursor-pointer">
+                        <option>Son 7 Gün (18 - 25 Eki)</option>
+                        <option selected="">Bu Ay (Ekim 2024)</option>
+                        <option>Son 90 Günlük Çeyrek</option>
+                        <option>Özel Aralık (01.01.2024 - 31.12.2024)</option>
+                        <option>Tüm Zamanlar</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-3 text-outline text-[18px] pointer-events-none">expand_more</span>
+                </div>
+            </div>
+            <!-- City Dropdown -->
+            <div class="lg:col-span-2">
+                <label class="block font-label-caps text-label-caps uppercase text-outline mb-1.5">Şehir Filtresi</label>
+                <div class="relative flex items-center">
+                    <span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">location_on</span>
+                    <select class="w-full pl-9 pr-7 py-2 bg-surface-container-low text-on-surface rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary-container appearance-none cursor-pointer">
+                        <option selected="">Tüm Şehirler</option>
+                        <option>İstanbul (1.420.300)</option>
+                        <option>Ankara (682.110)</option>
+                        <option>İzmir (492.050)</option>
+                        <option>Bursa (240.180)</option>
+                        <option>Antalya (182.900)</option>
+                        <option>Gaziantep (98.420)</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-2.5 text-outline text-[18px] pointer-events-none">expand_more</span>
+                </div>
+            </div>
+            <!-- Status Filter Dropdown -->
+            <div class="lg:col-span-3">
+                <label class="block font-label-caps text-label-caps uppercase text-outline mb-1.5">Operasyon Durumu</label>
+                <div class="relative flex items-center">
+                    <span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">filter_list</span>
+                    <select class="w-full pl-9 pr-7 py-2 bg-surface-container-low text-on-surface rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary-container appearance-none cursor-pointer">
+                        <option selected="">Tüm Durumlar (Canlı)</option>
+                        <option>Tamamlandı (Mint)</option>
+                        <option>Kargoda (Pastel Mavi)</option>
+                        <option>Beklemede (Yumuşak Turuncu)</option>
+                        <option>İptal / İade Edildi (Lavanta)</option>
+                    </select>
+                    <span class="material-symbols-outlined absolute right-2.5 text-outline text-[18px] pointer-events-none">expand_more</span>
+                </div>
+            </div>
+        </div>
+        <!-- Second Row: Amount Range & Payment Method & Quick Badges -->
+        <div class="pt-space-xs flex flex-col xl:flex-row xl:items-center justify-between gap-space-md border-t border-surface-container-low">
+            <!-- Payment Mode Radio-style Pill Toggles -->
+            <div class="flex items-center gap-space-xs flex-wrap">
+                <span class="font-label-caps text-label-caps uppercase text-outline mr-2">Ödeme Türü:</span>
+                <button class="px-3 py-1.5 rounded-lg text-body-sm font-semibold bg-primary-fixed text-on-primary-fixed-variant shadow-xs">Tümü</button>
+                <button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">Kredi Kartı</button>
+                <button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">Havale / EFT</button>
+                <button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">Kapıda Ödeme</button>
+                <button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">B2B Cari</button>
+            </div>
+            <!-- Amount Range Indicator -->
+            <div class="flex items-center gap-space-md self-start xl:self-auto">
+                <div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-xl">
+                    <span class="font-label-caps text-label-caps uppercase text-outline">Tutar Aralığı:</span>
+                    <span class="font-data-table text-body-sm font-semibold text-on-surface">₺0 - ₺50.000+</span>
+                    <input class="w-24 accent-primary cursor-pointer h-1.5 bg-surface-container-highest rounded-lg" max="50000" min="0" type="range" value="42000" />
+                </div>
+            </div>
+        </div>
+        <!-- Active Filter Tags Bar -->
+        <div class="flex flex-wrap items-center gap-2 pt-1">
+            <span class="font-label-caps text-label-caps text-outline uppercase mr-1">Aktif Filtreler (3):</span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-caps text-label-caps">
+                Arama: "#ORD-2024"
+                <button class="hover:text-primary"><span class="material-symbols-outlined text-[14px]">close</span></button>
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps">
+                Tarih: "Ekim 2024"
+                <button class="hover:text-secondary"><span class="material-symbols-outlined text-[14px]">close</span></button>
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">
+                Tutar: "₺0 - ₺50.000"
+                <button class="hover:text-on-surface"><span class="material-symbols-outlined text-[14px]">close</span></button>
+            </span>
+            <button class="text-primary hover:underline font-title-sm text-body-sm ml-2">Tüm Filtreleri Temizle</button>
+        </div>
+    </div>
+</section>

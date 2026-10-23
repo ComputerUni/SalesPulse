@@ -7,17 +7,14 @@
 }
 
 <div class="flex flex-col w-full pb-2">
-    <!-- Top Ambient Glow (Subtle warm radiance) -->
     <div class="relative w-full">
         <div class="absolute -top-10 left-1/4 w-96 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute top-4 right-10 w-80 h-40 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
     </div>
-    <!-- Section 1: Executive Overview Header & Ribbon -->
     <div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-lg mb-space-xl mt-5">
         <div class="flex flex-col gap-1">
             <h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Genel Performans Özeti</h1>
         </div>
-        <!-- Filter Ribbon Toolbar -->
         <form method="get" id="filterForm" class="bg-surface-container-lowest shadow-sm rounded-xl p-space-xs flex flex-wrap items-center gap-space-xs">
             <input type="hidden" name="startDate" id="hiddenStartDate" value="@(Model?.StartDate?.ToString("yyyy-MM-dd"))" />
             <input type="hidden" name="endDate" id="hiddenEndDate" value="@(Model?.EndDate?.ToString("yyyy-MM-dd"))" />
@@ -50,24 +47,16 @@
 @await Component.InvokeAsync("_PanelDashboardKpiCards", new { startDate = Model?.StartDate, endDate = Model?.EndDate })
 
 <div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter mb-space-xl">
-
     @await Component.InvokeAsync("_PanelDashboardDualAxisTrendChart", new { startDate = Model?.StartDate, endDate = Model?.EndDate })
-
     @await Component.InvokeAsync("_PanelDashboardVisualDonutChart", new { startDate = Model?.StartDate, endDate = Model?.EndDate })
-
 </div>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter mb-space-xl">
-
     @await Component.InvokeAsync("_PanelDashboardCategoryPerformance", new { startDate = Model?.StartDate, endDate = Model?.EndDate })
-
     @await Component.InvokeAsync("_PanelDashboardRegionalDistribution", new { startDate = Model?.StartDate, endDate = Model?.EndDate })
-
 </div>
 
 <div id="top-selling-container">
-
     @await Component.InvokeAsync("_PanelDashboardTopSellingProducts")
-
 </div>
 
 

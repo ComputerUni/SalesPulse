@@ -1,24 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.webui\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|solutionrelative:salespulse.webui\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.webui\\views\\shared\\components\\_paneldashboardkpicards\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|solutionrelative:salespulse.webui\\views\\shared\\components\\_paneldashboardkpicards\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.webui\\views\\shared\\components\\_panellayoutsidebar\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|solutionrelative:salespulse.webui\\views\\shared\\components\\_panellayoutsidebar\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.webui\\views\\shared\\components\\_panellayouttopbar\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|solutionrelative:salespulse.webui\\views\\shared\\components\\_panellayouttopbar\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -26,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 627,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -43,63 +26,11 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelLayoutTopbar\\Default.cshtml",
-              "RelativeDocumentMoniker": "SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelLayoutTopbar\\Default.cshtml",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelLayoutTopbar\\Default.cshtml",
-              "RelativeToolTip": "SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelLayoutTopbar\\Default.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-23T13:36:36.474Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelLayoutSidebar\\Default.cshtml",
-              "RelativeDocumentMoniker": "SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelLayoutSidebar\\Default.cshtml",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelLayoutSidebar\\Default.cshtml",
-              "RelativeToolTip": "SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelLayoutSidebar\\Default.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-23T13:31:19.593Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelDashboardKpiCards\\Default.cshtml",
-              "RelativeDocumentMoniker": "SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelDashboardKpiCards\\Default.cshtml",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelDashboardKpiCards\\Default.cshtml",
-              "RelativeToolTip": "SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelDashboardKpiCards\\Default.cshtml",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAE8AAACEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-23T13:28:09.353Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\Dashboard\\Index.cshtml",
-              "RelativeDocumentMoniker": "SalesPulse.WebUI\\Views\\Dashboard\\Index.cshtml",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\Dashboard\\Index.cshtml",
-              "RelativeToolTip": "SalesPulse.WebUI\\Views\\Dashboard\\Index.cshtml",
-              "ViewState": "AgIAABcAAAAAAAAAAAAiwDEAAAB3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-23T11:39:34.849Z",
-              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 557,
+          "DockedWidth": 627,
           "SelectedChildIndex": -1,
           "Children": [
             {

@@ -35,6 +35,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/BURHAN/Desktop/Dapper-SalesPulse/SalesPulse/SalesPulse.WebUI/Views/Order/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/BURHAN/Desktop/Dapper-SalesPulse/SalesPulse/SalesPulse.WebUI/Views/Shared/Components/_PanelDashboardCategoryPerformance/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1BhbmVsRGFzaGJvYXJkQ2F0ZWdvcnlQZXJmb3JtYW5jZVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -69,6 +73,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/BURHAN/Desktop/Dapper-SalesPulse/SalesPulse/SalesPulse.WebUI/Views/Shared/Components/_PanelLayoutTopbar/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1BhbmVsTGF5b3V0VG9wYmFyXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BURHAN/Desktop/Dapper-SalesPulse/SalesPulse/SalesPulse.WebUI/Views/Shared/Components/_PanelOrderExplorerDetailDrawer/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1BhbmVsT3JkZXJFeHBsb3JlckRldGFpbERyYXdlclxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BURHAN/Desktop/Dapper-SalesPulse/SalesPulse/SalesPulse.WebUI/Views/Shared/Components/_PanelOrderExplorerFilterRibbon/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1BhbmVsT3JkZXJFeHBsb3JlckZpbHRlclJpYmJvblxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BURHAN/Desktop/Dapper-SalesPulse/SalesPulse/SalesPulse.WebUI/Views/Shared/Components/_PanelOrderExplorerMetricCards/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1BhbmVsT3JkZXJFeHBsb3Jlck1ldHJpY0NhcmRzXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/BURHAN/Desktop/Dapper-SalesPulse/SalesPulse/SalesPulse.WebUI/Views/Shared/Components/_PanelOrderExplorerTable/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX1BhbmVsT3JkZXJFeHBsb3JlclRhYmxlXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/BURHAN/Desktop/Dapper-SalesPulse/SalesPulse/SalesPulse.WebUI/Views/Shared/Error.cshtml]
