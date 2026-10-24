@@ -1,128 +1,130 @@
-﻿<div class="col-span-12 xl:col-span-12 2xl:col-span-12 flex flex-col transition-all duration-300" id="orderDrawer">
-    <div class="bg-surface-container-lowest rounded-2xl shadow-md p-space-lg flex flex-col gap-space-lg sticky top-20">
-        <!-- Panel Header -->
-        <div class="flex items-start justify-between pb-space-sm border-b border-surface-container-low">
-            <div class="flex flex-col">
-                <div class="flex items-center gap-2">
-                    <span class="font-data-table text-data-metric font-bold text-on-surface tracking-tight" id="drawerOrderId">#ORD-2024-98412</span>
-                    <span class="inline-flex items-center gap-1 font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-[#D5F5E3] text-[#145A32] font-semibold">
-                        Tamamlandı
-                    </span>
-                </div>
-                <span class="font-body-sm text-body-sm text-outline mt-0.5">Sipariş Oluşturulma: 24 Eki 2024, 14:32</span>
-            </div>
-            <div class="flex items-center gap-1">
-                <button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Fatura İndir">
-                    <span class="material-symbols-outlined text-[18px]">download</span>
-                </button>
-                <button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-low transition-colors" onclick="closeDrawer()" title="Pencereyi Kapat">
-                    <span class="material-symbols-outlined text-[20px]">close</span>
-                </button>
-            </div>
-        </div>
-        <!-- Customer Snapshot & Shipping Tag -->
-        <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
-            <div class="flex items-center justify-between">
-                <span class="font-label-caps text-label-caps uppercase text-outline">Müşteri &amp; Kargo Künyesi</span>
-                <span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant">B2C Bireysel</span>
-            </div>
-            <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-[#FFD8BF] text-[#802900] font-headline-md text-headline-md flex items-center justify-center font-bold">
-                    SY
-                </div>
+﻿@using SalesPulse.Core.DTOs.OrderExplorerDtos
+@model OrderExplorerDetailItemDto
+
+<div class="col-span-12 xl:col-span-4 2xl:col-span-4 flex flex-col transition-all duration-300" id="orderDrawer">
+    @if (Model != null)
+    {
+        var orderCode = Model.OrderCode;
+        var initials = $"{(!string.IsNullOrEmpty(Model.CustomerName) ? Model.CustomerName[0].ToString() : "")}{(!string.IsNullOrEmpty(Model.CustomerSurname) ? Model.CustomerSurname[0].ToString() : "")}".ToUpper();
+
+        <div class="bg-surface-container-lowest rounded-2xl shadow-md p-space-lg flex flex-col gap-space-lg sticky top-20">
+            <div class="flex items-start justify-between pb-space-sm border-b border-surface-container-low">
                 <div class="flex flex-col">
-                    <span class="font-title-sm text-body-md font-bold text-on-surface">Selin Yılmaz</span>
-                    <span class="font-body-sm text-body-sm text-on-surface-variant">selin.yilmaz@enterprise.com • +90 (532) 412 88 19</span>
+                    <div class="flex items-center gap-2">
+                        <span class="font-data-table text-data-metric font-bold text-on-surface tracking-tight" id="drawerOrderId">@orderCode</span>
+                        <span class="inline-flex items-center gap-1 font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-[#D5F5E3] text-[#145A32] font-semibold">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#27AE60]"></span>
+                            Onaylandı
+                        </span>
+                    </div>
+                    <span class="font-body-sm text-body-sm text-outline mt-0.5">Sipariş Tarihi: @Model.CreatedAt.ToString("dd MMM yyyy, HH:mm")</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Fatura İndir">
+                        <span class="material-symbols-outlined text-[18px]">download</span>
+                    </button>
+                    <button class="p-1.5 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-low transition-colors" onclick="closeDrawer()" title="Pencereyi Kapat">
+                        <span class="material-symbols-outlined text-[20px]">close</span>
+                    </button>
                 </div>
             </div>
-            <!-- Shipping Route Details -->
-            <div class="mt-1 pt-2 border-t border-surface-container-high/60 flex flex-col gap-1 text-body-sm">
-                <div class="flex items-start gap-2">
-                    <span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">location_on</span>
-                    <span class="text-on-surface-variant font-body-sm">
-                        Caferağa Mah. Moda Cad. No: 42 D: 8, Kadıköy / İstanbul
+
+            <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm">
+                <div class="flex items-center justify-between">
+                    <span class="font-label-caps text-label-caps uppercase text-outline">Müşteri &amp; Teslimat Bilgisi</span>
+                    <span class="font-label-caps text-label-caps px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-semibold">
+                        @Model.PaymentMethod
                     </span>
                 </div>
-                <div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-lowest px-2.5 py-1.5 rounded-lg">
-                    <div class="flex items-center gap-1.5">
-                        <span class="material-symbols-outlined text-[16px] text-secondary">local_shipping</span>
-                        <span class="font-body-sm text-body-sm font-semibold text-on-surface">Yurtiçi Kargo:</span>
-                        <span class="font-data-table text-body-sm text-secondary font-semibold">#948192831</span>
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#FFD8BF] text-[#802900] font-headline-md text-headline-md flex items-center justify-center font-bold shrink-0">
+                        @initials
                     </div>
-                    <button class="text-secondary font-title-sm text-body-sm hover:underline" onclick="triggerNotification('Kargo takip sayfasına yönlendiriliyorsunuz')">Sorgula</button>
+                    <div class="flex flex-col min-w-0">
+                        <span class="font-title-sm text-body-md font-bold text-on-surface truncate">@Model.CustomerName @Model.CustomerSurname</span>
+                        <span class="font-body-sm text-body-sm text-on-surface-variant truncate">@Model.CustomerEmail</span>
+                    </div>
+                </div>
+
+                <div class="mt-1 pt-2 border-t border-surface-container-high/60 flex flex-col gap-1 text-body-sm">
+                    <div class="flex items-start gap-2">
+                        <span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">location_on</span>
+                        <span class="text-on-surface-variant font-body-sm">
+                            Teslimat Şehri: <strong class="text-on-surface">@Model.City</strong>
+                        </span>
+                    </div>
+                    <div class="flex items-center justify-between mt-1 pt-1 bg-surface-container-lowest px-2.5 py-1.5 rounded-lg">
+                        <div class="flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[16px] text-secondary">payments</span>
+                            <span class="font-body-sm text-body-sm font-semibold text-on-surface">Ödeme Türü:</span>
+                            <span class="font-data-table text-body-sm text-secondary font-semibold">@Model.PaymentMethod</span>
+                        </div>
+                        <span class="text-outline text-[11px] font-label-caps uppercase">Doğrulandı</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="flex items-center justify-between mb-space-xs">
+                    <span class="font-label-caps text-label-caps uppercase text-outline">Sepet İçeriği (@(Model.OrderItems?.Count ?? 0) Kalem)</span>
+                    <span class="font-body-sm text-body-sm text-outline">Hızlı Gönderim</span>
+                </div>
+                <div class="divide-y divide-surface-container-low max-h-56 overflow-y-auto pr-1">
+                    @if (Model.OrderItems != null && Model.OrderItems.Any())
+                    {
+                        @foreach (var item in Model.OrderItems)
+                        {
+                            <div class="py-2.5 flex items-center justify-between gap-2">
+                                <div class="flex items-center gap-2.5 min-w-0">
+                                    <div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 border border-surface-container-high/40">
+                                        <span class="material-symbols-outlined text-outline text-[20px]">inventory_2</span>
+                                    </div>
+                                    <div class="flex flex-col min-w-0">
+                                        <span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">@item.ProductName</span>
+                                        <span class="font-data-table text-outline text-[11px]">@item.Quantity Adet x ₺@item.UnitPrice.ToString("N2")</span>
+                                    </div>
+                                </div>
+                                <span class="font-data-table text-body-sm font-semibold text-on-surface shrink-0">₺@item.LineTotal.ToString("N2")</span>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <div class="py-4 text-center text-outline text-body-sm">
+                            Bu siparişe ait ürün kalemi bulunamadı.
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="p-space-md rounded-xl bg-surface-container-lowest border-0 shadow-inner bg-surface-container-low/30 flex flex-col gap-1.5 font-body-sm">
+                <div class="flex justify-between text-on-surface-variant">
+                    <span>Ara Toplam</span>
+                    <span class="font-data-table font-semibold">₺@Model.TotalAmount.ToString("N2")</span>
+                </div>
+                <div class="flex justify-between text-on-surface-variant">
+                    <span>Kargo &amp; Lojistik</span>
+                    <span class="font-data-table text-[#145A32] font-semibold">ÜCRETSİZ</span>
+                </div>
+                <div class="pt-2 mt-1 border-t border-surface-container-high flex justify-between items-baseline">
+                    <span class="font-title-sm text-body-md font-bold text-on-surface">Genel Toplam:</span>
+                    <span class="font-data-metric text-headline-md font-bold text-primary">₺@Model.TotalAmount.ToString("N2")</span>
                 </div>
             </div>
         </div>
-        <!-- Ordered Products List -->
-        <div class="flex flex-col">
-            <div class="flex items-center justify-between mb-space-xs">
-                <span class="font-label-caps text-label-caps uppercase text-outline">Sepet İçeriği (3 Kalem)</span>
-                <span class="font-body-sm text-body-sm text-outline">Depo: Tuzla-A2</span>
+    }
+    else
+    {
+        <div class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-xl flex flex-col items-center justify-center text-center gap-3 min-h-[360px] border border-dashed border-surface-container-high">
+            <div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-outline">
+                <span class="material-symbols-outlined text-[26px]">touch_app</span>
             </div>
-            <div class="divide-y divide-surface-container-low max-h-56 overflow-y-auto pr-1">
-                <!-- Product Item 1 -->
-                <div class="py-2.5 flex items-center justify-between gap-2">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 overflow-hidden">
-                            <img class="w-full h-full object-cover" data-alt="A clean top-down product photography of sleek wireless ergonomic noise cancelling headphones resting on a warm wooden studio surface with subtle warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-fZtStQo-gtU96CQwD0-mxKUSK5-Jz3UiXURKFn0F2ahDtctZNG5jmGpiZsWvQif7xAwCEUG783ucqo9hXuyplEZCV9hI3h3D8639JwBRdiYaZI9Q94hNYHiGvtqMAmMucXReUUg0ZTsHG1UmFb9KAEyzL9kr8E3hNQERqzij3cXpWJBowh0K_Z7W4y5474WmQGTTRbHNNFMAQduw0aK2STjWqAqYDs7yj06yFkbVgPoRRRx3NYgNPQ" />
-                        </div>
-                        <div class="flex flex-col min-w-0">
-                            <span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Vanguard Wireless Headset Pro</span>
-                            <span class="font-data-table text-outline text-[11px]">SKU: VAN-8491-BLK • 1 Adet</span>
-                        </div>
-                    </div>
-                    <span class="font-data-table text-body-sm font-semibold text-on-surface shrink-0">₺2.450,00</span>
-                </div>
-                <!-- Product Item 2 -->
-                <div class="py-2.5 flex items-center justify-between gap-2">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 overflow-hidden">
-                            <img class="w-full h-full object-cover" data-alt="Studio shot of a minimalist matte anodized aluminum laptop cooling stand with warm accent edge reflections on a soft grey gradient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP99bO14-KhJZiR3_AcRPKHLlw_dijbhdO_dUlk53cHMXrppQCjL7Gsy-WruDoyN45qJ-88fhpvlrQnlpts6yZvauAMU6X-5MhVjfaV3KVY2_PLW2vWWE1bdBBOElHQdEpPVi8zaNsUy3L_91_BBXL3-ia8Wirxmj-OI5Hpv7dli8YDjCOy8FBsp-Wunn-yzXRAob6XIYJJgxkhhHne7Yq462NPQkXCnIOUTVyIQgMwFtZG8oyTmnZIg" />
-                        </div>
-                        <div class="flex flex-col min-w-0">
-                            <span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Ergonomik Laptop Standı (Alüminyum)</span>
-                            <span class="font-data-table text-outline text-[11px]">SKU: ACC-3312-SLV • 1 Adet</span>
-                        </div>
-                    </div>
-                    <span class="font-data-table text-body-sm font-semibold text-on-surface shrink-0">₺1.850,00</span>
-                </div>
-                <!-- Product Item 3 -->
-                <div class="py-2.5 flex items-center justify-between gap-2">
-                    <div class="flex items-center gap-2.5 min-w-0">
-                        <div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 overflow-hidden">
-                            <img class="w-full h-full object-cover" data-alt="Close up product view of a premium braided orange fast charging USB-C cable neatly coiled with brushed metallic connectors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQEKBnblH-FiDTEinjzAbciXa-yLkUvg_c1C9qEA6YHy6dcnme8A20mggq0y1KHVff66oB3nxm4yh1Wvd0y1PQ82Txo_st-1Zstd0AK4nfh1uGBZ6R-e0TUB1ZTEa1Dv5u29aaCRF4cLUhsDmso7UeyO1zDsm8YhIic5EoLqfY9FcKAcF5tvQJvnDJz3IkxNiiDUVGZiDUDfEwBEzfAavvgMdgQJyFrdadCPE3enRYoOvU6ee3zvBhaQ" />
-                        </div>
-                        <div class="flex flex-col min-w-0">
-                            <span class="font-title-sm text-body-sm font-semibold text-on-surface truncate">Ultra-Hızlı Örgü Type-C Kablo 2m</span>
-                            <span class="font-data-table text-outline text-[11px]">SKU: CAB-0091-ORG • 1 Adet</span>
-                        </div>
-                    </div>
-                    <span class="font-data-table text-body-sm font-semibold text-on-surface shrink-0">₺550,00</span>
-                </div>
+            <div class="flex flex-col">
+                <span class="font-title-sm text-body-md font-semibold text-on-surface">Sipariş Seçilmedi</span>
+                <span class="font-body-sm text-body-sm text-outline max-w-xs mt-1">
+                    Detaylarını, müşteri künyesini ve sepet kalemlerini incelemek için soldaki tablodan bir siparişe tıklayın.
+                </span>
             </div>
         </div>
-        <!-- Invoice Breakdown Card -->
-        <div class="p-space-md rounded-xl bg-surface-container-lowest border-0 shadow-inner bg-surface-container-low/30 flex flex-col gap-1.5 font-body-sm">
-            <div class="flex justify-between text-on-surface-variant">
-                <span>Ara Toplam</span>
-                <span class="font-data-table font-semibold">₺4.850,00</span>
-            </div>
-            <div class="flex justify-between text-on-surface-variant">
-                <span>KDV (%20 Dahil)</span>
-                <span class="font-data-table">₺808,33</span>
-            </div>
-            <div class="flex justify-between text-on-surface-variant">
-                <span>Kargo &amp; Lojistik</span>
-                <span class="font-data-table text-[#145A32] font-semibold">ÜCRETSİZ</span>
-            </div>
-            <div class="flex justify-between text-on-surface-variant">
-                <span>Kupon İndirimi (GÜZ20)</span>
-                <span class="font-data-table text-primary">-₺0,00</span>
-            </div>
-            <div class="pt-2 mt-1 border-t border-surface-container-high flex justify-between items-baseline">
-                <span class="font-title-sm text-body-md font-bold text-on-surface">Genel Toplam:</span>
-                <span class="font-data-metric text-headline-md font-bold text-primary">₺4.850,00</span>
-            </div>
-        </div>
-    </div>
+    }
 </div>

@@ -11,5 +11,6 @@ namespace SalesPulse.Business.Services.OrderExplorers
     public interface IOrderExplorerService
     {
         Task<PagedResult<OrderExplorerListItemDto>> OrderExplorerListItemAsync(OrderExplorerFilterDto filter);
+        Task<OrderExplorerDetailItemDto> GetOrderDetailItemAsync(string orderCode);
     }
 }

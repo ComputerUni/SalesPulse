@@ -29,11 +29,9 @@
     <!-- Metric Strip Highlight (Micro Contextual Ribbon) -->
     @await Component.InvokeAsync("_PanelOrderExplorerMetricCards")
     <!-- Main Split Canvas: Orders Table + Preview Drawer/Panel -->
-    <div class="grid grid-cols-12 gap-space-lg items-start">
-        <!-- Right Side: Interactive Order Detail Panel (Pre-selected #ORD-2024-98412) -->
-        @await Component.InvokeAsync("_PanelOrderExplorerDetailDrawer")
-        <!-- Table Column (Expanded or Fluid) -->
+    <div class="grid grid-cols-12 gap-6 items-start">
         @await Component.InvokeAsync("_PanelOrderExplorerTable")
+        @await Component.InvokeAsync("_PanelOrderExplorerDetailDrawer")
     </div>
     <!-- Dynamic Notification Toast Container (Script Supported) -->
     <div class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-inverse-surface text-inverse-on-surface px-space-lg py-3 rounded-xl shadow-xl flex items-center gap-3" id="toastNotification">
@@ -43,13 +41,14 @@
 </div>
 <script>
     function openDrawer(orderId) {
-        const drawer = document.getElementById('orderDrawer');
-        const drawerOrderId = document.getElementById('drawerOrderId');
-        if (drawer && drawerOrderId) {
-            drawerOrderId.innerText = orderId;
-            drawer.classList.remove('hidden');
-            triggerNotification(orderId + " sipariş detayı görüntülendi.");
-        }
+        if (!orderId) return;
+
+        const cleanCode = orderId.replace(/^#+/, '');
+
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.set('orderCode', cleanCode);
+
+        window.location.search = urlParams.toString();
     }
 
     function closeDrawer() {
