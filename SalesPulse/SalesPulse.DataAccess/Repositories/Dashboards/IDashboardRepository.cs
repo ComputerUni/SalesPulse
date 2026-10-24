@@ -13,4 +13,3 @@ namespace SalesPulse.DataAccess.Repositories.Dashboards
         Task<DashboardOrderStatusDistributionDto> MonthlyOrderStatusDistributionAsync(DateTime? startDate, DateTime? endDate);
     }
 }
-//Teslim Edildi, Beklemede, İptal Edildi, Kargoda, İade Edildi bu durumlar var

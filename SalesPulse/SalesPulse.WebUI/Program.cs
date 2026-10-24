@@ -3,6 +3,7 @@ using SalesPulse.Business.Services.Cities;
 using SalesPulse.Business.Services.Customers;
 using SalesPulse.Business.Services.Dashboards;
 using SalesPulse.Business.Services.OrderDetails;
+using SalesPulse.Business.Services.OrderExplorers;
 using SalesPulse.Business.Services.Orders;
 using SalesPulse.Business.Services.Payments;
 using SalesPulse.Business.Services.Products;
@@ -12,6 +13,7 @@ using SalesPulse.DataAccess.Repositories.Cities;
 using SalesPulse.DataAccess.Repositories.Customers;
 using SalesPulse.DataAccess.Repositories.Dashboards;
 using SalesPulse.DataAccess.Repositories.OrderDetails;
+using SalesPulse.DataAccess.Repositories.OrderExplorers;
 using SalesPulse.DataAccess.Repositories.Orders;
 using SalesPulse.DataAccess.Repositories.Payments;
 using SalesPulse.DataAccess.Repositories.Products;
@@ -45,6 +47,9 @@ builder.Services.AddScoped<IProductService, ProductService>();
 
 builder.Services.AddScoped<IDashboardRepository, DashboardRepository>();
 builder.Services.AddScoped<IDashboardService, DashboardService>();
+
+builder.Services.AddScoped<IOrderExplorerRepository, OrderExplorerRepository>();
+builder.Services.AddScoped<IOrderExplorerService, OrderExplorerService>();
 
 
 builder.Services.AddControllersWithViews();

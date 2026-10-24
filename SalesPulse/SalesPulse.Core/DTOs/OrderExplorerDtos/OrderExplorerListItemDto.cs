@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SalesPulse.Core.DTOs.OrderExplorerDtos
+{
+    public class OrderExplorerListItemDto
+    {
+        public int Id { get; set; }
+        public string OrderCode { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string ImageUrl { get; set; }
+        public string City { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public decimal TotalAmount { get; set; }
+        public string PaymentMethod { get; set; }
+        public string Status { get; set; }
+    }
+}
