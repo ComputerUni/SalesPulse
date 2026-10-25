@@ -12,5 +12,6 @@ namespace SalesPulse.DataAccess.Repositories.OrderExplorers
     {
         Task<PagedResult<OrderExplorerListItemDto>> OrderExplorerListItemAsync(OrderExplorerFilterDto filter);
         Task <OrderExplorerDetailItemDto> GetOrderDetailItemAsync(string orderCode);
+        Task<OrderExplorerKpiDto> OrderExplorerKpiCardsAsync(OrderExplorerFilterDto filter);
     }
 }

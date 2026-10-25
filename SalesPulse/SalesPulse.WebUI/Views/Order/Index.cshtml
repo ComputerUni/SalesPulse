@@ -24,9 +24,9 @@
         </div>
     </div>
     <!-- Comprehensive Filter Ribbon (Level 1 Surface) -->
+    @await Component.InvokeAsync("_PanelOrderExplorerMetricCards", new { filter = Model })
     @await Component.InvokeAsync("_PanelOrderExplorerFilterRibbon", new { filter = Model })
     <!-- Metric Strip Highlight (Micro Contextual Ribbon) -->
-    @await Component.InvokeAsync("_PanelOrderExplorerMetricCards")
     <!-- Main Split Canvas: Orders Table + Preview Drawer/Panel -->
     <div class="grid grid-cols-12 gap-6 items-start">
         @await Component.InvokeAsync("_PanelOrderExplorerTable", new { filter = Model })

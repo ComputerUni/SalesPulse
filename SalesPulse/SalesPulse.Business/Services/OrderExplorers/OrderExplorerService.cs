@@ -16,6 +16,11 @@ namespace SalesPulse.Business.Services.OrderExplorers
             return await _orderExplorerRepository.GetOrderDetailItemAsync(orderCode);
         }
 
+        public async Task<OrderExplorerKpiDto> OrderExplorerKpiCardsAsync(OrderExplorerFilterDto filter)
+        {
+            return await _orderExplorerRepository.OrderExplorerKpiCardsAsync(filter);
+        }
+
         public async Task<PagedResult<OrderExplorerListItemDto>> OrderExplorerListItemAsync(OrderExplorerFilterDto filter)
         {
             return await _orderExplorerRepository.OrderExplorerListItemAsync(filter);

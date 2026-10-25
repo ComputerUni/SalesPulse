@@ -1,35 +1,49 @@
-﻿<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md mb-space-lg">
+﻿@using SalesPulse.Core.DTOs.OrderExplorerDtos
+@model OrderExplorerKpiDto
+
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md mb-space-lg">
     <div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex items-center justify-between">
         <div>
             <span class="font-label-caps text-label-caps uppercase text-outline">Filtrelenen Sipariş</span>
-            <div class="font-data-metric text-headline-md font-bold text-on-surface mt-0.5">3.421.800</div>
+            <div class="font-data-metric text-headline-md font-bold text-on-surface mt-0.5">
+                @Model.TotalCount.ToString("N0")
+            </div>
         </div>
         <div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed-variant">
             <span class="material-symbols-outlined text-[20px]">receipt_long</span>
         </div>
     </div>
+
     <div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex items-center justify-between">
         <div>
             <span class="font-label-caps text-label-caps uppercase text-outline">Toplam Net Hacim</span>
-            <div class="font-data-metric text-headline-md font-bold text-on-surface mt-0.5">₺184.250.400</div>
+            <div class="font-data-metric text-headline-md font-bold text-on-surface mt-0.5">
+                ₺@Model.TotalAmount.ToString("N0")
+            </div>
         </div>
         <div class="w-10 h-10 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
             <span class="material-symbols-outlined text-[20px]">payments</span>
         </div>
     </div>
+
     <div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex items-center justify-between">
         <div>
             <span class="font-label-caps text-label-caps uppercase text-outline">Ort. Sepet Tutarı</span>
-            <div class="font-data-metric text-headline-md font-bold text-on-surface mt-0.5">₺2.485,60</div>
+            <div class="font-data-metric text-headline-md font-bold text-on-surface mt-0.5">
+                ₺@Model.AverageOrderAmount.ToString("N2")
+            </div>
         </div>
         <div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
             <span class="material-symbols-outlined text-[20px]">shopping_cart_checkout</span>
         </div>
     </div>
+
     <div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex items-center justify-between">
         <div>
             <span class="font-label-caps text-label-caps uppercase text-outline">Teslimat Başarısı</span>
-            <div class="font-data-metric text-headline-md font-bold text-[#1e6f43] mt-0.5">%98.4</div>
+            <div class="font-data-metric text-headline-md font-bold text-[#1e6f43] mt-0.5">
+                %@Model.DeliverySuccessRate.ToString("F1")
+            </div>
         </div>
         <div class="w-10 h-10 rounded-xl bg-[#E6F9F0] flex items-center justify-center text-[#1e6f43]">
             <span class="material-symbols-outlined text-[20px]">verified</span>
