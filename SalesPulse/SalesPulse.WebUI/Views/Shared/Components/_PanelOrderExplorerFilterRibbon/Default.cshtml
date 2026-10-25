@@ -1,108 +1,316 @@
-﻿<section class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-lg mb-space-lg relative overflow-hidden">
-    <!-- Soft Decorative Glow -->
+﻿@using SalesPulse.Core.DTOs.OrderExplorerDtos
+@model OrderExplorerFilterDto
+
+@{
+    var hasSearch = !string.IsNullOrWhiteSpace(Model.SearchTerm);
+    var hasCity = Model.CityId.HasValue && Model.CityId > 0;
+    var hasStatus = !string.IsNullOrWhiteSpace(Model.Status);
+    var hasPayment = !string.IsNullOrWhiteSpace(Model.PaymentMethod);
+    var hasPrice = Model.MinAmount.HasValue || Model.MaxAmount.HasValue;
+    var hasDate = Model.StartDate.HasValue || Model.EndDate.HasValue;
+
+    var activeFilterCount = (hasSearch ? 1 : 0) + (hasCity ? 1 : 0) + (hasStatus ? 1 : 0) +
+                            (hasPayment ? 1 : 0) + (hasPrice ? 1 : 0) + (hasDate ? 1 : 0);
+
+
+    var cities = new Dictionary<int, string>
+    {
+        { 1, "Adana" }, { 2, "Adıyaman" }, { 3, "Afyonkarahisar" }, { 4, "Ağrı" }, { 5, "Amasya" },
+        { 6, "Ankara" }, { 7, "Antalya" }, { 8, "Artvin" }, { 9, "Aydın" }, { 10, "Balıkesir" },
+        { 11, "Bilecik" }, { 12, "Bingöl" }, { 13, "Bitlis" }, { 14, "Bolu" }, { 15, "Burdur" },
+        { 16, "Bursa" }, { 17, "Çanakkale" }, { 18, "Çankırı" }, { 19, "Çorum" }, { 20, "Denizli" },
+        { 21, "Diyarbakır" }, { 22, "Edirne" }, { 23, "Elazığ" }, { 24, "Erzincan" }, { 25, "Erzurum" },
+        { 26, "Eskişehir" }, { 27, "Gaziantep" }, { 28, "Giresun" }, { 29, "Gümüşhane" }, { 30, "Hakkari" },
+        { 31, "Hatay" }, { 32, "Isparta" }, { 33, "Mersin" }, { 34, "İstanbul" }, { 35, "İzmir" },
+        { 36, "Kars" }, { 37, "Kastamonu" }, { 38, "Kayseri" }, { 39, "Kırklareli" }, { 40, "Kırşehir" },
+        { 41, "Kocaeli" }, { 42, "Konya" }, { 43, "Kütahya" }, { 44, "Malatya" }, { 45, "Manisa" },
+        { 46, "Kahramanmaraş" }, { 47, "Mardin" }, { 48, "Muğla" }, { 49, "Muş" }, { 50, "Nevşehir" },
+        { 51, "Niğde" }, { 52, "Ordu" }, { 53, "Rize" }, { 54, "Sakarya" }, { 55, "Samsun" },
+        { 56, "Siirt" }, { 57, "Sinop" }, { 58, "Sivas" }, { 59, "Tekirdağ" }, { 60, "Tokat" },
+        { 61, "Trabzon" }, { 62, "Tunceli" }, { 63, "Şanlıurfa" }, { 64, "Uşak" }, { 65, "Van" },
+        { 66, "Yozgat" }, { 67, "Zonguldak" }, { 68, "Aksaray" }, { 69, "Bayburt" }, { 70, "Karaman" },
+        { 71, "Kırıkkale" }, { 72, "Batman" }, { 73, "Şırnak" }, { 74, "Bartın" }, { 75, "Ardahan" },
+        { 76, "Iğdır" }, { 77, "Yalova" }, { 78, "Karabük" }, { 79, "Kilis" }, { 80, "Osmaniye" },
+        { 81, "Düzce" }
+    };
+
+    var paymentMethods = new[] { "Kredi Kartı", "Banka Kartı", "Havale EFT", "Kapıda Ödeme", "Nakit" };
+    var statuses = new[] { "Teslim Edildi", "Kargoda", "Beklemede", "İptal Edildi" };
+}
+
+<form id="orderFilterRibbonForm" method="get" action="/Order/Index" class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-lg mb-space-lg relative overflow-hidden">
+    <input type="hidden" name="page" value="1" />
+    <input type="hidden" name="pageSize" value="@Model.PageSize" />
+
+    <input type="hidden" name="paymentMethod" id="inputPaymentMethod" value="@Model.PaymentMethod" />
+    <input type="hidden" name="minAmount" id="inputMinAmount" value="@Model.MinAmount" />
+    <input type="hidden" name="maxAmount" id="inputMaxAmount" value="@Model.MaxAmount" />
+    <input type="hidden" name="startDate" id="inputStartDate" value="@Model.StartDate?.ToString("yyyy-MM-dd")" />
+    <input type="hidden" name="endDate" id="inputEndDate" value="@Model.EndDate?.ToString("yyyy-MM-dd")" />
+
     <div class="absolute -right-16 -top-16 w-64 h-64 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute left-1/3 -bottom-12 w-48 h-48 bg-secondary-fixed/20 rounded-full blur-2xl pointer-events-none"></div>
+
     <div class="relative z-10 flex flex-col gap-space-md">
-        <!-- Search & Primary Dropdowns Row -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-md">
-            <!-- Live Search Field -->
             <div class="lg:col-span-4 relative">
                 <label class="block font-label-caps text-label-caps uppercase text-outline mb-1.5">Sipariş No / Müşteri / E-Posta</label>
                 <div class="relative flex items-center">
                     <span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">manage_search</span>
-                    <input class="w-full pl-10 pr-10 py-2 bg-surface-container-low text-on-surface placeholder:text-outline/70 rounded-xl text-body-md font-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all" id="searchInput" placeholder="Örn: #ORD-2024 veya 'Selin Yılmaz'..." type="text" />
-                    <button class="absolute right-3 text-outline hover:text-on-surface" onclick="document.getElementById('searchInput').value=''">
-                        <span class="material-symbols-outlined text-[16px]">close</span>
-                    </button>
+                    <input name="searchTerm"
+                           id="searchInput"
+                           value="@Model.SearchTerm"
+                           class="w-full pl-10 pr-10 py-2 bg-surface-container-low text-on-surface placeholder:text-outline/70 rounded-xl text-body-md font-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container transition-all"
+                           placeholder="Örn: ORD-2026 veya 'Tolga'..."
+                           type="text" />
+                    @if (hasSearch)
+                    {
+                        <button type="button" class="absolute right-3 text-outline hover:text-on-surface" onclick="clearField('searchInput')">
+                            <span class="material-symbols-outlined text-[16px]">close</span>
+                        </button>
+                    }
                 </div>
             </div>
-            <!-- Date Range Filter -->
+
             <div class="lg:col-span-3">
                 <label class="block font-label-caps text-label-caps uppercase text-outline mb-1.5">Tarih Aralığı</label>
                 <div class="relative flex items-center">
                     <span class="material-symbols-outlined absolute left-3.5 text-outline text-[18px]">calendar_month</span>
-                    <select class="w-full pl-10 pr-8 py-2 bg-surface-container-low text-on-surface rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary-container appearance-none cursor-pointer">
-                        <option>Son 7 Gün (18 - 25 Eki)</option>
-                        <option selected="">Bu Ay (Ekim 2024)</option>
-                        <option>Son 90 Günlük Çeyrek</option>
-                        <option>Özel Aralık (01.01.2024 - 31.12.2024)</option>
-                        <option>Tüm Zamanlar</option>
+                    <select id="dateRangeSelect" onchange="applyDatePreset(this.value)" class="w-full pl-10 pr-8 py-2 bg-surface-container-low text-on-surface rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary-container appearance-none cursor-pointer">
+                        <!option value="" @(!hasDate ? "selected" : "")>Tüm Zamanlar</!option>
+                        <!option value="last7days">Son 7 Gün</!option>
+                        <!option value="thisMonth">Bu Ay (Ekim 2026)</!option>
+                        <!option value="last90days">Son 90 Gün</!option>
                     </select>
                     <span class="material-symbols-outlined absolute right-3 text-outline text-[18px] pointer-events-none">expand_more</span>
                 </div>
             </div>
-            <!-- City Dropdown -->
+
             <div class="lg:col-span-2">
                 <label class="block font-label-caps text-label-caps uppercase text-outline mb-1.5">Şehir Filtresi</label>
                 <div class="relative flex items-center">
                     <span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">location_on</span>
-                    <select class="w-full pl-9 pr-7 py-2 bg-surface-container-low text-on-surface rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary-container appearance-none cursor-pointer">
-                        <option selected="">Tüm Şehirler</option>
-                        <option>İstanbul (1.420.300)</option>
-                        <option>Ankara (682.110)</option>
-                        <option>İzmir (492.050)</option>
-                        <option>Bursa (240.180)</option>
-                        <option>Antalya (182.900)</option>
-                        <option>Gaziantep (98.420)</option>
+                    <select name="cityId" onchange="submitFilterForm()" class="w-full pl-9 pr-7 py-2 bg-surface-container-low text-on-surface rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary-container appearance-none cursor-pointer">
+                        <!option value="" @(!hasCity ? "selected" : "")>Tüm Şehirler (81 İl)</!option>
+                        @foreach (var city in cities.OrderBy(x => x.Value, StringComparer.Create(new System.Globalization.CultureInfo("tr-TR"), true)))
+                        {
+                            <!option value="@city.Key" @(Model.CityId == city.Key ? "selected" : "")>@city.Value</!option>
+                        }
                     </select>
                     <span class="material-symbols-outlined absolute right-2.5 text-outline text-[18px] pointer-events-none">expand_more</span>
                 </div>
             </div>
-            <!-- Status Filter Dropdown -->
+
             <div class="lg:col-span-3">
                 <label class="block font-label-caps text-label-caps uppercase text-outline mb-1.5">Operasyon Durumu</label>
                 <div class="relative flex items-center">
                     <span class="material-symbols-outlined absolute left-3 text-outline text-[18px]">filter_list</span>
-                    <select class="w-full pl-9 pr-7 py-2 bg-surface-container-low text-on-surface rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary-container appearance-none cursor-pointer">
-                        <option selected="">Tüm Durumlar (Canlı)</option>
-                        <option>Teslim Edildi</option>
-                        <option>Kargoda</option>
-                        <option>İptal Edildi</option>
-                        <option>Beklemede</option>
-                        <option>İade Edildi</option>
+                    <select name="status" onchange="submitFilterForm()" class="w-full pl-9 pr-7 py-2 bg-surface-container-low text-on-surface rounded-xl text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary-container appearance-none cursor-pointer">
+                        <!option value="" @(!hasStatus ? "selected" : "")>Tüm Durumlar (Canlı)</!option>
+                        @foreach (var st in statuses)
+                        {
+                            <!option value="@st" @(Model.Status == st ? "selected" : "")>@st</!option>
+                        }
                     </select>
                     <span class="material-symbols-outlined absolute right-2.5 text-outline text-[18px] pointer-events-none">expand_more</span>
                 </div>
             </div>
         </div>
-        <!-- Second Row: Amount Range & Payment Method & Quick Badges -->
+
         <div class="pt-space-xs flex flex-col xl:flex-row xl:items-center justify-between gap-space-md border-t border-surface-container-low">
-            <!-- Payment Mode Radio-style Pill Toggles -->
             <div class="flex items-center gap-space-xs flex-wrap">
                 <span class="font-label-caps text-label-caps uppercase text-outline mr-2">Ödeme Türü:</span>
-                <button class="px-3 py-1.5 rounded-lg text-body-sm font-semibold bg-primary-fixed text-on-primary-fixed-variant shadow-xs">Tümü</button>
-                <button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">Kredi Kartı</button>
-                <button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">Banka Kartı</button>
-                <button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">Havale EFT</button>
-                <button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">Kapıda Ödeme</button>
-                <button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">Nakit</button>
+                <button type="button"
+                        onclick="setPaymentFilter('')"
+                        class="px-3 py-1.5 rounded-lg text-body-sm font-semibold transition-colors @(string.IsNullOrEmpty(Model.PaymentMethod) ? "bg-primary-fixed text-on-primary-fixed-variant shadow-xs" : "text-on-surface-variant hover:bg-surface-container-low")">
+                    Tümü
+                </button>
+                @foreach (var method in paymentMethods)
+                {
+                    var isSelected = Model.PaymentMethod == method;
+                    <button type="button"
+                            onclick="setPaymentFilter('@method')"
+                            class="px-3 py-1.5 rounded-lg text-body-sm font-semibold transition-colors @(isSelected ? "bg-primary-fixed text-on-primary-fixed-variant shadow-xs" : "text-on-surface-variant hover:bg-surface-container-low")">
+                        @method
+                    </button>
+                }
             </div>
-            <!-- Amount Range Indicator -->
+
             <div class="flex items-center gap-space-xs flex-wrap">
                 <span class="font-label-caps text-label-caps uppercase text-outline mr-2">Fiyat Aralığı:</span>
-                <button class="px-3 py-1.5 rounded-lg text-body-sm font-semibold bg-primary-fixed text-on-primary-fixed-variant shadow-xs">Tümü</button>
-                <button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">0 - 10.000 TL</button>
-                <button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">10.000 - 30.000 TL</button>
-                <button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">30.000 - 50.000 TL</button>
-                <button class="px-3 py-1.5 rounded-lg text-body-sm text-on-surface-variant hover:bg-surface-container-low transition-colors">50.000 TL ve üzeri</button>
+                @{
+                    bool isAllPrice = !Model.MinAmount.HasValue && !Model.MaxAmount.HasValue;
+                    bool isRange1 = Model.MinAmount == 0 && Model.MaxAmount == 10000;
+                    bool isRange2 = Model.MinAmount == 10000 && Model.MaxAmount == 30000;
+                    bool isRange3 = Model.MinAmount == 30000 && Model.MaxAmount == 50000;
+                    bool isRange4 = Model.MinAmount == 50000 && !Model.MaxAmount.HasValue;
+                }
+                <button type="button" onclick="setPriceFilter(null, null)" class="px-3 py-1.5 rounded-lg text-body-sm font-semibold transition-colors @(isAllPrice ? "bg-primary-fixed text-on-primary-fixed-variant shadow-xs" : "text-on-surface-variant hover:bg-surface-container-low")">
+                    Tümü
+                </button>
+                <button type="button" onclick="setPriceFilter(0, 10000)" class="px-3 py-1.5 rounded-lg text-body-sm font-semibold transition-colors @(isRange1 ? "bg-primary-fixed text-on-primary-fixed-variant shadow-xs" : "text-on-surface-variant hover:bg-surface-container-low")">
+                    0 - 10.000 TL
+                </button>
+                <button type="button" onclick="setPriceFilter(10000, 30000)" class="px-3 py-1.5 rounded-lg text-body-sm font-semibold transition-colors @(isRange2 ? "bg-primary-fixed text-on-primary-fixed-variant shadow-xs" : "text-on-surface-variant hover:bg-surface-container-low")">
+                    10.000 - 30.000 TL
+                </button>
+                <button type="button" onclick="setPriceFilter(30000, 50000)" class="px-3 py-1.5 rounded-lg text-body-sm font-semibold transition-colors @(isRange3 ? "bg-primary-fixed text-on-primary-fixed-variant shadow-xs" : "text-on-surface-variant hover:bg-surface-container-low")">
+                    30.000 - 50.000 TL
+                </button>
+                <button type="button" onclick="setPriceFilter(50000, null)" class="px-3 py-1.5 rounded-lg text-body-sm font-semibold transition-colors @(isRange4 ? "bg-primary-fixed text-on-primary-fixed-variant shadow-xs" : "text-on-surface-variant hover:bg-surface-container-low")">
+                    50.000 TL ve üzeri
+                </button>
             </div>
         </div>
-        <!-- Active Filter Tags Bar -->
-        <div class="flex flex-wrap items-center gap-2 pt-1">
-            <span class="font-label-caps text-label-caps text-outline uppercase mr-1">Aktif Filtreler (3):</span>
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-caps text-label-caps">
-                Arama: "#ORD-2024"
-                <button class="hover:text-primary"><span class="material-symbols-outlined text-[14px]">close</span></button>
-            </span>
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps">
-                Tarih: "Ekim 2024"
-                <button class="hover:text-secondary"><span class="material-symbols-outlined text-[14px]">close</span></button>
-            </span>
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">
-                Tutar: "₺0 - ₺50.000"
-                <button class="hover:text-on-surface"><span class="material-symbols-outlined text-[14px]">close</span></button>
-            </span>
-            <button class="text-primary hover:underline font-title-sm text-body-sm ml-2">Tüm Filtreleri Temizle</button>
-        </div>
+
+        @if (activeFilterCount > 0)
+        {
+            <div class="flex flex-wrap items-center gap-2 pt-1 border-t border-surface-container-low/50">
+                <span class="font-label-caps text-label-caps text-outline uppercase mr-1">Aktif Filtreler (@activeFilterCount):</span>
+
+                @if (hasSearch)
+                {
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-caps text-label-caps">
+                        Arama: "@Model.SearchTerm"
+                        <button type="button" onclick="clearField('searchInput')" class="hover:opacity-75 flex items-center">
+                            <span class="material-symbols-outlined text-[14px]">close</span>
+                        </button>
+                    </span>
+                }
+
+                @if (hasCity && cities.ContainsKey(Model.CityId!.Value))
+                {
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps">
+                        Şehir: "@cities[Model.CityId.Value]"
+                        <button type="button" onclick="clearSelect('cityId')" class="hover:opacity-75 flex items-center">
+                            <span class="material-symbols-outlined text-[14px]">close</span>
+                        </button>
+                    </span>
+                }
+
+                @if (hasStatus)
+                {
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">
+                        Durum: "@Model.Status"
+                        <button type="button" onclick="clearSelect('status')" class="hover:opacity-75 flex items-center">
+                            <span class="material-symbols-outlined text-[14px]">close</span>
+                        </button>
+                    </span>
+                }
+
+                @if (hasPayment)
+                {
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">
+                        Ödeme: "@Model.PaymentMethod"
+                        <button type="button" onclick="setPaymentFilter('')" class="hover:opacity-75 flex items-center">
+                            <span class="material-symbols-outlined text-[14px]">close</span>
+                        </button>
+                    </span>
+                }
+
+                @if (hasPrice)
+                {
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">
+                        Tutar: @(Model.MinAmount?.ToString("N0") ?? "0") ₺ - @(Model.MaxAmount?.ToString("N0") ?? "Üzeri") ₺
+                        <button type="button" onclick="setPriceFilter(null, null)" class="hover:opacity-75 flex items-center">
+                            <span class="material-symbols-outlined text-[14px]">close</span>
+                        </button>
+                    </span>
+                }
+
+                @if (hasDate)
+                {
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">
+                        Tarih Filtresi Aktif
+                        <button type="button" onclick="clearDates()" class="hover:opacity-75 flex items-center">
+                            <span class="material-symbols-outlined text-[14px]">close</span>
+                        </button>
+                    </span>
+                }
+
+                <a href="/Order/Index" class="text-primary hover:underline font-title-sm text-body-sm ml-2">Tüm Filtreleri Temizle</a>
+            </div>
+        }
     </div>
-</section>
+</form>
+
+<script>
+    function submitFilterForm() {
+        document.getElementById('orderFilterRibbonForm').submit();
+    }
+
+    function setPaymentFilter(val) {
+        document.getElementById('inputPaymentMethod').value = val;
+        submitFilterForm();
+    }
+
+    function setPriceFilter(min, max) {
+        document.getElementById('inputMinAmount').value = min !== null ? min : '';
+        document.getElementById('inputMaxAmount').value = max !== null ? max : '';
+        submitFilterForm();
+    }
+
+    function clearField(id) {
+        const el = document.getElementById(id);
+        if (el) {
+            el.value = '';
+            submitFilterForm();
+        }
+    }
+
+    function clearSelect(name) {
+        const select = document.querySelector(`select[name="${name}"]`);
+        if (select) {
+            select.value = '';
+            submitFilterForm();
+        }
+    }
+
+    function clearDates() {
+        document.getElementById('inputStartDate').value = '';
+        document.getElementById('inputEndDate').value = '';
+        submitFilterForm();
+    }
+
+    function applyDatePreset(preset) {
+        const startInput = document.getElementById('inputStartDate');
+        const endInput = document.getElementById('inputEndDate');
+        const today = new Date();
+
+        // Yerel saat formatı (UTC gün kaymasını engeller)
+        const formatDate = (d) => {
+            const year = d.getFullYear();
+            const month = String(d.getMonth() + 1).padStart(2, '0');
+            const day = String(d.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        };
+
+        if (!preset) {
+            startInput.value = '';
+            endInput.value = '';
+        } else if (preset === 'last7days') {
+            const past = new Date();
+            past.setDate(today.getDate() - 7);
+            startInput.value = formatDate(past);
+            endInput.value = formatDate(today);
+        } else if (preset === 'thisMonth') {
+            const firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
+            startInput.value = formatDate(firstDay);
+            endInput.value = formatDate(today);
+        } else if (preset === 'last90days') {
+            const past = new Date();
+            past.setDate(today.getDate() - 90);
+            startInput.value = formatDate(past);
+            endInput.value = formatDate(today);
+        }
+
+        submitFilterForm();
+    }
+
+    document.getElementById('searchInput')?.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            submitFilterForm();
+        }
+    });
+</script>

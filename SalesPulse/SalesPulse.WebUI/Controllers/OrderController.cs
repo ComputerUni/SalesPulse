@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SalesPulse.Core.DTOs.OrderExplorerDtos;
 
 namespace SalesPulse.WebUI.Controllers
 {
     public class OrderController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index([FromQuery] OrderExplorerFilterDto filter)
         {
-            return View();
+            return View(filter);
         }
     }
 }

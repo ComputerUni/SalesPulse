@@ -1,8 +1,10 @@
-﻿@{
+﻿@using SalesPulse.Core.DTOs.OrderExplorerDtos
+@model OrderExplorerFilterDto
+
+@{
     Layout = "~/Views/Shared/_PanelLayout.cshtml";
     ViewData["Title"] = "Dashboard";
 }
-
 
 <div class="flex flex-col w-full pb-2">
     <!-- Top Navigation & Action Header -->
@@ -12,9 +14,6 @@
                 <span class="font-label-caps text-label-caps tracking-wider uppercase text-primary">Sipariş Kayıtları</span>
             </div>
             <h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight flex items-center gap-3">Sipariş Yönetimi</h1>
-            <p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-3xl">
-                Veritabanındaki 3.420.000+ kayıt arasında gerçek zamanlı arama, dinamik filtreleme ve anlık operasyonel detay analizi.
-            </p>
         </div>
         <!-- Global CTA Buttons -->
         <div class="flex flex-wrap items-center gap-space-sm self-start xl:self-auto">
@@ -25,12 +24,12 @@
         </div>
     </div>
     <!-- Comprehensive Filter Ribbon (Level 1 Surface) -->
-    @await Component.InvokeAsync("_PanelOrderExplorerFilterRibbon")
+    @await Component.InvokeAsync("_PanelOrderExplorerFilterRibbon", new { filter = Model })
     <!-- Metric Strip Highlight (Micro Contextual Ribbon) -->
     @await Component.InvokeAsync("_PanelOrderExplorerMetricCards")
     <!-- Main Split Canvas: Orders Table + Preview Drawer/Panel -->
     <div class="grid grid-cols-12 gap-6 items-start">
-        @await Component.InvokeAsync("_PanelOrderExplorerTable")
+        @await Component.InvokeAsync("_PanelOrderExplorerTable", new { filter = Model })
         @await Component.InvokeAsync("_PanelOrderExplorerDetailDrawer")
     </div>
     <!-- Dynamic Notification Toast Container (Script Supported) -->

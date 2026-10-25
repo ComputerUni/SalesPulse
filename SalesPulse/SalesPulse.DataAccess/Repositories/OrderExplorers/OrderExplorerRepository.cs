@@ -53,11 +53,21 @@ namespace SalesPulse.DataAccess.Repositories.OrderExplorers
             var parameters = new DynamicParameters();
             parameters.Add("@Page", filter.Page, DbType.Int32);
             parameters.Add("@PageSize", filter.PageSize, DbType.Int32);
+            parameters.Add("@SearchTerm", string.IsNullOrWhiteSpace(filter.SearchTerm) ? null : filter.SearchTerm.Trim(), DbType.String);
+            parameters.Add("@StartDate", filter.StartDate, DbType.DateTime);
+            parameters.Add("@EndDate", filter.EndDate, DbType.DateTime);
+            parameters.Add("@CityId", filter.CityId, DbType.Int32);
+            parameters.Add("@Status", string.IsNullOrWhiteSpace(filter.Status) ? null : filter.Status.Trim(), DbType.String);
+            parameters.Add("@PaymentMethod", string.IsNullOrWhiteSpace(filter.PaymentMethod) ? null : filter.PaymentMethod.Trim(), DbType.String);
+            parameters.Add("@MinAmount", filter.MinAmount, DbType.Decimal);
+            parameters.Add("@MaxAmount", filter.MaxAmount, DbType.Decimal);
+
 
             using var multi = await connection.QueryMultipleAsync(
                 "sp_GetOrderExplorerPagedList",
                 parameters,
-                commandType: CommandType.StoredProcedure
+                commandType: CommandType.StoredProcedure,
+                commandTimeout: 60
             );
 
             int totalCount = await multi.ReadFirstAsync<int>();

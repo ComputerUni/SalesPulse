@@ -5,6 +5,26 @@
 @{
     var startItem = Model.TotalCount == 0 ? 0 : ((Model.Page - 1) * Model.PageSize) + 1;
     var endItem = Math.Min(Model.Page * Model.PageSize, Model.TotalCount);
+
+    string BuildPageUrl(int targetPage, int? targetPageSize = null)
+    {
+        var query = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
+        foreach (var key in Context.Request.Query.Keys)
+        {
+            if (!string.IsNullOrWhiteSpace(key))
+            {
+                query[key] = Context.Request.Query[key].ToString();
+            }
+        }
+
+        query["page"] = targetPage.ToString();
+        query["pageSize"] = (targetPageSize ?? Model.PageSize).ToString();
+
+        return "?" + string.Join("&", query
+            .Where(x => !string.IsNullOrEmpty(x.Value))
+            .Select(x => $"{System.Net.WebUtility.UrlEncode(x.Key)}={System.Net.WebUtility.UrlEncode(x.Value)}"));
+    }
 }
 
 <div class="col-span-12 xl:col-span-8 2xl:col-span-8 flex flex-col">
@@ -80,7 +100,6 @@
                                 </td>
                                 <td class="py-3.5 px-3 font-data-table text-data-table font-semibold text-on-surface">
                                     <div class="flex items-center gap-1.5">
-                                        <!-- Tekil # düzeltildi -->
                                         <span>@item.OrderCode</span>
                                         <button class="opacity-0 group-hover:opacity-100 text-outline hover:text-primary" onclick="copyToClipboard('@item.OrderCode', event)" title="Kopyala">
                                             <span class="material-symbols-outlined text-[14px]">content_copy</span>
@@ -173,7 +192,6 @@
             </table>
         </div>
 
-        <!-- Pagination -->
         <div class="px-space-lg py-space-md bg-surface-container-low/40 flex flex-col sm:flex-row items-center justify-between gap-space-md border-t border-surface-container-low">
             <div class="flex items-center gap-space-md">
                 <span class="font-body-sm text-body-sm text-on-surface-variant">
@@ -182,7 +200,7 @@
                 </span>
                 <div class="flex items-center gap-1.5">
                     <span class="font-label-caps text-label-caps uppercase text-outline">Sayfa Başı:</span>
-                    <select onchange="window.location.href='?page=1&pageSize=' + this.value" class="py-1 px-2 rounded-lg bg-surface-container-lowest text-on-surface text-body-sm font-data-table border-0 shadow-xs focus:ring-1 focus:ring-primary cursor-pointer">
+                    <select onchange="changePageSize(this.value)" class="py-1 px-2 rounded-lg bg-surface-container-lowest text-on-surface text-body-sm font-data-table border-0 shadow-xs focus:ring-1 focus:ring-primary cursor-pointer">
                         <!option value="25" @(Model.PageSize == 25 ? "selected" : "")>25</!option>
                         <!option value="50" @(Model.PageSize == 50 ? "selected" : "")>50</!option>
                         <!option value="100" @(Model.PageSize == 100 ? "selected" : "")>100</!option>
@@ -193,7 +211,7 @@
             <div class="flex items-center gap-1">
                 @if (Model.Page > 1)
                 {
-                    <a href="?page=@(Model.Page - 1)&pageSize=@Model.PageSize" class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors shadow-xs flex items-center justify-center">
+                    <a href="@BuildPageUrl(Model.Page - 1)" class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors shadow-xs flex items-center justify-center">
                         <span class="material-symbols-outlined text-[18px]">chevron_left</span>
                     </a>
                 }
@@ -210,7 +228,7 @@
                 }
                 else
                 {
-                    <a href="?page=1&pageSize=@Model.PageSize" class="w-8 h-8 rounded-lg font-data-table text-body-sm text-on-surface-variant hover:bg-surface-container transition-colors flex items-center justify-center">1</a>
+                    <a href="@BuildPageUrl(1)" class="w-8 h-8 rounded-lg font-data-table text-body-sm text-on-surface-variant hover:bg-surface-container transition-colors flex items-center justify-center">1</a>
                 }
 
                 @if (Model.Page > 3)
@@ -226,7 +244,7 @@
                     }
                     else
                     {
-                        <a href="?page=@p&pageSize=@Model.PageSize" class="w-8 h-8 rounded-lg font-data-table text-body-sm text-on-surface-variant hover:bg-surface-container transition-colors flex items-center justify-center">@p</a>
+                        <a href="@BuildPageUrl(p)" class="w-8 h-8 rounded-lg font-data-table text-body-sm text-on-surface-variant hover:bg-surface-container transition-colors flex items-center justify-center">@p</a>
                     }
                 }
 
@@ -243,13 +261,13 @@
                     }
                     else
                     {
-                        <a href="?page=@Model.TotalPages&pageSize=@Model.PageSize" class="px-2 h-8 rounded-lg font-data-table text-body-sm text-on-surface-variant hover:bg-surface-container transition-colors flex items-center justify-center">@Model.TotalPages.ToString("N0")</a>
+                        <a href="@BuildPageUrl(Model.TotalPages)" class="px-2 h-8 rounded-lg font-data-table text-body-sm text-on-surface-variant hover:bg-surface-container transition-colors flex items-center justify-center">@Model.TotalPages.ToString("N0")</a>
                     }
                 }
 
                 @if (Model.Page < Model.TotalPages)
                 {
-                    <a href="?page=@(Model.Page + 1)&pageSize=@Model.PageSize" class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors shadow-xs flex items-center justify-center">
+                    <a href="@BuildPageUrl(Model.Page + 1)" class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors shadow-xs flex items-center justify-center">
                         <span class="material-symbols-outlined text-[18px]">chevron_right</span>
                     </a>
                 }
@@ -263,3 +281,12 @@
         </div>
     </div>
 </div>
+
+<script>
+    function changePageSize(size) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('page', '1');
+        url.searchParams.set('pageSize', size);
+        window.location.href = url.toString();
+    }
+</script>

@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SalesPulse.Core.DTOs.OrderExplorerDtos;
 
 namespace SalesPulse.WebUI.ViewComponents._PanelOrderExplorerViewComponents
 {
     public class _PanelOrderExplorerFilterRibbonViewComponent : ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(OrderExplorerFilterDto? filter)
         {
-            return View();
+            filter ??= new OrderExplorerFilterDto();
+            return View(filter);
         }
     }
 }
