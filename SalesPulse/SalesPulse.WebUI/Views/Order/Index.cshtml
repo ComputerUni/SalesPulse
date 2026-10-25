@@ -17,10 +17,22 @@
         </div>
         <!-- Global CTA Buttons -->
         <div class="flex flex-wrap items-center gap-space-sm self-start xl:self-auto">
-            <button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-title-sm text-body-sm shadow-sm transition-all duration-200" onclick="triggerNotification('CSV aktarımı başlatıldı (10.000 satır sınırlandırıldı)')">
+            <a asp-action="ExportCsv" asp-controller="Order"
+               asp-all-route-data="@(new Dictionary<string, string?> 
+               {
+                    { "SearchTerm", Model.SearchTerm },
+                    { "StartDate", Model.StartDate?.ToString("yyyy-MM-dd") },
+                    { "EndDate", Model.EndDate?.ToString("yyyy-MM-dd") },
+                    { "CityId", Model.CityId?.ToString() },
+                    { "Status", Model.Status },
+                    { "PaymentMethod", Model.PaymentMethod },
+                    { "MinAmount", Model.MinAmount?.ToString() },
+                    { "MaxAmount", Model.MaxAmount?.ToString() }
+                })"
+               class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-title-sm text-body-sm shadow-sm transition-all duration-200">
                 <span class="material-symbols-outlined text-[19px] text-primary">cloud_download</span>
                 <span>CSV İndir</span>
-            </button>
+            </a>
         </div>
     </div>
     <!-- Comprehensive Filter Ribbon (Level 1 Surface) -->

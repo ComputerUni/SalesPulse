@@ -16,6 +16,11 @@ namespace SalesPulse.Business.Services.OrderExplorers
             return await _orderExplorerRepository.GetOrderDetailItemAsync(orderCode);
         }
 
+        public async Task<IEnumerable<OrderExplorerCsvDto>> GetOrdersForCsvExportAsync(OrderExplorerFilterDto filter, int maxLimit = 50000)
+        {
+            return await _orderExplorerRepository.GetOrdersForCsvExportAsync(filter, maxLimit);
+        }
+
         public async Task<OrderExplorerKpiDto> OrderExplorerKpiCardsAsync(OrderExplorerFilterDto filter)
         {
             return await _orderExplorerRepository.OrderExplorerKpiCardsAsync(filter);

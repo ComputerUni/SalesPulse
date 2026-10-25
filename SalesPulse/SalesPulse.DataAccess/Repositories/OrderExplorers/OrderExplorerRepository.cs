@@ -46,6 +46,30 @@ namespace SalesPulse.DataAccess.Repositories.OrderExplorers
             return detail;
         }
 
+        public async Task<IEnumerable<OrderExplorerCsvDto>> GetOrdersForCsvExportAsync(OrderExplorerFilterDto filter, int maxLimit = 50000)
+        {
+            using var connection = _context.CreateConnection();
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@SearchTerm", string.IsNullOrWhiteSpace(filter.SearchTerm) ? null : filter.SearchTerm.Trim(), DbType.String);
+            parameters.Add("@StartDate", filter.StartDate, DbType.DateTime);
+            parameters.Add("@EndDate", filter.EndDate, DbType.DateTime);
+            parameters.Add("@CityId", filter.CityId, DbType.Int32);
+            parameters.Add("@Status", string.IsNullOrWhiteSpace(filter.Status) ? null : filter.Status.Trim(), DbType.String);
+            parameters.Add("@PaymentMethod", string.IsNullOrWhiteSpace(filter.PaymentMethod) ? null : filter.PaymentMethod.Trim(), DbType.String);
+            parameters.Add("@MinAmount", filter.MinAmount, DbType.Decimal);
+            parameters.Add("@MaxAmount", filter.MaxAmount, DbType.Decimal);
+            parameters.Add("@MaxLimit", maxLimit, DbType.Int32);
+
+            return await connection.QueryAsync<OrderExplorerCsvDto>(
+                "sp_GetOrderExplorerCsvExport",
+                parameters,
+                commandType: CommandType.StoredProcedure,
+                commandTimeout: 120
+                );
+        }
+
+
         public async Task<OrderExplorerKpiDto> OrderExplorerKpiCardsAsync(OrderExplorerFilterDto filter)
         {
             using var connection = _context.CreateConnection();
