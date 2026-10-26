@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SalesPulse.Core.DTOs.SalesIntelligenceDtos;
 
 namespace SalesPulse.WebUI.Controllers
 {
     public class SalesIntelligenceController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(SalesIntelligenceFilterDto filter)
         {
-            return View();
+            filter ??= new SalesIntelligenceFilterDto();
+            return View(filter);
         }
     }
 }

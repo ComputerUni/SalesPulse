@@ -7,6 +7,7 @@ using SalesPulse.Business.Services.OrderExplorers;
 using SalesPulse.Business.Services.Orders;
 using SalesPulse.Business.Services.Payments;
 using SalesPulse.Business.Services.Products;
+using SalesPulse.Business.Services.SalesIntelligence;
 using SalesPulse.DataAccess.Context;
 using SalesPulse.DataAccess.Repositories.Categories;
 using SalesPulse.DataAccess.Repositories.Cities;
@@ -17,6 +18,7 @@ using SalesPulse.DataAccess.Repositories.OrderExplorers;
 using SalesPulse.DataAccess.Repositories.Orders;
 using SalesPulse.DataAccess.Repositories.Payments;
 using SalesPulse.DataAccess.Repositories.Products;
+using SalesPulse.DataAccess.Repositories.SalesIntelligence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,6 +52,9 @@ builder.Services.AddScoped<IDashboardService, DashboardService>();
 
 builder.Services.AddScoped<IOrderExplorerRepository, OrderExplorerRepository>();
 builder.Services.AddScoped<IOrderExplorerService, OrderExplorerService>();
+
+builder.Services.AddScoped<ISalesIntelligenceRepository, SalesIntelligenceRepository>();
+builder.Services.AddScoped<ISalesIntelligenceService, SalesIntelligenceService>();
 
 
 builder.Services.AddControllersWithViews();

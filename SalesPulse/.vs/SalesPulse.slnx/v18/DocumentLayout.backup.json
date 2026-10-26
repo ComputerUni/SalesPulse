@@ -7,16 +7,52 @@
       "RelativeMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|solutionrelative:salespulse.webui\\views\\salesintelligence\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.webui\\views\\shared\\components\\_panellayoutsidebar\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|solutionrelative:salespulse.webui\\views\\shared\\components\\_panellayoutsidebar\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.webui\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|solutionrelative:salespulse.webui\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.webui\\controllers\\salesintelligencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|solutionrelative:salespulse.webui\\controllers\\salesintelligencecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.core\\dtos\\salesintelligencedtos\\salesintelligencefilterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|solutionrelative:salespulse.core\\dtos\\salesintelligencedtos\\salesintelligencefilterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.core\\dtos\\salesintelligencedtos\\salesintelligencekpidto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63AF0502-34B1-F6F3-2E02-454B049F9AA8}|SalesPulse.Core\\SalesPulse.Core.csproj|solutionrelative:salespulse.core\\dtos\\salesintelligencedtos\\salesintelligencekpidto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.webui\\viewcomponents\\_panelsalesintelligenceviewcomponents\\_panelsalesintelligenceanalyticskpicardsviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|solutionrelative:salespulse.webui\\viewcomponents\\_panelsalesintelligenceviewcomponents\\_panelsalesintelligenceanalyticskpicardsviewcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.webui\\views\\shared\\components\\_panelsalesintelligenceanalyticskpicards\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1B3D09BB-A6D9-1E5D-4A16-4AC797D389D0}|SalesPulse.WebUI\\SalesPulse.WebUI.csproj|solutionrelative:salespulse.webui\\views\\shared\\components\\_panelsalesintelligenceanalyticskpicards\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{254E26E7-B875-352A-4CFB-8407A4CAE3B0}|SalesPulse.Business\\SalesPulse.Business.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.business\\services\\salesintelligence\\salesintelligenceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{254E26E7-B875-352A-4CFB-8407A4CAE3B0}|SalesPulse.Business\\SalesPulse.Business.csproj|solutionrelative:salespulse.business\\services\\salesintelligence\\salesintelligenceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{254E26E7-B875-352A-4CFB-8407A4CAE3B0}|SalesPulse.Business\\SalesPulse.Business.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.business\\services\\salesintelligence\\isalesintelligenceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{254E26E7-B875-352A-4CFB-8407A4CAE3B0}|SalesPulse.Business\\SalesPulse.Business.csproj|solutionrelative:salespulse.business\\services\\salesintelligence\\isalesintelligenceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34E8185-F078-AB31-B538-D7A35A32D718}|SalesPulse.DataAccess\\SalesPulse.DataAccess.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.dataaccess\\repositories\\salesintelligence\\isalesintelligencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34E8185-F078-AB31-B538-D7A35A32D718}|SalesPulse.DataAccess\\SalesPulse.DataAccess.csproj|solutionrelative:salespulse.dataaccess\\repositories\\salesintelligence\\isalesintelligencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34E8185-F078-AB31-B538-D7A35A32D718}|SalesPulse.DataAccess\\SalesPulse.DataAccess.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.dataaccess\\repositories\\salesintelligence\\salesintelligencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34E8185-F078-AB31-B538-D7A35A32D718}|SalesPulse.DataAccess\\SalesPulse.DataAccess.csproj|solutionrelative:salespulse.dataaccess\\repositories\\salesintelligence\\salesintelligencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34E8185-F078-AB31-B538-D7A35A32D718}|SalesPulse.DataAccess\\SalesPulse.DataAccess.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.dataaccess\\repositories\\orderexplorers\\orderexplorerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34E8185-F078-AB31-B538-D7A35A32D718}|SalesPulse.DataAccess\\SalesPulse.DataAccess.csproj|solutionrelative:salespulse.dataaccess\\repositories\\orderexplorers\\orderexplorerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34E8185-F078-AB31-B538-D7A35A32D718}|SalesPulse.DataAccess\\SalesPulse.DataAccess.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.dataaccess\\repositories\\dashboards\\dashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34E8185-F078-AB31-B538-D7A35A32D718}|SalesPulse.DataAccess\\SalesPulse.DataAccess.csproj|solutionrelative:salespulse.dataaccess\\repositories\\dashboards\\dashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34E8185-F078-AB31-B538-D7A35A32D718}|SalesPulse.DataAccess\\SalesPulse.DataAccess.csproj|c:\\users\\burhan\\desktop\\dapper-salespulse\\salespulse\\salespulse.dataaccess\\repositories\\dashboards\\idashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34E8185-F078-AB31-B538-D7A35A32D718}|SalesPulse.DataAccess\\SalesPulse.DataAccess.csproj|solutionrelative:salespulse.dataaccess\\repositories\\dashboards\\idashboardrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 629,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,27 +83,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Default.cshtml",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelLayoutSidebar\\Default.cshtml",
-              "RelativeDocumentMoniker": "SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelLayoutSidebar\\Default.cshtml",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelLayoutSidebar\\Default.cshtml",
-              "RelativeToolTip": "SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelLayoutSidebar\\Default.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAADDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-26T11:00:52.761Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\Order\\Index.cshtml",
-              "RelativeDocumentMoniker": "SalesPulse.WebUI\\Views\\Order\\Index.cshtml",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\Order\\Index.cshtml",
-              "RelativeToolTip": "SalesPulse.WebUI\\Views\\Order\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-26T10:05:01.908Z",
+              "Title": "SalesIntelligenceController.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Controllers\\SalesIntelligenceController.cs",
+              "RelativeDocumentMoniker": "SalesPulse.WebUI\\Controllers\\SalesIntelligenceController.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Controllers\\SalesIntelligenceController.cs",
+              "RelativeToolTip": "SalesPulse.WebUI\\Controllers\\SalesIntelligenceController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-26T14:45:40.709Z",
               "EditorCaption": ""
             },
             {
@@ -78,22 +101,158 @@
               "RelativeDocumentMoniker": "SalesPulse.WebUI\\Views\\SalesIntelligence\\Index.cshtml",
               "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\SalesIntelligence\\Index.cshtml",
               "RelativeToolTip": "SalesPulse.WebUI\\Views\\SalesIntelligence\\Index.cshtml",
-              "ViewState": "AgIAACMBAAAAAAAAAAAAAEcBAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-10-26T09:28:46.364Z",
+              "WhenOpened": "2026-10-26T14:43:31.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_PanelSalesIntelligenceAnalyticsKpiCardsViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\ViewComponents\\_PanelSalesIntelligenceViewComponents\\_PanelSalesIntelligenceAnalyticsKpiCardsViewComponent.cs",
+              "RelativeDocumentMoniker": "SalesPulse.WebUI\\ViewComponents\\_PanelSalesIntelligenceViewComponents\\_PanelSalesIntelligenceAnalyticsKpiCardsViewComponent.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\ViewComponents\\_PanelSalesIntelligenceViewComponents\\_PanelSalesIntelligenceAnalyticsKpiCardsViewComponent.cs",
+              "RelativeToolTip": "SalesPulse.WebUI\\ViewComponents\\_PanelSalesIntelligenceViewComponents\\_PanelSalesIntelligenceAnalyticsKpiCardsViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-26T14:38:31.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SalesIntelligenceFilterDto.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\SalesIntelligenceDtos\\SalesIntelligenceFilterDto.cs",
+              "RelativeDocumentMoniker": "SalesPulse.Core\\DTOs\\SalesIntelligenceDtos\\SalesIntelligenceFilterDto.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\SalesIntelligenceDtos\\SalesIntelligenceFilterDto.cs",
+              "RelativeToolTip": "SalesPulse.Core\\DTOs\\SalesIntelligenceDtos\\SalesIntelligenceFilterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-26T12:59:43.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelSalesIntelligenceAnalyticsKpiCards\\Default.cshtml",
+              "RelativeDocumentMoniker": "SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelSalesIntelligenceAnalyticsKpiCards\\Default.cshtml",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelSalesIntelligenceAnalyticsKpiCards\\Default.cshtml",
+              "RelativeToolTip": "SalesPulse.WebUI\\Views\\Shared\\Components\\_PanelSalesIntelligenceAnalyticsKpiCards\\Default.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAiwBUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-10-26T14:39:38.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ISalesIntelligenceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataAccess\\Repositories\\SalesIntelligence\\ISalesIntelligenceRepository.cs",
+              "RelativeDocumentMoniker": "SalesPulse.DataAccess\\Repositories\\SalesIntelligence\\ISalesIntelligenceRepository.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataAccess\\Repositories\\SalesIntelligence\\ISalesIntelligenceRepository.cs",
+              "RelativeToolTip": "SalesPulse.DataAccess\\Repositories\\SalesIntelligence\\ISalesIntelligenceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-26T12:53:52.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SalesIntelligenceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataAccess\\Repositories\\SalesIntelligence\\SalesIntelligenceRepository.cs",
+              "RelativeDocumentMoniker": "SalesPulse.DataAccess\\Repositories\\SalesIntelligence\\SalesIntelligenceRepository.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataAccess\\Repositories\\SalesIntelligence\\SalesIntelligenceRepository.cs",
+              "RelativeToolTip": "SalesPulse.DataAccess\\Repositories\\SalesIntelligence\\SalesIntelligenceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-26T12:54:25.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ISalesIntelligenceService.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Business\\Services\\SalesIntelligence\\ISalesIntelligenceService.cs",
+              "RelativeDocumentMoniker": "SalesPulse.Business\\Services\\SalesIntelligence\\ISalesIntelligenceService.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Business\\Services\\SalesIntelligence\\ISalesIntelligenceService.cs",
+              "RelativeToolTip": "SalesPulse.Business\\Services\\SalesIntelligence\\ISalesIntelligenceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-26T12:55:03.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SalesIntelligenceService.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Business\\Services\\SalesIntelligence\\SalesIntelligenceService.cs",
+              "RelativeDocumentMoniker": "SalesPulse.Business\\Services\\SalesIntelligence\\SalesIntelligenceService.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Business\\Services\\SalesIntelligence\\SalesIntelligenceService.cs",
+              "RelativeToolTip": "SalesPulse.Business\\Services\\SalesIntelligence\\SalesIntelligenceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-26T12:55:14.861Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 629,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderExplorerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataAccess\\Repositories\\OrderExplorers\\OrderExplorerRepository.cs",
+              "RelativeDocumentMoniker": "SalesPulse.DataAccess\\Repositories\\OrderExplorers\\OrderExplorerRepository.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataAccess\\Repositories\\OrderExplorers\\OrderExplorerRepository.cs",
+              "RelativeToolTip": "SalesPulse.DataAccess\\Repositories\\OrderExplorers\\OrderExplorerRepository.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowEoAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-26T13:04:19.188Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "SalesIntelligenceController.cs",
-              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Controllers\\SalesIntelligenceController.cs",
-              "RelativeDocumentMoniker": "SalesPulse.WebUI\\Controllers\\SalesIntelligenceController.cs",
-              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.WebUI\\Controllers\\SalesIntelligenceController.cs",
-              "RelativeToolTip": "SalesPulse.WebUI\\Controllers\\SalesIntelligenceController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
+              "Title": "SalesIntelligenceKpiDto.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\SalesIntelligenceDtos\\SalesIntelligenceKpiDto.cs",
+              "RelativeDocumentMoniker": "SalesPulse.Core\\DTOs\\SalesIntelligenceDtos\\SalesIntelligenceKpiDto.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.Core\\DTOs\\SalesIntelligenceDtos\\SalesIntelligenceKpiDto.cs",
+              "RelativeToolTip": "SalesPulse.Core\\DTOs\\SalesIntelligenceDtos\\SalesIntelligenceKpiDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-26T09:28:35.779Z",
+              "WhenOpened": "2026-10-26T12:52:00.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IDashboardRepository.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataAccess\\Repositories\\Dashboards\\IDashboardRepository.cs",
+              "RelativeDocumentMoniker": "SalesPulse.DataAccess\\Repositories\\Dashboards\\IDashboardRepository.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataAccess\\Repositories\\Dashboards\\IDashboardRepository.cs",
+              "RelativeToolTip": "SalesPulse.DataAccess\\Repositories\\Dashboards\\IDashboardRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-26T12:57:23.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DashboardRepository.cs",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataAccess\\Repositories\\Dashboards\\DashboardRepository.cs",
+              "RelativeDocumentMoniker": "SalesPulse.DataAccess\\Repositories\\Dashboards\\DashboardRepository.cs",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\SalesPulse\\SalesPulse.DataAccess\\Repositories\\Dashboards\\DashboardRepository.cs",
+              "RelativeToolTip": "SalesPulse.DataAccess\\Repositories\\Dashboards\\DashboardRepository.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAwwBYAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-26T12:57:19.629Z",
               "EditorCaption": ""
             }
           ]
