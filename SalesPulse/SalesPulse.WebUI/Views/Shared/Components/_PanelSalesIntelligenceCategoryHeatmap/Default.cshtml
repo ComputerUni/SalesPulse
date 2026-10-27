@@ -1,94 +1,173 @@
-﻿<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+﻿@using SalesPulse.Core.DTOs.SalesIntelligenceDtos
+@using System.Globalization
+@model CategoryHeatmapDto
+
+@{
+    var tr = new CultureInfo("tr-TR");
+
+    string FormatRevenue(decimal amount)
+    {
+        if (amount <= 0) return "₺0";
+        return $"₺{amount.ToString("N0", tr)}";
+    }
+    (
+        (string Bg, string Tx, string Fw) L1,
+        (string Bg, string Tx, string Fw) L2,
+        (string Bg, string Tx, string Fw) L3,
+        (string Bg, string Tx, string Fw) L4
+    ) CreateMonoPalette(string c10, string c30, string c70, string c100, string darkText) => (
+        (c10, darkText, "font-medium"),
+        (c30, darkText, "font-semibold"),
+        (c70, "#FFFFFF", "font-bold"),
+        (c100, "#FFFFFF", "font-extrabold shadow-sm")
+    );
+
+    var categoryColorMap = new Dictionary<string, (
+        (string Bg, string Tx, string Fw) L1,
+        (string Bg, string Tx, string Fw) L2,
+        (string Bg, string Tx, string Fw) L3,
+        (string Bg, string Tx, string Fw) L4
+    )>(StringComparer.OrdinalIgnoreCase)
+    {
+        ["Bilgisayar & Tablet"] = CreateMonoPalette("#EFF6FF", "#BFDBFE", "#2563EB", "#1E3A8A", "#1D4ED8"),
+        ["TV & Görüntü"] = CreateMonoPalette("#EEF2FF", "#C7D2FE", "#4F46E5", "#1E1B4B", "#3730A3"),
+        ["Fotoğraf & Kamera"] = CreateMonoPalette("#F1F5F9", "#CBD5E1", "#475569", "#0F172A", "#334155"),
+        ["Beyaz Eşya"] = CreateMonoPalette("#ECFEFF", "#A5F3FC", "#06B6D4", "#164E63", "#0E7490"),
+        ["Mobilya"] = CreateMonoPalette("#FAF5F0", "#D7B99C", "#9A5B2D", "#4A2209", "#6B3512"),
+        ["Saat & Mücevher"] = CreateMonoPalette("#FEFCE8", "#FDE047", "#EAB308", "#713F12", "#854D0E"),
+        ["Müzik & Hobi"] = CreateMonoPalette("#FAF5FF", "#E9D5FF", "#A855F7", "#581C87", "#7E22CE"),
+        ["Oyun & Konsol"] = CreateMonoPalette("#F5F3FF", "#DDD6FE", "#7C3AED", "#2E1065", "#5B21B6"),
+        ["Anne & Bebek"] = CreateMonoPalette("#FFF1F2", "#FECDD3", "#F43F5E", "#881337", "#BE123C"),
+        ["Telefon & Aksesuar"] = CreateMonoPalette("#F0FDFA", "#99F6E4", "#0D9488", "#134E4A", "#0F766E"),
+        ["Spor & Outdoor"] = CreateMonoPalette("#FFF7ED", "#FED7AA", "#F97316", "#7C2D12", "#C2410C"),
+        ["Küçük Ev Aletleri"] = CreateMonoPalette("#F0FDF4", "#A7F3D0", "#059669", "#064E3B", "#047857"),
+        ["Oto & Motosiklet"] = CreateMonoPalette("#FEF2F2", "#FECACA", "#DC2626", "#7F1D1D", "#B91C1C"),
+        ["Ayakkabı & Çanta"] = CreateMonoPalette("#FFF1F2", "#FDA4AF", "#E11D48", "#4C0519", "#9F1239"),
+        ["Elektronik"] = CreateMonoPalette("#F0F9FF", "#BAE6FD", "#0284C7", "#082F49", "#0369A1"),
+        ["Aydınlatma"] = CreateMonoPalette("#FEF9C3", "#FACC15", "#CA8A04", "#713F12", "#854D0E"),
+        ["Yazılım"] = CreateMonoPalette("#ECFDF5", "#A7F3D0", "#10B981", "#064E3B", "#047857"),
+        ["Mutfak"] = CreateMonoPalette("#FFF5F5", "#FEB2B2", "#E53E3E", "#63171B", "#9B2C2C"),
+        ["Bahçe & Yapı Market"] = CreateMonoPalette("#F0FDF4", "#BBF7D0", "#22C55E", "#14532D", "#15803D"),
+        ["Yapı Malzemeleri"] = CreateMonoPalette("#F7F7F2", "#D8D9B8", "#878C3D", "#2F330D", "#4B501B"),
+        ["Ev Tekstili"] = CreateMonoPalette("#FAF5FF", "#D8B4FE", "#9333EA", "#3B0764", "#6B21A8"),
+        ["Giyim"] = CreateMonoPalette("#F0F4F8", "#99B8D1", "#2B5278", "#081320", "#162D4A"),
+        ["Kozmetik & Kişisel Bakım"] = CreateMonoPalette("#FDF4FF", "#F0ABFC", "#C026D3", "#4A044E", "#86198F"),
+        ["Oyuncak"] = CreateMonoPalette("#FFFBEB", "#FDE68A", "#D97706", "#451A03", "#92400E"),
+        ["Sağlık & Wellness"] = CreateMonoPalette("#F2FBF7", "#B7EAD3", "#34D399", "#064E3B", "#065F46"),
+        ["Pet Shop"] = CreateMonoPalette("#FFF3EB", "#FDC7A6", "#DD6B20", "#652B19", "#9C4221"),
+        ["Ofis & Kırtasiye"] = CreateMonoPalette("#F8FAFC", "#CBD5E1", "#64748B", "#020617", "#334155"),
+        ["Gıda & İçecek"] = CreateMonoPalette("#F7FEE7", "#D9F99D", "#65A30D", "#1A2E05", "#3F6212"),
+        ["Kitap"] = CreateMonoPalette("#FEF3C7", "#FCD34D", "#B45309", "#451A03", "#78350F"),
+        ["Film & Müzik"] = CreateMonoPalette("#FAF5FF", "#E9D5FF", "#8B5CF6", "#2E1065", "#5B21B6")
+    };
+
+    var defaultPalette = CreateMonoPalette("#EFF6FF", "#BFDBFE", "#2563EB", "#1E3A8A", "#1D4ED8");
+
+    (string Bg, string Tx, string Fw) GetCellTone(string categoryName, decimal amount, decimal rowMin, decimal rowMax)
+    {
+        if (amount <= 0)
+            return ("#F1F5F9", "#94A3B8", "font-normal");
+
+        var palette = categoryColorMap.TryGetValue(categoryName.Trim(), out var p) ? p : defaultPalette;
+
+        if (rowMax <= rowMin)
+            return palette.L2;
+
+        var score = (amount - rowMin) / (rowMax - rowMin);
+
+        if (score >= 0.75m) return palette.L4; 
+        if (score >= 0.45m) return palette.L3; 
+        if (score >= 0.20m) return palette.L2; 
+        return palette.L1;                    
+    }
+}
+
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between min-w-0 max-w-full">
     <div>
-        <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center justify-between gap-2 mb-2 flex-wrap">
             <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
-                <h2 class="font-title-sm text-title-sm text-on-surface">Kategorilerin Aylık Performansı (Son 6 Ay Isı Haritası)</h2>
+                <span class="w-2.5 h-2.5 rounded-full bg-secondary shrink-0"></span>
+                <h2 class="font-title-sm text-title-sm text-on-surface">Kategorilerin Aylık Performansı</h2>
             </div>
-            <span class="font-label-caps text-label-caps uppercase px-2 py-0.5 rounded bg-surface-container-low text-outline">Ciro Yoğunluğu (₺ Bin)</span>
+            <span class="font-label-caps text-label-caps uppercase px-2 py-0.5 rounded bg-surface-container-low text-outline whitespace-nowrap">
+                Ciro Yoğunluğu ₺
+            </span>
         </div>
-        <p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
-            Ana ürün departmanlarının Ocak - Haziran 2024 dönemindeki ciro dalgalanmaları ve mevsimsel zirveleri.
-        </p>
-        <!-- Heatmap Grid -->
-        <div class="overflow-x-auto">
-            <table class="w-full text-center border-separate border-spacing-1.5">
+
+        <div class="overflow-x-auto mt-4 pb-2 scroll-smooth">
+            <table class="w-full min-w-[720px] text-center border-separate border-spacing-1.5">
                 <thead>
                     <tr class="font-label-caps text-label-caps text-outline">
-                        <th class="text-left font-normal pb-2 px-2">Kategori</th>
-                        <th class="pb-2">Oca</th>
-                        <th class="pb-2">Şub</th>
-                        <th class="pb-2">Mar</th>
-                        <th class="pb-2">Nis</th>
-                        <th class="pb-2">May</th>
-                        <th class="pb-2">Haz (Prj)</th>
+                        <th class="sticky left-0 bg-surface-container-lowest z-20 text-left font-normal pb-2 px-3 whitespace-nowrap min-w-[160px] shadow-[3px_0_6px_-2px_rgba(0,0,0,0.06)]">
+                            Kategori
+                        </th>
+                        @if (Model.Months != null && Model.Months.Any())
+                        {
+                            foreach (var month in Model.Months)
+                            {
+                                <th class="pb-2 whitespace-nowrap min-w-[72px]">
+                                    @month.MonthName
+                                </th>
+                            }
+                        }
                     </tr>
                 </thead>
                 <tbody class="font-data-table text-body-sm">
-                    <!-- Category 1 -->
-                    <tr>
-                        <td class="text-left font-body-sm text-body-sm font-semibold text-on-surface px-2 py-2">Akıllı Ev &amp; IoT</td>
-                        <td class="p-2.5 rounded-lg bg-primary-fixed/40 text-on-surface font-medium">₺420k</td>
-                        <td class="p-2.5 rounded-lg bg-primary-fixed/60 text-on-surface font-medium">₺580k</td>
-                        <td class="p-2.5 rounded-lg bg-primary-fixed text-primary font-bold">₺840k</td>
-                        <td class="p-2.5 rounded-lg bg-primary-container text-on-primary font-bold shadow-xs">₺1.120k</td>
-                        <td class="p-2.5 rounded-lg bg-primary text-on-primary font-bold shadow-sm">₺1.450k</td>
-                        <td class="p-2.5 rounded-lg bg-primary-container text-on-primary font-bold">₺1.280k</td>
-                    </tr>
-                    <!-- Category 2 -->
-                    <tr>
-                        <td class="text-left font-body-sm text-body-sm font-semibold text-on-surface px-2 py-2">Kurumsal Donanım</td>
-                        <td class="p-2.5 rounded-lg bg-secondary-fixed/50 text-on-surface font-medium">₺680k</td>
-                        <td class="p-2.5 rounded-lg bg-secondary-fixed text-secondary font-bold">₺910k</td>
-                        <td class="p-2.5 rounded-lg bg-secondary-container text-on-primary font-bold shadow-xs">₺1.050k</td>
-                        <td class="p-2.5 rounded-lg bg-secondary text-on-secondary font-bold shadow-sm">₺1.320k</td>
-                        <td class="p-2.5 rounded-lg bg-secondary-container text-on-primary font-bold">₺1.150k</td>
-                        <td class="p-2.5 rounded-lg bg-secondary-fixed text-secondary font-bold">₺990k</td>
-                    </tr>
-                    <!-- Category 3 -->
-                    <tr>
-                        <td class="text-left font-body-sm text-body-sm font-semibold text-on-surface px-2 py-2">Giyilebilir Sağlık</td>
-                        <td class="p-2.5 rounded-lg bg-tertiary-fixed/30 text-on-surface font-medium">₺210k</td>
-                        <td class="p-2.5 rounded-lg bg-tertiary-fixed/50 text-on-surface font-medium">₺340k</td>
-                        <td class="p-2.5 rounded-lg bg-tertiary-fixed text-tertiary font-bold">₺480k</td>
-                        <td class="p-2.5 rounded-lg bg-tertiary-container text-on-primary font-bold">₺620k</td>
-                        <td class="p-2.5 rounded-lg bg-tertiary text-on-tertiary font-bold shadow-sm">₺890k</td>
-                        <td class="p-2.5 rounded-lg bg-tertiary-container text-on-primary font-bold">₺740k</td>
-                    </tr>
-                    <!-- Category 4 -->
-                    <tr>
-                        <td class="text-left font-body-sm text-body-sm font-semibold text-on-surface px-2 py-2">Ses Sistemleri &amp; Hi-Fi</td>
-                        <td class="p-2.5 rounded-lg bg-[#E6FFFB] text-[#08979C] font-medium">₺310k</td>
-                        <td class="p-2.5 rounded-lg bg-[#E6FFFB] text-[#08979C] font-medium">₺350k</td>
-                        <td class="p-2.5 rounded-lg bg-[#87E8DE] text-on-surface font-bold">₺520k</td>
-                        <td class="p-2.5 rounded-lg bg-[#36CFC9] text-on-surface font-bold">₺590k</td>
-                        <td class="p-2.5 rounded-lg bg-[#13C2C2] text-on-primary font-bold shadow-sm">₺720k</td>
-                        <td class="p-2.5 rounded-lg bg-[#36CFC9] text-on-surface font-bold">₺610k</td>
-                    </tr>
-                    <!-- Category 5 -->
-                    <tr>
-                        <td class="text-left font-body-sm text-body-sm font-semibold text-on-surface px-2 py-2">Aksesuar &amp; Sarf</td>
-                        <td class="p-2.5 rounded-lg bg-surface-container-low text-on-surface-variant">₺120k</td>
-                        <td class="p-2.5 rounded-lg bg-surface-container-low text-on-surface-variant">₺140k</td>
-                        <td class="p-2.5 rounded-lg bg-primary-fixed/30 text-on-surface font-medium">₺190k</td>
-                        <td class="p-2.5 rounded-lg bg-primary-fixed/50 text-on-surface font-medium">₺240k</td>
-                        <td class="p-2.5 rounded-lg bg-primary-fixed text-primary font-bold">₺310k</td>
-                        <td class="p-2.5 rounded-lg bg-primary-fixed/60 text-on-surface font-medium">₺280k</td>
-                    </tr>
+                    @if (Model.Rows != null && Model.Rows.Any())
+                    {
+                        foreach (var row in Model.Rows)
+                        {
+                            var validRevenues = row.MonthlyRevenues.Values.Where(v => v > 0).ToList();
+                            var rowMin = validRevenues.Any() ? validRevenues.Min() : 0m;
+                            var rowMax = validRevenues.Any() ? validRevenues.Max() : 0m;
+
+                            <tr>
+                                <td class="sticky left-0 bg-surface-container-lowest z-10 text-left font-body-sm font-semibold text-on-surface px-3 py-2 truncate max-w-[170px] whitespace-nowrap shadow-[3px_0_6px_-2px_rgba(0,0,0,0.06)]"
+                                    title="@row.CategoryName">
+                                    @row.CategoryName
+                                </td>
+
+                                @foreach (var month in Model.Months!)
+                                {
+                                    var key = $"{month.Year}-{month.Month}";
+                                    var revenue = row.MonthlyRevenues.TryGetValue(key, out var val) ? val : 0m;
+                                    var tone = GetCellTone(row.CategoryName, revenue, rowMin, rowMax);
+
+                                    <td class="p-2 sm:p-2.5 rounded-lg whitespace-nowrap text-[12px] sm:text-body-sm transition-all duration-150 hover:scale-[1.03] cursor-default @tone.Fw"
+                                        style="background-color: @tone.Bg; color: @tone.Tx;"
+                                        title="@row.CategoryName (@month.MonthName): ₺@revenue.ToString("N2", tr)">
+                                        @FormatRevenue(revenue)
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="@((Model.Months?.Count ?? 0) + 1)" class="py-10 text-center text-outline font-body-sm">
+                                Seçilen tarih kriterine uygun aylık kategori verisi bulunamadı.
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
     </div>
-    <!-- Heatmap Legend -->
-    <div class="flex items-center justify-between pt-4 mt-4">
-        <span class="font-body-sm text-body-sm text-outline">En yüksek ivme: <strong>Mayıs (+%24)</strong></span>
-        <div class="flex items-center gap-1.5 font-label-caps text-label-caps text-outline">
-            <span>Düşük</span>
-            <span class="w-3.5 h-3.5 rounded bg-primary-fixed/40"></span>
-            <span class="w-3.5 h-3.5 rounded bg-primary-fixed"></span>
-            <span class="w-3.5 h-3.5 rounded bg-primary-container"></span>
-            <span class="w-3.5 h-3.5 rounded bg-primary"></span>
-            <span>Yüksek Hacim</span>
+
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mt-6 pt-3 border-t border-surface-container/50">
+        <div class="flex items-center gap-2 font-label-caps text-label-caps text-outline flex-wrap">
+            <span>Düşük Ay (Açık Ton)</span>
+            <div class="flex items-center gap-1">
+                <span class="w-3.5 h-3.5 rounded bg-slate-100 border border-slate-300" title="En Düşük Ay"></span>
+                <span class="w-3.5 h-3.5 rounded bg-slate-300" title="Orta Seviye"></span>
+                <span class="w-3.5 h-3.5 rounded bg-slate-500" title="Yüksek Seviye"></span>
+                <span class="w-3.5 h-3.5 rounded bg-slate-800" title="Zirve Ay"></span>
+            </div>
+            <span>Zirve Ay (Koyu Ton)</span>
         </div>
+        <span class="text-[11px] font-data-table text-outline whitespace-nowrap">
+            Dönem Zirvesi: ₺@Model.MaxRevenue.ToString("N0", tr)
+        </span>
     </div>
 </div>

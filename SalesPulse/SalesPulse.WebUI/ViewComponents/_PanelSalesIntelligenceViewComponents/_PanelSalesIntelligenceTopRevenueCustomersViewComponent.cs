@@ -1,12 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SalesPulse.Business.Services.SalesIntelligence;
+using SalesPulse.Core.DTOs.SalesIntelligenceDtos;
 
 namespace SalesPulse.WebUI.ViewComponents._PanelSalesIntelligenceViewComponents
 {
-    public class _PanelSalesIntelligenceTopRevenueCustomersViewComponent : ViewComponent
+    public class _PanelSalesIntelligenceTopRevenueCustomersViewComponent(ISalesIntelligenceService _salesIntelligenceService) : ViewComponent
     {
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync(SalesIntelligenceFilterDto filter)
         {
-            return View();
+            var topRevenues = await _salesIntelligenceService.GetTopRevenueCustomersAsync(filter);
+            return View(topRevenues);
         }
     }
 }
