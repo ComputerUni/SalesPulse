@@ -16,6 +16,11 @@ namespace SalesPulse.Business.Services.SalesIntelligence
             return await _salesIntelligenceRepository.GetCategoryMonthlyPerformanceHeatmapAsync(filter);
         }
 
+        public async Task<CohortMatrixDto> GetCustomerRetentionCohortAsync(SalesIntelligenceFilterDto filter)
+        {
+            return await _salesIntelligenceRepository.GetCustomerRetentionCohortAsync(filter);
+        }
+
         public async Task<SalesIntelligenceKpiDto> GetKpiMetricsAsync(SalesIntelligenceFilterDto filter)
         {
             return await _salesIntelligenceRepository.GetKpiMetricsAsync(filter);

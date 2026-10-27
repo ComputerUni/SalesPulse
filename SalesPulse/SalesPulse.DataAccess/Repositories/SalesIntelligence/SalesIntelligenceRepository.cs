@@ -74,6 +74,62 @@ namespace SalesPulse.DataAccess.Repositories.SalesIntelligence
 
         }
 
+        public async Task<CohortMatrixDto> GetCustomerRetentionCohortAsync(SalesIntelligenceFilterDto filter)
+        {
+            using var connection = _context.CreateConnection();
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@StartDate", filter.StartDate, DbType.DateTime);
+            parameters.Add("@EndDate", filter.EndDate, DbType.DateTime);
+
+            var rawData = (await connection.QueryAsync<CohortRetentionRawDto>(
+                "sp_GetCustomerRetentionCohort",
+                parameters,
+                commandType: CommandType.StoredProcedure,
+                commandTimeout: 120
+            )).ToList();
+
+            var result = new CohortMatrixDto();
+
+            if (!rawData.Any())
+                return result;
+
+            var currentMonthStart = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            var groupedByCohort = rawData.GroupBy(x => new { x.CohortDate, x.CohortName, x.InitialCustomers })
+                                         .OrderBy(g => g.Key.CohortDate);
+
+            var tr = new System.Globalization.CultureInfo("tr-TR");
+
+            foreach (var group in groupedByCohort)
+            {
+                var row = new CohortMatrixRowDto
+                {
+                    CohortDate = group.Key.CohortDate,
+                    CohortName = group.Key.CohortDate.ToString("MMMM yyyy", tr),
+                    InitialCustomers = group.Key.InitialCustomers
+                };
+
+                for(int m = 0; m < 12; m++)
+                {
+                    var targetData = group.Key.CohortDate.AddMonths(m);
+                    if(targetData > currentMonthStart)
+                    {
+                        row.RetentionRates[m] = null;
+                    }
+                    else
+                    {
+                        var record = group.FirstOrDefault(x => x.Month == m);
+                        row.RetentionRates[m] = record?.RetentionRate ?? 0.0m;
+                    }
+                }
+
+                result.Rows.Add(row);
+            }
+
+            return result;
+
+        }
+
         public async Task<SalesIntelligenceKpiDto> GetKpiMetricsAsync(SalesIntelligenceFilterDto filter)
         {
             using var connection = _context.CreateConnection();

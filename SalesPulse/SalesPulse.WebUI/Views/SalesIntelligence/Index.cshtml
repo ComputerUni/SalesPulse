@@ -43,7 +43,7 @@
 <section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-5">
     <div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm">
 
-        @await Component.InvokeAsync("_PanelSalesIntelligenceCohortRetentionMatrix")
+        @await Component.InvokeAsync("_PanelSalesIntelligenceCohortRetentionMatrix", new { filter = Model })
 
     </div>
 

@@ -1,80 +1,114 @@
-﻿<div class="flex items-center justify-between mb-2">
+﻿@using SalesPulse.Core.DTOs.SalesIntelligenceDtos
+@using System.Globalization
+@model CohortMatrixDto
+
+@{
+    var tr = new CultureInfo("tr-TR");
+
+    var monthNames = new[]
+    {
+        "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+        "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"
+    };
+
+    string GetCellClass(decimal? rate)
+    {
+        if (!rate.HasValue)
+            return "bg-surface-container-low text-outline font-normal";
+
+        var val = rate.Value;
+
+        if (val >= 99.0m)
+            return "bg-primary text-on-primary font-bold";
+        if (val >= 45.0m)
+            return "bg-primary-container text-on-primary font-bold";
+        if (val >= 38.0m)
+            return "bg-primary-fixed text-primary font-bold";
+        if (val >= 32.0m)
+            return "bg-primary-fixed/80 text-on-surface font-semibold";
+        if (val >= 28.0m)
+            return "bg-secondary-fixed text-secondary font-semibold";
+        if (val >= 20.0m)
+            return "bg-tertiary-fixed text-tertiary font-semibold";
+
+        return "bg-surface-container-low text-on-surface-variant font-medium";
+    }
+}
+
+<div class="flex items-center justify-between mb-2">
     <div class="flex items-center gap-2">
         <span class="w-2.5 h-2.5 rounded-full bg-[#13C2C2]"></span>
         <h2 class="font-title-sm text-title-sm text-on-surface">Tekrar Eden Alışveriş</h2>
     </div>
+    <span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container-low text-outline uppercase font-semibold">
+        Müşteri Sadakati (%)
+    </span>
 </div>
-<!-- Cohort Table -->
-<div class="overflow-x-auto">
-    <table class="w-full text-center border-separate border-spacing-1 font-data-table text-body-sm">
+
+<div class="overflow-x-auto pb-2 scroll-smooth">
+    <table class="w-full min-w-[860px] text-center border-separate border-spacing-1 font-data-table text-body-sm">
         <thead>
             <tr class="font-label-caps text-label-caps text-outline">
-                <th class="text-left font-normal pb-2 px-2">Kohort</th>
-                <th class="pb-2">Kullanıcı</th>
-                <th class="pb-2">Ay 0</th>
-                <th class="pb-2">Ay 1</th>
-                <th class="pb-2">Ay 2</th>
-                <th class="pb-2">Ay 3</th>
-                <th class="pb-2">Ay 4</th>
-                <th class="pb-2">Ay 5</th>
+                <th class="sticky left-0 bg-surface-container-lowest z-10 text-left font-normal pb-2 px-2 whitespace-nowrap min-w-[130px]">
+                    Kohort
+                </th>
+                <th class="pb-2 px-2 whitespace-nowrap min-w-[70px]">
+                    Kullanıcı
+                </th>
+                @foreach (var monthTitle in monthNames)
+                {
+                    <th class="pb-2 whitespace-nowrap min-w-[55px]">
+                        @monthTitle
+                    </th>
+                }
             </tr>
         </thead>
         <tbody>
-            <!-- Cohort Jan -->
-            <tr>
-                <td class="text-left font-semibold text-on-surface px-2 py-1.5 font-body-sm">Ocak 2024</td>
-                <td class="text-on-surface-variant text-xs">4.280</td>
-                <td class="p-2 rounded bg-primary text-on-primary font-bold">100%</td>
-                <td class="p-2 rounded bg-primary-fixed text-primary font-bold">42.8%</td>
-                <td class="p-2 rounded bg-primary-fixed/80 text-on-surface font-semibold">36.1%</td>
-                <td class="p-2 rounded bg-secondary-fixed text-secondary font-semibold">31.4%</td>
-                <td class="p-2 rounded bg-secondary-fixed/70 text-on-surface">28.9%</td>
-                <td class="p-2 rounded bg-tertiary-fixed text-tertiary font-semibold">27.2%</td>
-            </tr>
-            <!-- Cohort Feb -->
-            <tr>
-                <td class="text-left font-semibold text-on-surface px-2 py-1.5 font-body-sm">Şubat 2024</td>
-                <td class="text-on-surface-variant text-xs">5.120</td>
-                <td class="p-2 rounded bg-primary text-on-primary font-bold">100%</td>
-                <td class="p-2 rounded bg-primary-fixed text-primary font-bold">44.6%</td>
-                <td class="p-2 rounded bg-primary-fixed/80 text-on-surface font-semibold">38.2%</td>
-                <td class="p-2 rounded bg-secondary-fixed text-secondary font-semibold">33.5%</td>
-                <td class="p-2 rounded bg-secondary-fixed/70 text-on-surface">30.1%</td>
-                <td class="p-2 rounded bg-surface-container-low text-outline">-</td>
-            </tr>
-            <!-- Cohort Mar -->
-            <tr>
-                <td class="text-left font-semibold text-on-surface px-2 py-1.5 font-body-sm">Mart 2024</td>
-                <td class="text-on-surface-variant text-xs">6.340</td>
-                <td class="p-2 rounded bg-primary text-on-primary font-bold">100%</td>
-                <td class="p-2 rounded bg-primary-container text-on-primary font-bold">47.1%</td>
-                <td class="p-2 rounded bg-primary-fixed text-primary font-semibold">39.8%</td>
-                <td class="p-2 rounded bg-secondary-fixed text-secondary font-semibold">35.0%</td>
-                <td class="p-2 rounded bg-surface-container-low text-outline">-</td>
-                <td class="p-2 rounded bg-surface-container-low text-outline">-</td>
-            </tr>
-            <!-- Cohort Apr -->
-            <tr>
-                <td class="text-left font-semibold text-on-surface px-2 py-1.5 font-body-sm">Nisan 2024</td>
-                <td class="text-on-surface-variant text-xs">7.890</td>
-                <td class="p-2 rounded bg-primary text-on-primary font-bold">100%</td>
-                <td class="p-2 rounded bg-primary-container text-on-primary font-bold">49.4%</td>
-                <td class="p-2 rounded bg-primary-fixed text-primary font-semibold">41.2%</td>
-                <td class="p-2 rounded bg-surface-container-low text-outline">-</td>
-                <td class="p-2 rounded bg-surface-container-low text-outline">-</td>
-                <td class="p-2 rounded bg-surface-container-low text-outline">-</td>
-            </tr>
-            <!-- Cohort May -->
-            <tr>
-                <td class="text-left font-semibold text-on-surface px-2 py-1.5 font-body-sm">Mayıs 2024</td>
-                <td class="text-on-surface-variant text-xs">9.140</td>
-                <td class="p-2 rounded bg-primary text-on-primary font-bold">100%</td>
-                <td class="p-2 rounded bg-primary-container text-on-primary font-bold">51.8%</td>
-                <td class="p-2 rounded bg-surface-container-low text-outline">-</td>
-                <td class="p-2 rounded bg-surface-container-low text-outline">-</td>
-                <td class="p-2 rounded bg-surface-container-low text-outline">-</td>
-                <td class="p-2 rounded bg-surface-container-low text-outline">-</td>
-            </tr>
+            @if (Model.Rows != null && Model.Rows.Any())
+            {
+                foreach (var row in Model.Rows)
+                {
+                    var cohortMonth = row.CohortDate.Month; 
+
+                    <tr>
+                        <td class="sticky left-0 bg-surface-container-lowest z-10 text-left font-semibold text-on-surface px-2 py-1.5 font-body-sm whitespace-nowrap capitalize">
+                            @row.CohortName
+                        </td>
+
+                        <td class="text-on-surface-variant text-xs font-semibold px-2 py-1.5 whitespace-nowrap">
+                            @row.InitialCustomers.ToString("N0", tr)
+                        </td>
+
+                        @for (int colMonth = 1; colMonth <= 12; colMonth++)
+                        {
+                            decimal? rate = null;
+
+
+                            if (colMonth >= cohortMonth)
+                            {
+                                int relativeIndex = colMonth - cohortMonth;
+                                row.RetentionRates.TryGetValue(relativeIndex, out rate);
+                            }
+
+                            var cellClass = GetCellClass(rate);
+                            var targetMonthName = monthNames[colMonth - 1];
+
+                            <td class="p-2 rounded text-xs whitespace-nowrap transition-transform duration-100 hover:scale-[1.03] cursor-default @cellClass"
+                                title="@(rate.HasValue ? $"{row.CohortName} kohortunun {targetMonthName} ayı sadakat oranı: %{rate.Value.ToString("F1", tr)}" : "-")">
+                                @(rate.HasValue ? (rate.Value >= 99.9m ? "100%" : $"%{rate.Value.ToString("F1", tr)}") : "-")
+                            </td>
+                        }
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="14" class="py-8 text-center text-outline font-body-sm">
+                        Seçilen tarih aralığında kohort verisi bulunamadı.
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
-</div> 
+</div>

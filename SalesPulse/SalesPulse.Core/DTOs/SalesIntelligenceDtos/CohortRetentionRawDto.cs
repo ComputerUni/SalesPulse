@@ -11,7 +11,7 @@ namespace SalesPulse.Core.DTOs.SalesIntelligenceDtos
         public DateTime CohortDate { get; set; }
         public string CohortName { get; set; }
         public int InitialCustomers { get; set; }
-        public int MonthIndex { get; set; }
+        public int Month { get; set; }
         public decimal RetentionRate { get; set; }
     }
 }
