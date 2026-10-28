@@ -4,6 +4,9 @@
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|MarkdownPreview"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,7 +16,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 629,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -33,13 +36,25 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "README.md [\u00D6nizleme]",
+              "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\README.md",
+              "RelativeDocumentMoniker": "..\\README.md",
+              "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\README.md [\u00D6nizleme]",
+              "RelativeToolTip": "..\\README.md [\u00D6nizleme]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-10-28T16:06:53.428Z",
+              "EditorCaption": " [\u00D6nizleme]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\README.md",
               "RelativeDocumentMoniker": "..\\README.md",
               "ToolTip": "C:\\Users\\BURHAN\\Desktop\\Dapper-SalesPulse\\README.md",
               "RelativeToolTip": "..\\README.md",
-              "ViewState": "AgIAADYDAAAAAAAAAAAAAMUCAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAABcDAAAAAAAAAAAnwCsDAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2026-10-28T15:52:00.96Z",
               "EditorCaption": ""
