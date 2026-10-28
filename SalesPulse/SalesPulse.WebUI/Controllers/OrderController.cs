@@ -21,6 +21,13 @@ namespace SalesPulse.WebUI.Controllers
                 return RedirectToAction(nameof(Index), filter);
             }
 
+            var maxLimit = 50000;
+            if (orders.Count() >= maxLimit)
+            {
+                TempData["WarningMessage"] = "Seçilen aralıkta 50.000'den fazla kayıt bulunmaktadır. Sistem performansını korumak için lütfen tarih veya durum filtresini daraltarak tekrar deneyiniz.";
+                return RedirectToAction(nameof(Index), filter);
+            }
+
             var fileName = $"Siparisler_{DateTime.Now:yyyyMMdd_HHmmss}.csv"; 
 
             var memoryStream = new MemoryStream();
