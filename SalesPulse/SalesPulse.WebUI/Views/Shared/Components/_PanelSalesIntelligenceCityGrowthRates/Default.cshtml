@@ -1,91 +1,111 @@
-﻿<div>
-    <div class="flex items-center justify-between mb-2">
-        <div class="flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
-            <h2 class="font-title-sm text-title-sm text-on-surface">Şehirlerin Büyüme Hızı (YoY)</h2>
+﻿@using SalesPulse.Core.DTOs.SalesIntelligenceDtos
+@using System.Globalization
+@model List<TopCitySalesDto>
+
+@{
+    var tr = new CultureInfo("tr-TR");
+
+    var barColors = new[]
+    {
+        "bg-[#872400]", 
+        "bg-[#FF7A45]",
+        "bg-[#1677FF]",
+        "bg-[#722ED1]",
+        "bg-[#13C2C2]",
+        "bg-[#FA8C16]", 
+        "bg-[#1890FF]"
+    };
+
+    string FormatRevenue(decimal amount)
+    {
+        if (amount >= 1_000_000_000)
+            return $"₺{(amount / 1_000_000_000m).ToString("F2", tr)} Mr";
+
+        if (amount >= 1_000_000)
+            return $"₺{(amount / 1_000_000m).ToString("F2", tr)}M";
+
+        if (amount >= 1_000)
+            return $"₺{(amount / 1_000m).ToString("F0", tr)}k";
+
+        return $"₺{amount.ToString("N0", tr)}";
+    }
+
+    var mainCities = Model?.Take(6).ToList() ?? new List<TopCitySalesDto>();
+    var secondaryCities = Model?.Skip(6).Take(4).ToList() ?? new List<TopCitySalesDto>();
+}
+
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+    <div>
+        <div class="flex items-center justify-between mb-1">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#FF7A45] shrink-0"></span>
+                <h2 class="font-title-sm text-title-sm text-on-surface">En Çok Satış Yapılan Şehirler</h2>
+            </div>
+            <span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-[#E6F4FF] text-[#1677FF] uppercase font-semibold">
+                Bölgesel Ciro
+            </span>
         </div>
-        <span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container text-on-surface-variant uppercase">Bölgesel Ciro</span>
-    </div>
-    <p class="font-body-sm text-body-sm text-on-surface-variant mb-5">
-        Türkiye genelinde en yüksek hacme sahip 7 metropolün yıllık büyüme oranları.
-    </p>
-    <!-- Vertical Bar Metric List -->
-    <div class="flex flex-col gap-3">
-        <!-- Istanbul -->
-        <div>
-            <div class="flex items-center justify-between font-body-sm text-body-sm mb-1">
-                <div class="flex items-center gap-2">
-                    <span class="font-bold text-on-surface">İstanbul</span>
-                    <span class="text-xs text-outline font-data-table">₺4.82M</span>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mb-5">
+            Türkiye genelinde en yüksek hacme sahip 10 şehrin yıllık büyüme ve ciro dağılımı.
+        </p>
+
+        <div class="flex flex-col gap-4">
+            @if (mainCities.Any())
+            {
+                for (int i = 0; i < mainCities.Count; i++)
+                {
+                    var city = mainCities[i];
+                    var barColor = barColors[i % barColors.Length];
+                    var isPositive = city.GrowthRate >= 0;
+
+                    <div>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <div class="flex items-center gap-2">
+                                <span class="font-body-sm text-body-sm font-bold text-on-surface">@city.CityName</span>
+                                <span class="font-data-table text-xs text-outline font-medium">@FormatRevenue(city.TotalRevenue)</span>
+                            </div>
+                            <span class="font-label-caps text-xs font-bold @(isPositive ? "text-[#D4380D]" : "text-error") flex items-center">
+                                @(isPositive ? "+" : "")%@city.GrowthRate.ToString("F1", tr)
+                            </span>
+                        </div>
+
+                        <div class="w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+                            <div class="h-full rounded-full transition-all duration-500 @barColor" 
+                                 style="width: @city.PercentageOfMax.ToString(CultureInfo.InvariantCulture)%">
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="py-8 text-center text-outline font-body-sm">
+                    Döneme ait bölgesel satış verisi bulunamadı.
                 </div>
-                <span class="font-data-table text-data-table text-primary font-bold">+%34.2</span>
-            </div>
-            <div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
-                <div class="h-full bg-primary rounded-full" style="width: 88%"></div>
-            </div>
-        </div>
-        <!-- Ankara -->
-        <div>
-            <div class="flex items-center justify-between font-body-sm text-body-sm mb-1">
-                <div class="flex items-center gap-2">
-                    <span class="font-bold text-on-surface">Ankara</span>
-                    <span class="text-xs text-outline font-data-table">₺2.41M</span>
-                </div>
-                <span class="font-data-table text-data-table text-primary-container font-bold">+%28.6</span>
-            </div>
-            <div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
-                <div class="h-full bg-primary-container rounded-full" style="width: 74%"></div>
-            </div>
-        </div>
-        <!-- Izmir -->
-        <div>
-            <div class="flex items-center justify-between font-body-sm text-body-sm mb-1">
-                <div class="flex items-center gap-2">
-                    <span class="font-bold text-on-surface">İzmir</span>
-                    <span class="text-xs text-outline font-data-table">₺1.98M</span>
-                </div>
-                <span class="font-data-table text-data-table text-secondary font-bold">+%22.1</span>
-            </div>
-            <div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
-                <div class="h-full bg-secondary-container rounded-full" style="width: 62%"></div>
-            </div>
-        </div>
-        <!-- Bursa -->
-        <div>
-            <div class="flex items-center justify-between font-body-sm text-body-sm mb-1">
-                <div class="flex items-center gap-2">
-                    <span class="font-bold text-on-surface">Bursa</span>
-                    <span class="text-xs text-outline font-data-table">₺1.15M</span>
-                </div>
-                <span class="font-data-table text-data-table text-tertiary font-bold">+%31.8</span>
-            </div>
-            <div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
-                <div class="h-full bg-tertiary rounded-full" style="width: 68%"></div>
-            </div>
-        </div>
-        <!-- Antalya -->
-        <div>
-            <div class="flex items-center justify-between font-body-sm text-body-sm mb-1">
-                <div class="flex items-center gap-2">
-                    <span class="font-bold text-on-surface">Antalya</span>
-                    <span class="text-xs text-outline font-data-table">₺980k</span>
-                </div>
-                <span class="font-data-table text-data-table text-[#08979C] font-bold">+%41.5</span>
-            </div>
-            <div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
-                <div class="h-full bg-[#13C2C2] rounded-full" style="width: 82%"></div>
-            </div>
-        </div>
-        <!-- Trabzon & Eskisehir (Compact summary) -->
-        <div class="grid grid-cols-2 gap-2 pt-1">
-            <div class="p-2 rounded-lg bg-surface-container-low/70">
-                <div class="font-body-sm text-[12px] text-outline">Eskişehir</div>
-                <div class="font-data-table text-body-sm font-bold text-on-surface">+%19.4 <span class="text-xs font-normal text-outline">(₺620k)</span></div>
-            </div>
-            <div class="p-2 rounded-lg bg-surface-container-low/70">
-                <div class="font-body-sm text-[12px] text-outline">Trabzon</div>
-                <div class="font-data-table text-body-sm font-bold text-on-surface">+%26.0 <span class="text-xs font-normal text-outline">(₺490k)</span></div>
-            </div>
+            }
         </div>
     </div>
+
+    @if (secondaryCities.Any())
+    {
+        <div class="grid grid-cols-2 gap-3 mt-6 pt-4 border-t border-surface-container/50">
+            @foreach (var city in secondaryCities)
+            {
+                var isPositive = city.GrowthRate >= 0;
+                <div class="bg-surface-container-low/50 p-2.5 rounded-xl border border-outline/5 flex flex-col justify-between">
+                    <span class="font-body-sm text-xs font-semibold text-outline truncate" title="@city.CityName">
+                        @city.CityName
+                    </span>
+                    <div class="flex items-baseline justify-between mt-1">
+                        <span class="font-label-caps text-xs font-bold @(isPositive ? "text-primary" : "text-error")">
+                            @(isPositive ? "+" : "")%@city.GrowthRate.ToString("F1", tr)
+                        </span>
+                        <span class="font-data-table text-[11px] text-on-surface-variant font-medium">
+                            (@FormatRevenue(city.TotalRevenue))
+                        </span>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 </div>

@@ -15,5 +15,6 @@ namespace SalesPulse.DataAccess.Repositories.SalesIntelligence
         Task<CategoryHeatmapDto> GetCategoryMonthlyPerformanceHeatmapAsync(SalesIntelligenceFilterDto filter);
         Task<IEnumerable<TopRevenueProductDto>> GetTopRevenueProductAsync(SalesIntelligenceFilterDto filter);
         Task<CohortMatrixDto> GetCustomerRetentionCohortAsync(SalesIntelligenceFilterDto filter);
+        Task<IEnumerable<TopCitySalesDto>> GetTopCitySalesAsync(SalesIntelligenceFilterDto filter);
     }
 }

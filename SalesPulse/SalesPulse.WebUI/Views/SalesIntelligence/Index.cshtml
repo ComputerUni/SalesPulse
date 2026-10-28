@@ -6,6 +6,21 @@
     ViewData["Title"] = "Dashboard";
 }
 
+@{
+    var tr = new System.Globalization.CultureInfo("tr-TR");
+    var today = DateTime.Today.ToString("yyyy-MM-dd");
+
+    var oneWeekAgo = DateTime.Today.AddDays(-7).ToString("yyyy-MM-dd");
+    var thirtyDaysAgo = DateTime.Today.AddDays(-30).ToString("yyyy-MM-dd");
+    var sixMonthsAgo = DateTime.Today.AddMonths(-6).ToString("yyyy-MM-dd");
+    var oneYearAgo = DateTime.Today.AddYears(-1).ToString("yyyy-MM-dd");
+    var twoYearsAgo = DateTime.Today.AddYears(-2).ToString("yyyy-MM-dd");
+    var threeYearsAgo = DateTime.Today.AddYears(-3).ToString("yyyy-MM-dd");
+
+    var currentStart = Model?.StartDate?.ToString("yyyy-MM-dd") ?? oneYearAgo;
+    var currentEnd = Model?.EndDate?.ToString("yyyy-MM-dd") ?? today;
+}
+
 <section class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg mb-8">
     <div class="flex flex-col gap-1 mt-3">
         <h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">Gelişmiş Satış Analizi</h1>
@@ -14,15 +29,47 @@
         </p>
     </div>
     <div class="flex flex-wrap items-center gap-space-sm">
-        <div class="flex items-center bg-surface-container-low p-1 rounded-xl shadow-xs">
-            <button class="px-space-md py-1.5 rounded-lg font-body-sm text-body-sm font-semibold bg-surface-container-lowest text-primary shadow-sm flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-[16px] text-primary">swap_horiz</span>
-                2024 vs 2023
-            </button>
-            <button class="px-space-md py-1.5 rounded-lg font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors">
-                Son 4 Çeyrek (QoQ)
-            </button>
-        </div>
+        <form method="get" asp-action="Index" class="flex flex-col lg:flex-row items-start lg:items-center gap-3">
+            <div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-xl shadow-xs border border-outline/10 overflow-x-auto max-w-full">
+                <a href="?startDate=@oneWeekAgo&endDate=@today"
+                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all @(currentStart == oneWeekAgo ? "bg-surface-container-lowest text-primary shadow-sm" : "text-on-surface-variant hover:text-on-surface")">
+                    Son 1 Hafta
+                </a>
+                <a href="?startDate=@thirtyDaysAgo&endDate=@today"
+                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all @(currentStart == thirtyDaysAgo ? "bg-surface-container-lowest text-primary shadow-sm" : "text-on-surface-variant hover:text-on-surface")">
+                    Son 30 Gün
+                </a>
+                <a href="?startDate=@sixMonthsAgo&endDate=@today"
+                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all @(currentStart == sixMonthsAgo ? "bg-surface-container-lowest text-primary shadow-sm" : "text-on-surface-variant hover:text-on-surface")">
+                    Son 6 Ay
+                </a>
+                <a href="?startDate=@oneYearAgo&endDate=@today"
+                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all @(currentStart == oneYearAgo ? "bg-surface-container-lowest text-primary shadow-sm" : "text-on-surface-variant hover:text-on-surface")">
+                    Son 1 Yıl
+                </a>
+                <a href="?startDate=@twoYearsAgo&endDate=@today"
+                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all @(currentStart == twoYearsAgo ? "bg-surface-container-lowest text-primary shadow-sm" : "text-on-surface-variant hover:text-on-surface")">
+                    Son 2 Yıl
+                </a>
+                <a href="?startDate=@threeYearsAgo&endDate=@today"
+                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all @(currentStart == threeYearsAgo ? "bg-surface-container-lowest text-primary shadow-sm" : "text-on-surface-variant hover:text-on-surface")">
+                    Son 3 Yıl
+                </a>
+            </div>
+
+            <div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-xl border border-outline/15 shadow-xs">
+                <span class="material-symbols-outlined text-[18px] text-outline">calendar_today</span>
+                <input type="date" name="startDate" value="@currentStart"
+                       class="bg-transparent text-xs font-medium text-on-surface focus:outline-none cursor-pointer" />
+                <span class="text-outline text-xs">-</span>
+                <input type="date" name="endDate" value="@currentEnd"
+                       class="bg-transparent text-xs font-medium text-on-surface focus:outline-none cursor-pointer" />
+                <button type="submit"
+                        class="ml-1 bg-primary text-on-primary px-3 py-1 rounded-lg text-xs font-semibold hover:opacity-90 transition-opacity shadow-xs">
+                    Uygula
+                </button>
+            </div>
+        </form>
 
     </div>
 </section>
@@ -49,7 +96,7 @@
 
     <div class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
 
-        @await Component.InvokeAsync("_PanelSalesIntelligenceCityGrowthRates")
+        @await Component.InvokeAsync("_PanelSalesIntelligenceCityGrowthRates", new { filter = Model })
 
     </div>
 </section>

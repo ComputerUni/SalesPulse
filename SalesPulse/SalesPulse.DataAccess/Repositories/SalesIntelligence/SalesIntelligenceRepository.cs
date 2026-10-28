@@ -109,10 +109,10 @@ namespace SalesPulse.DataAccess.Repositories.SalesIntelligence
                     InitialCustomers = group.Key.InitialCustomers
                 };
 
-                for(int m = 0; m < 12; m++)
+                for (int m = 0; m < 12; m++)
                 {
                     var targetData = group.Key.CohortDate.AddMonths(m);
-                    if(targetData > currentMonthStart)
+                    if (targetData > currentMonthStart)
                     {
                         row.RetentionRates[m] = null;
                     }
@@ -144,6 +144,36 @@ namespace SalesPulse.DataAccess.Repositories.SalesIntelligence
                 commandType: CommandType.StoredProcedure,
                 commandTimeout: 120
             ) ?? new SalesIntelligenceKpiDto();
+        }
+
+        public async Task<IEnumerable<TopCitySalesDto>> GetTopCitySalesAsync(SalesIntelligenceFilterDto filter)
+        {
+            using var connection = _context.CreateConnection();
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@StartDate", filter.StartDate, DbType.DateTime);
+            parameters.Add("@EndDate", filter.EndDate, DbType.DateTime);
+
+            var cities = (await connection.QueryAsync<TopCitySalesDto>(
+                "sp_GetTop10CitiesPerformance",
+                parameters,
+                commandType: CommandType.StoredProcedure,
+                commandTimeout: 120
+            )).ToList();
+
+            if (!cities.Any())
+                return cities;
+
+            var maxRevenue = cities.Max(x => x.TotalRevenue);
+            if(maxRevenue > 0)
+            {
+                foreach(var city in cities)
+                {
+                    city.PercentageOfMax = Math.Round((city.TotalRevenue / maxRevenue) * 100, 1);
+                }
+            }
+
+            return cities;
         }
 
         public async Task<PagedResult<SalesIntelligenceTopRevenueCustomerDto>> GetTopRevenueCustomersAsync(SalesIntelligenceFilterDto filter)

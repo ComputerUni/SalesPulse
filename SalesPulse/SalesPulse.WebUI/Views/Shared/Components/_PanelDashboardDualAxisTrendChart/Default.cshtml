@@ -1,5 +1,27 @@
 ﻿@model SalesPulse.Core.DTOs.DashboardDtos.DashboardMonthlySalesTrendDto
 
+@functions {
+    string FormatCurrency(decimal amount)
+    {
+        var tr = new System.Globalization.CultureInfo("tr-TR");
+        if (amount >= 1_000_000_000m)
+            return $"₺{(amount / 1_000_000_000m).ToString("0.00", tr)} Mr";
+        if (amount >= 1_000_000m)
+            return $"₺{(amount / 1_000_000m).ToString("0.00", tr)}M";
+        if (amount >= 1_000m)
+            return $"₺{(amount / 1_000m).ToString("0.0", tr)}K";
+        return $"₺{amount.ToString("N0", tr)}";
+    }
+}
+
+@{
+    var tr = new System.Globalization.CultureInfo("tr-TR");
+
+    var peakItem = Model?.MonthlyItems?.OrderByDescending(x => x.TotalRevenue).FirstOrDefault();
+    var peakMonthName = !string.IsNullOrEmpty(Model?.PeakMonth) ? Model.PeakMonth : (peakItem?.MonthName ?? "-");
+    var peakRevenue = Model?.PeakRevenue > 0 ? Model.PeakRevenue : (peakItem?.TotalRevenue ?? 0m);
+}
+
 <div class="xl:col-span-8 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
     <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md gap-space-sm">
         <div>
@@ -9,7 +31,7 @@
 
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-orange-50 border border-orange-200/60 text-orange-700 text-xs font-medium w-fit">
             <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
-            <span>Zirve: <strong>@Model.PeakMonth (₺@((Model.PeakRevenue / 1_000_000m).ToString("0.00", new System.Globalization.CultureInfo("tr-TR")))M)</strong></span>
+            <span>Zirve: <strong>@peakMonthName (@FormatCurrency(peakRevenue))</strong></span>
         </div>
     </div>
 
@@ -21,19 +43,19 @@
         <div>
             <span class="font-label-caps text-label-caps uppercase text-outline text-[11px] text-slate-400 font-semibold block">En Yüksek Ay</span>
             <p class="font-data-table text-body-sm font-semibold text-slate-800 mt-0.5">
-                @Model.PeakMonth (₺@((Model.PeakRevenue / 1_000_000m).ToString("0.00", new System.Globalization.CultureInfo("tr-TR")))M)
+                @peakMonthName (@FormatCurrency(peakRevenue))
             </p>
         </div>
         <div class="border-x border-slate-200/60">
             <span class="font-label-caps text-label-caps uppercase text-outline text-[11px] text-slate-400 font-semibold block">Aylık Ort. Ciro</span>
             <p class="font-data-table text-body-sm font-semibold text-slate-800 mt-0.5">
-                ₺@Model.AverageMonthlyRevenue.ToString("N0", new System.Globalization.CultureInfo("tr-TR"))
+                ₺@FormatCurrency(Model.AverageMonthlyRevenue)
             </p>
         </div>
         <div>
             <span class="font-label-caps text-label-caps uppercase text-outline text-[11px] text-slate-400 font-semibold block">Hedef Tutma Oranı</span>
             <p class="font-data-table text-body-sm font-semibold @(Model.TargetAchievementRate >= 100 ? "text-emerald-600" : "text-amber-600") mt-0.5">
-                %@Model.TargetAchievementRate.ToString("0.0", new System.Globalization.CultureInfo("tr-TR")) Başarı
+                %@Model.TargetAchievementRate.ToString("0.0", tr) Başarı
             </p>
         </div>
     </div>
@@ -46,7 +68,7 @@
         if (!rawData || rawData.length === 0) return;
 
         const categories = rawData.map(x => x.MonthName);
-        const revenues = rawData.map(x => x.TotalRevenue); // DÜZELTİLDİ: Saf sayısal dizi aktarıldı
+        const revenues = rawData.map(x => x.TotalRevenue); 
         const orders = rawData.map(x => x.TotalOrderCount);
 
         const options = {
@@ -105,7 +127,15 @@
             yaxis: [
                 {
                     labels: {
-                        formatter: val => `₺${Math.round(val / 1000000)}M`,
+                        formatter: function (val) {
+                            if (val >= 1000000000) {
+                                return `₺${(val / 1000000000).toLocaleString('tr-TR', { minimumFractionDigits: 0, maximumFractionDigits: 1 })} Mr`;
+                            }
+                            if (val >= 1000000) {
+                                return `₺${Math.round(val / 1000000)}M`;
+                            }
+                            return `₺${val}`;
+                        },
                         style: { colors: '#94a3b8', fontSize: '11px' }
                     }
                 },
@@ -127,9 +157,12 @@
                 y: {
                     formatter: function (y, { seriesIndex }) {
                         if (typeof y !== "undefined") {
-                            return seriesIndex === 0
-                                ? `₺${Math.round(y).toLocaleString('tr-TR')}`
-                                : `${Math.round(y).toLocaleString('tr-TR')} adet`;
+                            if (seriesIndex === 0) {
+                                const billionFormatted = (y / 1000000000).toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                                const exactFormatted = Math.round(y).toLocaleString('tr-TR');
+                                return `₺${billionFormatted} Mr (₺${exactFormatted})`;
+                            }
+                            return `${Math.round(y).toLocaleString('tr-TR')} adet`;
                         }
                         return y;
                     }

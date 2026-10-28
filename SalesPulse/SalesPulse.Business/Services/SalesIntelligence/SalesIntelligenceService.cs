@@ -26,6 +26,11 @@ namespace SalesPulse.Business.Services.SalesIntelligence
             return await _salesIntelligenceRepository.GetKpiMetricsAsync(filter);
         }
 
+        public async Task<IEnumerable<TopCitySalesDto>> GetTopCitySalesAsync(SalesIntelligenceFilterDto filter)
+        {
+            return await _salesIntelligenceRepository.GetTopCitySalesAsync(filter);
+        }
+
         public async Task<PagedResult<SalesIntelligenceTopRevenueCustomerDto>> GetTopRevenueCustomersAsync(SalesIntelligenceFilterDto filter)
         {
             return await _salesIntelligenceRepository.GetTopRevenueCustomersAsync(filter);
