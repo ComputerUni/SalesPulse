@@ -1,18 +1,18 @@
-# SalesPulse
+﻿# SalesPulse
 ## Dapper ORM ve SQL Server Performans Optimizasyonu
 
 ---
 
 ## 📋 İçindekiler
-1. [Proje Tanımı](#proje-tanımı)
-2. [Kurulum Adımları](#kurulum-adımları)
-3. [Veritabanı Şeması](#veritabanı-şeması)
-4. [Tablo İlişkileri](#tablo-ilişkileri)
-5. [Indeksler ve Stratejisi](#indeksler-ve-stratejisi)
-6. [Stored Procedures](#stored-procedures)
-7. [Örnek Veri Üretimi](#örnek-veri-üretimi)
-8. [Performans Analizi ve Optimizasyon](#performans-analizi-ve-optimizasyon)
-9. [Dashboard Ekran Görüntüleri](#dashboard-ekran-görüntüleri)
+1. [Proje Tanımı](#-proje-tanımı)
+2. [Kurulum Adımları](#-kurulum-adımları)
+3. [Veritabanı Şeması](#-veritabanı-şeması)
+4. [Tablo İlişkileri](#-tablo-ilişkileri)
+5. [İndeksler ve Stratejisi](#-indeksler-ve-stratejisi)
+6. [Stored Procedures](#-stored-procedures)
+7. [Örnek Veri Üretimi](#-örnek-veri-üretimi)
+8. [Performans Analizi ve Optimizasyon](#-performans-analizi-ve-optimizasyon)
+9. [Dashboard Ekran Görüntüleri](#-dashboard-ekran-görüntüleri)
 
 ---
 
@@ -798,27 +798,27 @@ INCLUDE ([TotalAmount], [Id], [CustomerId]);
 
 ## 🎮 Dashboard Ekran Görüntüleri
 
-![Dashboard Anasayfa](https://raw.githubusercontent.com/ComputerUni/Dapper-SalesPulse/main/SalesPulse/screenshots/dashboard-home.png)
+![Dashboard Anasayfa](./screenshots/dashboard-home.png)
 
-![Sipariş Yönetimi](https://raw.githubusercontent.com/ComputerUni/Dapper-SalesPulse/main/SalesPulse/screenshots/orders-management.png)
+![Sipariş Yönetimi](./screenshots/orders-management.png)
 
-![Müşteri Analitikleri](https://raw.githubusercontent.com/ComputerUni/Dapper-SalesPulse/main/SalesPulse/screenshots/customer-analytics.png)
+![Müşteri Analitikleri](./screenshots/customer-analytics.png)
 
-![Ürün Performansı](https://raw.githubusercontent.com/ComputerUni/Dapper-SalesPulse/main/SalesPulse/screenshots/product-performance.png)
+![Ürün Performansı](./screenshots/product-performance.png)
 
-![Şehir Analizi](https://raw.githubusercontent.com/ComputerUni/Dapper-SalesPulse/main/SalesPulse/screenshots/city-analysis.png)
+![Şehir Analizi](./screenshots/city-analysis.png)
 
-![Kategori Heatmap](https://raw.githubusercontent.com/ComputerUni/Dapper-SalesPulse/main/SalesPulse/screenshots/category-heatmap.png)
+![Kategori Heatmap](./screenshots/category-heatmap.png)
 
-![Ödeme Yöntemleri](https://raw.githubusercontent.com/ComputerUni/Dapper-SalesPulse/main/SalesPulse/screenshots/payment-methods.png)
+![Ödeme Yöntemleri](./screenshots/payment-methods.png)
 
-![KPI Dashboard](https://raw.githubusercontent.com/ComputerUni/Dapper-SalesPulse/main/SalesPulse/screenshots/kpi-dashboard.png)
+![KPI Dashboard](./screenshots/kpi-dashboard.png)
 
-![Raporlar](https://raw.githubusercontent.com/ComputerUni/Dapper-SalesPulse/main/SalesPulse/screenshots/reports.png)
+![Raporlar](./screenshots/reports.png)
 
-![Müşteri Retansiyon](https://raw.githubusercontent.com/ComputerUni/Dapper-SalesPulse/main/SalesPulse/screenshots/customer-retention.png)
+![Müşteri Retansiyon](./screenshots/customer-retention.png)
 
-![Gerçek Zamanlı](https://raw.githubusercontent.com/ComputerUni/Dapper-SalesPulse/main/SalesPulse/screenshots/realtime-data.png)
+![Gerçek Zamanlı](./screenshots/realtime-data.png)
 
 ---
 
