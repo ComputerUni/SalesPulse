@@ -798,27 +798,27 @@ INCLUDE ([TotalAmount], [Id], [CustomerId]);
 
 ## 🎮 Dashboard Ekran Görüntüleri
 
-![Dashboard Anasayfa](./screenshots/dashboard-home.png)
+![Dashboard Anasayfa](https://raw.githubusercontent.com/ComputerUni/SalesPulse/main/screenshots/dashboard-home.png)
 
-![Sipariş Yönetimi](./screenshots/orders-management.png)
+![Sipariş Yönetimi](https://raw.githubusercontent.com/ComputerUni/SalesPulse/main/screenshots/orders-management.png)
 
-![Müşteri Analitikleri](./screenshots/customer-analytics.png)
+![Müşteri Analitikleri](https://raw.githubusercontent.com/ComputerUni/SalesPulse/main/screenshots/customer-analytics.png)
 
-![Ürün Performansı](./screenshots/product-performance.png)
+![Ürün Performansı](https://raw.githubusercontent.com/ComputerUni/SalesPulse/main/screenshots/product-performance.png)
 
-![Şehir Analizi](./screenshots/city-analysis.png)
+![Şehir Analizi](https://raw.githubusercontent.com/ComputerUni/SalesPulse/main/screenshots/city-analysis.png)
 
-![Kategori Heatmap](./screenshots/category-heatmap.png)
+![Kategori Heatmap](https://raw.githubusercontent.com/ComputerUni/SalesPulse/main/screenshots/category-heatmap.png)
 
-![Ödeme Yöntemleri](./screenshots/payment-methods.png)
+![Ödeme Yöntemleri](https://raw.githubusercontent.com/ComputerUni/SalesPulse/main/screenshots/payment-methods.png)
 
-![KPI Dashboard](./screenshots/kpi-dashboard.png)
+![KPI Dashboard](https://raw.githubusercontent.com/ComputerUni/SalesPulse/main/screenshots/kpi-dashboard.png)
 
-![Raporlar](./screenshots/reports.png)
+![Raporlar](https://raw.githubusercontent.com/ComputerUni/SalesPulse/main/screenshots/reports.png)
 
-![Müşteri Retansiyon](./screenshots/customer-retention.png)
+![Müşteri Retansiyon](https://raw.githubusercontent.com/ComputerUni/SalesPulse/main/screenshots/customer-retention.png)
 
-![Gerçek Zamanlı](./screenshots/realtime-data.png)
+![Gerçek Zamanlı](https://raw.githubusercontent.com/ComputerUni/SalesPulse/main/screenshots/realtime-data.png)
 
 ---
 
